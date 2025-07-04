@@ -17,22 +17,35 @@ export default function WorkflowCard({
   className = "" 
 }: WorkflowCardProps) {
   return (
-    <div className={`relative bg-white dark:bg-slate-900 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden ${className}`}>
+    <div className={`relative bg-white dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300 overflow-hidden ${className}`}>
       {/* Image Placeholder */}
       <div className="aspect-[4/3] bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 flex items-center justify-center">
         <span className="text-slate-600 dark:text-slate-500 text-sm">{imagePlaceholder}</span>
       </div>
       
       {/* Content */}
-      <div className="p-6">
-        <h4 className="text-xl font-semibold mb-2 text-slate-900 dark:text-white">{title}</h4>
-        <p className="text-slate-600 dark:text-slate-300 text-sm mb-4">{subtitle}</p>
+      <div className="p-4 sm:p-6">
+        <h4 className="text-lg sm:text-xl font-semibold mb-2 text-slate-900 dark:text-white">{title}</h4>
+        <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm mb-3 sm:mb-4">{subtitle}</p>
+        
+        {/* Separator */}
+        <div className="border-t border-gray-200 dark:border-gray-700 pt-3 sm:pt-4 mb-3 sm:mb-4"></div>
         
         {/* Integration Icons */}
-        <div className="flex items-center gap-2">
-          {integrations.map((Icon, index) => (
-            <IntegrationIcon key={index} icon={Icon} />
-          ))}
+        <div className="flex items-center">
+          <div className="flex items-center">
+            {integrations.slice(0, 3).map((Icon, index) => (
+              <IntegrationIcon key={index} icon={Icon} index={index} />
+            ))}
+            {integrations.length > 3 && (
+              <div 
+                className="relative w-8 h-8 bg-gray-200 dark:bg-gray-700 rounded-full border-2 border-white dark:border-slate-900 shadow-sm flex items-center justify-center text-xs font-semibold text-gray-600 dark:text-gray-300"
+                style={{ marginLeft: '-0.5rem' }}
+              >
+                +{integrations.length - 3}
+              </div>
+            )}
+          </div>
         </div>
       </div>
       

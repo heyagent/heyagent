@@ -4,15 +4,17 @@ interface IntegrationIconProps {
   icon: IconType;
   name?: string;
   className?: string;
+  index?: number;
 }
 
-export default function IntegrationIcon({ icon: Icon, name, className = "" }: IntegrationIconProps) {
+export default function IntegrationIcon({ icon: Icon, name, className = "", index = 0 }: IntegrationIconProps) {
   return (
     <div 
-      className={`p-1.5 bg-gray-100 dark:bg-gray-700 rounded transition-colors hover:bg-gray-200 dark:hover:bg-gray-600 ${className}`}
+      className={`relative w-8 h-8 bg-white dark:bg-slate-800 rounded-full border-2 border-white dark:border-slate-900 shadow-sm flex items-center justify-center ${className}`}
+      style={{ marginLeft: index > 0 ? '-0.5rem' : '0' }}
       title={name}
     >
-      <Icon className="w-4 h-4 text-gray-600 dark:text-gray-400" />
+      <Icon className="w-4 h-4 text-slate-600 dark:text-slate-400" />
     </div>
   );
 }

@@ -79,7 +79,7 @@ export default function FAQSection() {
                 role="region"
                 aria-labelledby={`faq-question-${index}`}
               >
-                <div className="p-4 sm:p-5 pt-0 sm:pt-0">
+                <div className="p-4 sm:p-5 pt-2 sm:pt-3">
                   <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base">
                     {faq.answer}
                   </p>
