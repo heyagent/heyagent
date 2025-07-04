@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FiArrowRight, FiChevronDown } from "react-icons/fi";
+import { FiChevronDown } from "react-icons/fi";
 import { useState } from "react";
 import LegalPageLayout from "@/components/legal/LegalPageLayout";
 import LegalSection from "@/components/legal/LegalSection";
