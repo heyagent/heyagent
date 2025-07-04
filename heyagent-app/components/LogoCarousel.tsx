@@ -139,7 +139,7 @@ export default function LogoCarousel() {
       {/* Header and CTA */}
       <div className="text-center mb-12">
         <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
-          Connect with 400+ integrations
+          Connect with <span className="bg-gradient-to-r from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">400+ integrations</span>
         </h3>
         <p className="text-slate-400 dark:text-white/60 max-w-2xl mx-auto mb-8">
           Seamlessly integrate with your favorite tools and services to create powerful automation workflows

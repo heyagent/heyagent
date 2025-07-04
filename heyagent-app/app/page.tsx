@@ -3,6 +3,8 @@ import Link from "next/link";
 import TypewriterEffect from "@/components/TypewriterEffect";
 import PricingSection from "@/components/PricingSection";
 import LogoCarousel from "@/components/LogoCarousel";
+import FAQSection from "@/components/FAQSection";
+import BlogSection from "@/components/BlogSection";
 
 export default function Home() {
   return (
@@ -90,7 +92,7 @@ export default function Home() {
             
             <div>
               <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
-                Turn agents into high-quality <br /> automation with one click
+                Turn agents into <span className="bg-gradient-to-r from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">high-quality <br /> automation</span> with one click
               </h3>
               <p className="text-slate-400 dark:text-white/60 max-w-xl">
                 "Usually, our colleagues don't jump in the air when they hear about automation, but the AI agents created with HeyAgent have sparked productivity that we haven't seen before."
@@ -316,6 +318,16 @@ export default function Home() {
 
           <PricingSection />
         </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="relative md:py-6 py-4">
+        <FAQSection />
+      </section>
+
+      {/* Blog Section */}
+      <section className="relative md:py-24 py-16">
+        <BlogSection />
       </section>
     </main>
   );
