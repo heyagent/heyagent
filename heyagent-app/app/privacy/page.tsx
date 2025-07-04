@@ -23,7 +23,7 @@ export default function PrivacyPolicy() {
       </section>
 
       {/* Content Section */}
-      <section className="relative py-6 sm:py-8 md:py-12 lg:py-24">
+      <section className="relative py-6 sm:py-8 md:py-10 lg:py-24">
         <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="md:flex justify-center">
             <div className="md:w-3/4">
@@ -239,6 +239,15 @@ export default function PrivacyPolicy() {
                   <p>Email: privacy@heyagent.ai</p>
                   <p>Address: [Your Company Address]</p>
                   <p>Data Protection Officer: dpo@heyagent.ai</p>
+                </div>
+
+                <div className="mt-8">
+                  <button 
+                    className="py-2 px-5 inline-block font-semibold tracking-wide border align-middle duration-500 text-base text-center bg-amber-400 hover:bg-amber-500 border-amber-400 hover:border-amber-500 text-white rounded-md" 
+                    onClick={() => window.print()}
+                  >
+                    Print
+                  </button>
                 </div>
               </div>
             </div>

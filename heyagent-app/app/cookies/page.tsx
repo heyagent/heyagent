@@ -23,7 +23,7 @@ export default function CookiePolicy() {
       </section>
 
       {/* Content Section */}
-      <section className="relative py-6 sm:py-8 md:py-12 lg:py-24">
+      <section className="relative py-6 sm:py-8 md:py-10 lg:py-24">
         <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="md:flex justify-center">
             <div className="md:w-3/4">
