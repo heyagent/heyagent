@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FiChevronRight, FiArrowRight } from "react-icons/fi";
+import { FiArrowRight } from "react-icons/fi";
 
 export default function PrivacyPolicy() {
   return (
@@ -15,17 +15,9 @@ export default function PrivacyPolicy() {
                 Privacy Policy
               </h5>
             </div>
-            <ul className="tracking-[0.5px] mb-0 inline-block mt-5">
-              <li className="inline-block capitalize font-medium duration-500 ease-in-out hover:text-amber-400">
-                <Link href="/">HeyAgent</Link>
-              </li>
-              <li className="inline-block text-base mx-0.5 ltr:rotate-0 rtl:rotate-180">
-                <FiChevronRight className="inline-block" />
-              </li>
-              <li className="inline-block capitalize font-medium duration-500 ease-in-out text-amber-400" aria-current="page">
-                Privacy
-              </li>
-            </ul>
+            <p className="text-slate-600 dark:text-slate-300 mt-5">
+              Last updated: January 4, 2025
+            </p>
           </div>
         </div>
       </section>
