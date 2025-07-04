@@ -62,8 +62,8 @@ export default function Navbar() {
               </Link>
 
               {/* Desktop Navigation - Centered */}
-              <div className="hidden md:flex items-center md:absolute md:left-1/2 md:transform md:-translate-x-1/2">
-                <ul className="flex items-center space-x-4 lg:space-x-8">
+              <div className="hidden lg:flex items-center lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2">
+                <ul className="flex items-center space-x-4 xl:space-x-8">
                   <li>
                     <Link href="/pricing" className={`hover:text-amber-400 transition-colors text-sm font-medium ${
                       isScrolled ? 'text-slate-700 dark:text-white' : 'text-slate-700 dark:text-white'
@@ -136,7 +136,7 @@ export default function Navbar() {
                 {/* Mobile menu button */}
                 <button
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                  className={`md:hidden p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors ${
+                  className={`lg:hidden p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors ${
                     isScrolled ? 'text-slate-700 dark:text-white' : 'text-slate-700 dark:text-white'
                   }`}
                   aria-label="Toggle navigation menu"
@@ -154,7 +154,7 @@ export default function Navbar() {
         
         {/* Mobile Menu - Outside of navbar container */}
         {mobileMenuOpen && (
-          <div className={`md:hidden mt-2 rounded-2xl transition-all duration-300 border ${
+          <div className={`lg:hidden mt-2 rounded-2xl transition-all duration-300 border ${
             isScrolled 
               ? 'bg-white/95 dark:bg-slate-800/95 shadow-md backdrop-blur-sm border-gray-200 dark:border-slate-600' 
               : 'bg-black/10 dark:bg-white/10 backdrop-blur-md border-white/20'
