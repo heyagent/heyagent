@@ -1,22 +1,36 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
-const NO_LAYOUT_PATHS = ["/404", "/500"]; // Add more paths as needed
 
 export default function LayoutWrapper({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const pathname = usePathname();
-  
-  // Check if current path should not have layout
-  const shouldHideLayout = pathname === null || NO_LAYOUT_PATHS.includes(pathname);
+  const [hideLayout, setHideLayout] = useState(false);
 
-  if (shouldHideLayout) {
+  useEffect(() => {
+    // Check if body has no-layout class
+    const checkLayout = () => {
+      setHideLayout(document.body.classList.contains("no-layout"));
+    };
+
+    // Initial check
+    checkLayout();
+
+    // Watch for changes
+    const observer = new MutationObserver(checkLayout);
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  if (hideLayout) {
     return <>{children}</>;
   }
 
