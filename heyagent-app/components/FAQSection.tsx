@@ -31,12 +31,12 @@ export default function FAQSection() {
 
   return (
     <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
-      <div className="grid lg:grid-cols-12 md:grid-cols-2 grid-cols-1 items-center gap-6 md:gap-[30px]">
-        <div className="lg:col-span-4 md:mb-0 mb-6">
+      <div className="grid lg:grid-cols-12 grid-cols-1 items-start gap-6 lg:gap-[30px]">
+        <div className="lg:col-span-4 mb-8 lg:mb-0 text-center lg:text-left">
           <h3 className="mb-4 text-xl sm:text-2xl md:text-3xl md:leading-normal leading-normal font-semibold">
             Have a question?
           </h3>
-          <p className="text-slate-600 dark:text-slate-300 max-w-xl mx-auto mb-6 text-sm sm:text-base">
+          <p className="text-slate-600 dark:text-slate-300 max-w-xl mx-auto lg:mx-0 mb-6 text-sm sm:text-base">
             Got questions about automating your employee workflows? We've got answers.
           </p>
           <a 

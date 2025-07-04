@@ -16,7 +16,7 @@ export default function PricingSection({ isAnnual }: PricingSectionProps) {
   const professionalBasePrice = isAnnual ? 32 : 40;  // 20% discount for annual
 
   return (
-    <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-6 gap-8 lg:gap-10">
+    <div className="grid lg:grid-cols-3 grid-cols-1 mt-6 gap-6 lg:gap-8">
       {/* Free Plan */}
       <div className="relative overflow-hidden rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm hover:shadow-md transition-shadow duration-300">
         <div className="p-6">
@@ -73,7 +73,7 @@ export default function PricingSection({ isAnnual }: PricingSectionProps) {
       </div>
 
       {/* Business Plan - Featured */}
-      <div className="relative transform lg:scale-105 mt-5 lg:mt-0">
+      <div className="relative lg:transform lg:scale-105 mt-0">
         {/* Popular Badge */}
         <div className="absolute -top-4 inset-x-0 text-center z-10">
           <span className="bg-gradient-to-r from-amber-400 to-fuchsia-600 text-white text-xs font-semibold px-3 py-1 rounded-full inline-block">
