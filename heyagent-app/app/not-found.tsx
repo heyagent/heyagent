@@ -67,7 +67,7 @@ export default function NotFound() {
                   Page Not Found
                 </h5>
                 <p className="text-slate-400 dark:text-white/70 max-w-xl mx-auto">
-                  Artificial intelligence makes it fast easy to create content for your blog, social media, website, and more!
+                  Sorry, we couldn't find the page you're looking for. It might have been moved or doesn't exist.
                 </p>
                 <div className="mt-6">
                   <Link 
