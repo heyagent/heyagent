@@ -17,20 +17,27 @@ export default function Home() {
         <div className="container relative z-2 mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="grid grid-cols-1 text-center">
             <div>
-              <h4 className="font-bold lg:leading-normal leading-normal text-4xl lg:text-6xl mb-5">
-                The AI Assistant <br /> That Gets
-                <TypewriterEffect 
-                  words={["Tasks", "Workflows", "Approvals", "Requests", "Operations"]}
-                  className="typewrite bg-gradient-to-br from-amber-400 to-fuchsia-600 text-transparent bg-clip-text ms-4"
-                />
-                Done
+              <h4 className="font-bold lg:leading-normal leading-normal text-3xl sm:text-4xl lg:text-6xl mb-5">
+                {/* Mobile: Static text */}
+                <span className="sm:hidden">
+                  The AI Assistant <br /> That Gets <span className="bg-gradient-to-br from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">Things</span> Done
+                </span>
+                {/* Desktop: Typewriter effect */}
+                <span className="hidden sm:block">
+                  The AI Assistant <br /> That Gets
+                  <TypewriterEffect 
+                    words={["Tasks", "Workflows", "Approvals", "Requests", "Operations"]}
+                    className="typewrite bg-gradient-to-br from-amber-400 to-fuchsia-600 text-transparent bg-clip-text ms-2 sm:ms-4"
+                  />
+                  Done
+                </span>
               </h4>
-              <p className="text-slate-600 dark:text-slate-300 text-lg max-w-xl mx-auto">
+              <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg max-w-xl mx-auto px-4 sm:px-0">
                 Empower your employees with an AI chatbot that automates workflows, streamlines operations, and boosts productivity across your entire organization
               </p>
               <div className="mt-6">
                 <a 
-                  className="py-2 px-5 inline-block font-semibold tracking-wide border align-middle duration-500 text-base text-center bg-amber-400 hover:bg-amber-500 border-amber-400 hover:border-amber-500 text-white rounded-md" 
+                  className="py-3 px-6 inline-block font-semibold tracking-wide border align-middle duration-500 text-sm sm:text-base text-center bg-amber-400 hover:bg-amber-500 border-amber-400 hover:border-amber-500 text-white rounded-md" 
                   href="/"
                 >
                   Try For Free
