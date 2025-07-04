@@ -109,53 +109,47 @@ export default function CookiePolicy() {
                   </table>
                 </div>
 
-                <h5 className="text-xl font-semibold mb-4 mt-8">4. How We Use Cookies</h5>
+                <LegalSection title="4. How We Use Cookies" className="mt-8">
                 <p className="text-slate-600 dark:text-slate-300 mb-4">
                   We use cookies for the following purposes:
                 </p>
                 <ul className="list-none text-slate-600 dark:text-slate-300">
-                  <li className="flex mt-2">
-                    <FiArrowRight className="text-amber-400 text-lg align-middle me-2 flex-shrink-0 mt-0.5" />
-                    <span><strong>AI Chatbot Functionality:</strong> To maintain conversation context and user state across sessions</span>
-                  </li>
-                  <li className="flex mt-2">
-                    <FiArrowRight className="text-amber-400 text-lg align-middle me-2 flex-shrink-0 mt-0.5" />
-                    <span><strong>Authentication and Security:</strong> To keep you logged in and protect your account</span>
-                  </li>
-                  <li className="flex mt-2">
-                    <FiArrowRight className="text-amber-400 text-lg align-middle me-2 flex-shrink-0 mt-0.5" />
-                    <span><strong>Performance Monitoring:</strong> To understand how our services are used and identify areas for improvement</span>
-                  </li>
-                  <li className="flex mt-2">
-                    <FiArrowRight className="text-amber-400 text-lg align-middle me-2 flex-shrink-0 mt-0.5" />
-                    <span><strong>Integration Support:</strong> To facilitate seamless integration with third-party platforms</span>
-                  </li>
-                  <li className="flex mt-2">
-                    <FiArrowRight className="text-amber-400 text-lg align-middle me-2 flex-shrink-0 mt-0.5" />
-                    <span><strong>User Experience:</strong> To remember your preferences and provide a personalized experience</span>
-                  </li>
+                  <LegalListItem>
+                    <strong>AI Chatbot Functionality:</strong> To maintain conversation context and user state across sessions
+                  </LegalListItem>
+                  <LegalListItem>
+                    <strong>Authentication and Security:</strong> To keep you logged in and protect your account
+                  </LegalListItem>
+                  <LegalListItem>
+                    <strong>Performance Monitoring:</strong> To understand how our services are used and identify areas for improvement
+                  </LegalListItem>
+                  <LegalListItem>
+                    <strong>Integration Support:</strong> To facilitate seamless integration with third-party platforms
+                  </LegalListItem>
+                  <LegalListItem>
+                    <strong>User Experience:</strong> To remember your preferences and provide a personalized experience
+                  </LegalListItem>
                 </ul>
+                </LegalSection>
 
-                <h5 className="text-xl font-semibold mb-4 mt-8">5. Third-Party Cookies</h5>
+                <LegalSection title="5. Third-Party Cookies" className="mt-8">
                 <p className="text-slate-600 dark:text-slate-300">
                   Some cookies are placed by third-party services that appear on our pages. We do not control these cookies, and you should refer to the third parties' privacy policies for more information:
                 </p>
                 <ul className="list-none text-slate-600 dark:text-slate-300 mt-4">
-                  <li className="flex mt-2">
-                    <FiArrowRight className="text-amber-400 text-lg align-middle me-2 flex-shrink-0" />
+                  <LegalListItem>
                     <strong>Google Analytics:</strong> For website analytics and performance monitoring
-                  </li>
-                  <li className="flex mt-2">
-                    <FiArrowRight className="text-amber-400 text-lg align-middle me-2 flex-shrink-0" />
+                  </LegalListItem>
+                  <LegalListItem>
                     <strong>Cloudflare:</strong> For security and performance optimization
-                  </li>
-                  <li className="flex mt-2">
-                    <FiArrowRight className="text-amber-400 text-lg align-middle me-2 flex-shrink-0" />
+                  </LegalListItem>
+                  <LegalListItem>
                     <strong>Integration Partners:</strong> When you connect HeyAgent to services like Slack or Microsoft Teams
-                  </li>
+                  </LegalListItem>
                 </ul>
+                </LegalSection>
 
-                <h5 className="text-xl font-semibold mb-4 mt-8">6. Your Cookie Choices</h5>
+                <LegalSection title="6. Your Cookie Choices" className="mt-8">
                 <p className="text-slate-600 dark:text-slate-300">
                   You have several options for managing cookies:
                 </p>
