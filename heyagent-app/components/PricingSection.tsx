@@ -18,7 +18,7 @@ export default function PricingSection() {
         <div className="p-6">
           <h5 className="text-2xl leading-normal font-semibold">Free</h5>
           <p className="text-slate-400 dark:text-white/60 mt-2">
-            For anyone to try AI agent creation
+            Test HeyAgent with your team
           </p>
           <div className="flex mt-4">
             <span className="text-lg font-semibold">$</span>
@@ -44,23 +44,23 @@ export default function PricingSection() {
             <li className="font-semibold text-slate-900 dark:text-white text-sm uppercase">Features:</li>
             <li className="flex items-center mt-2">
               <FiCheck className="text-green-600 h-[18px] w-[18px] me-2" />
-              <span className="text-slate-900 dark:text-white me-1 font-semibold">10 workflows/mo</span> creation
+              <span className="text-slate-900 dark:text-white me-1 font-semibold">5 workflows/mo</span> limit
             </li>
             <li className="flex items-center mt-2">
               <FiCheck className="text-green-600 h-[18px] w-[18px] me-2" />
-              <span className="text-slate-900 dark:text-white me-1 font-semibold">10 GB</span> storage
+              <span className="text-slate-900 dark:text-white me-1 font-semibold">3 users</span> included
             </li>
             <li className="flex items-center mt-2">
               <FiCheck className="text-green-600 h-[18px] w-[18px] me-2" />
-              <span className="text-slate-900 dark:text-white me-1 font-semibold">4 exports/wk</span> with branding
+              <span className="text-slate-900 dark:text-white me-1 font-semibold">Basic</span> integrations
             </li>
             <li className="flex items-center mt-2 text-slate-400">
               <FiX className="h-[18px] w-[18px] me-2" />
-              Limited integrations
+              Custom workflows
             </li>
             <li className="flex items-center mt-2 text-slate-400">
               <FiX className="h-[18px] w-[18px] me-2" />
-              Priority support
+              Analytics dashboard
             </li>
           </ul>
         </div>
@@ -71,7 +71,7 @@ export default function PricingSection() {
         <div className="p-6">
           <h5 className="text-2xl leading-normal font-semibold">Business</h5>
           <p className="text-slate-400 dark:text-white/60 mt-2">
-            For teams starting their automation journey
+            For teams embracing automation
           </p>
           
           <div className="relative">
@@ -117,23 +117,23 @@ export default function PricingSection() {
             <li className="font-semibold text-slate-900 dark:text-white text-sm uppercase">Features:</li>
             <li className="flex items-center mt-2">
               <FiCheck className="text-green-600 h-[18px] w-[18px] me-2" />
-              <span className="text-slate-900 dark:text-white me-1 font-semibold">50 workflows/mo</span> creation
+              <span className="text-slate-900 dark:text-white me-1 font-semibold">Pre-built</span> workflow library
             </li>
             <li className="flex items-center mt-2">
               <FiCheck className="text-green-600 h-[18px] w-[18px] me-2" />
-              <span className="text-slate-900 dark:text-white me-1 font-semibold">100 GB</span> storage
+              <span className="text-slate-900 dark:text-white me-1 font-semibold">Custom</span> workflows
             </li>
             <li className="flex items-center mt-2">
               <FiCheck className="text-green-600 h-[18px] w-[18px] me-2" />
-              <span className="text-slate-900 dark:text-white me-1 font-semibold">Unlimited</span> exports
+              <span className="text-slate-900 dark:text-white me-1 font-semibold">All</span> integrations
             </li>
             <li className="flex items-center mt-2">
               <FiCheck className="text-green-600 h-[18px] w-[18px] me-2" />
-              Up to <span className="text-slate-900 dark:text-white mx-1 font-semibold">{businessMultiplier}</span> users
+              Up to <span className="text-slate-900 dark:text-white mx-1 font-semibold">{businessMultiplier * 50}</span> employees
             </li>
             <li className="flex items-center mt-2">
               <FiCheck className="text-green-600 h-[18px] w-[18px] me-2" />
-              <span className="text-slate-900 dark:text-white me-1 font-semibold">40/mo</span> integrations
+              <span className="text-slate-900 dark:text-white me-1 font-semibold">Basic</span> analytics
             </li>
           </ul>
         </div>
@@ -144,7 +144,7 @@ export default function PricingSection() {
         <div className="p-6">
           <h5 className="text-2xl leading-normal font-semibold">Professional</h5>
           <p className="text-slate-400 dark:text-white/60 mt-2">
-            For growing & established teams
+            For enterprise automation
           </p>
           
           <div className="relative">
@@ -190,23 +190,23 @@ export default function PricingSection() {
             <li className="font-semibold text-slate-900 dark:text-white text-sm uppercase">Features:</li>
             <li className="flex items-center mt-2">
               <FiCheck className="text-green-600 h-[18px] w-[18px] me-2" />
-              <span className="text-slate-900 dark:text-white me-1 font-semibold">200 workflows/mo</span> creation
+              <span className="text-slate-900 dark:text-white me-1 font-semibold">Unlimited</span> workflows
             </li>
             <li className="flex items-center mt-2">
               <FiCheck className="text-green-600 h-[18px] w-[18px] me-2" />
-              <span className="text-slate-900 dark:text-white me-1 font-semibold">400 GB</span> storage
+              <span className="text-slate-900 dark:text-white me-1 font-semibold">Priority</span> support
             </li>
             <li className="flex items-center mt-2">
               <FiCheck className="text-green-600 h-[18px] w-[18px] me-2" />
-              <span className="text-slate-900 dark:text-white me-1 font-semibold">Unlimited</span> exports
+              <span className="text-slate-900 dark:text-white me-1 font-semibold">SSO</span> integration
             </li>
             <li className="flex items-center mt-2">
               <FiCheck className="text-green-600 h-[18px] w-[18px] me-2" />
-              Up to <span className="text-slate-900 dark:text-white mx-1 font-semibold">{professionalMultiplier}</span> users
+              <span className="text-slate-900 dark:text-white mx-1 font-semibold">Unlimited</span> employees
             </li>
             <li className="flex items-center mt-2">
               <FiCheck className="text-green-600 h-[18px] w-[18px] me-2" />
-              <span className="text-slate-900 dark:text-white me-1 font-semibold">Unlimited</span> integrations
+              <span className="text-slate-900 dark:text-white me-1 font-semibold">Advanced</span> analytics
             </li>
           </ul>
         </div>

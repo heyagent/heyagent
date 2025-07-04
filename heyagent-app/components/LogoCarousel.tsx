@@ -139,14 +139,14 @@ export default function LogoCarousel() {
       {/* Header and CTA */}
       <div className="text-center mb-12">
         <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
-          Connect with <span className="bg-gradient-to-r from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">400+ integrations</span>
+          Trusted by <span className="bg-gradient-to-r from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">400+ forward-thinking companies</span>
         </h3>
         <p className="text-slate-400 dark:text-white/60 max-w-2xl mx-auto mb-8">
-          Seamlessly integrate with your favorite tools and services to create powerful automation workflows
+          Join innovative teams that have transformed their operations with HeyAgent's intelligent automation
         </p>
         <Link 
           href="/integrations" 
-          className="py-2 px-5 inline-block font-semibold tracking-wide border align-middle duration-500 text-base text-center bg-amber-400 hover:bg-amber-500 border-amber-400 hover:border-amber-500 text-white rounded-md"
+          className="py-2 px-5 inline-block font-semibold tracking-wide border align-middle duration-500 text-base text-center bg-transparent hover:bg-amber-400 border-gray-800 dark:border-slate-800 hover:border-amber-400 dark:hover:border-amber-400 text-slate-900 dark:text-white hover:text-white rounded-md"
         >
           View All Integrations
         </Link>

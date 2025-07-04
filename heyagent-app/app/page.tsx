@@ -14,14 +14,15 @@ export default function Home() {
           <div className="grid grid-cols-1 text-center">
             <div>
               <h4 className="font-bold lg:leading-normal leading-normal text-4xl lg:text-6xl mb-5">
-                The AI Content <br /> Platform for
+                The Employee AI <br /> Assistant That Gets
                 <TypewriterEffect 
-                  words={["Videos", "Images", "Music", "Code", "Content"]}
+                  words={["Tasks", "Workflows", "Approvals", "Requests", "Operations"]}
                   className="typewrite bg-gradient-to-br from-amber-400 to-fuchsia-600 text-transparent bg-clip-text ms-4"
                 />
+                Done
               </h4>
               <p className="text-slate-400 dark:text-white/60 text-lg max-w-xl mx-auto">
-                Artificial intelligence makes it fast easy to create content for your blog, social media, website, and more!
+                Empower your employees with an AI chatbot that automates workflows, streamlines operations, and boosts productivity across your entire organization
               </p>
               <div className="mt-6">
                 <a 
@@ -70,32 +71,32 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* Language tags */}
+              {/* Integration platforms */}
               <div className="mt-6 flex flex-wrap">
                 <span className="py-[6px] px-2 inline-flex items-center tracking-wider align-middle duration-500 text-sm text-center rounded bg-amber-400/5 hover:bg-amber-400 border border-amber-400/10 hover:border-amber-400 text-amber-400 hover:text-white font-semibold m-0.5">
-                  🇮🇹 Italian
+                  Slack
                 </span>
                 <span className="py-[6px] px-2 inline-flex items-center tracking-wider align-middle duration-500 text-sm text-center rounded bg-amber-400/5 hover:bg-amber-400 border border-amber-400/10 hover:border-amber-400 text-amber-400 hover:text-white font-semibold m-0.5">
-                  🇮🇳 Hindi
+                  Microsoft Teams
                 </span>
                 <span className="py-[6px] px-2 inline-flex items-center tracking-wider align-middle duration-500 text-sm text-center rounded bg-amber-400/5 hover:bg-amber-400 border border-amber-400/10 hover:border-amber-400 text-amber-400 hover:text-white font-semibold m-0.5">
-                  🇷🇺 Russian
+                  ServiceNow
                 </span>
                 <span className="py-[6px] px-2 inline-flex items-center tracking-wider align-middle duration-500 text-sm text-center rounded bg-amber-400/5 hover:bg-amber-400 border border-amber-400/10 hover:border-amber-400 text-amber-400 hover:text-white font-semibold m-0.5">
-                  🇪🇸 Spanish
+                  Jira
                 </span>
                 <span className="py-[6px] px-2 inline-flex items-center tracking-wider align-middle duration-500 text-sm text-center rounded bg-amber-400/5 hover:bg-amber-400 border border-amber-400/10 hover:border-amber-400 text-amber-400 hover:text-white font-semibold m-0.5">
-                  🇬🇧 English
+                  Salesforce
                 </span>
               </div>
             </div>
             
             <div>
               <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
-                Turn agents into <span className="bg-gradient-to-r from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">high-quality <br /> automation</span> with one click
+                Transform employee productivity with <br /> <span className="bg-gradient-to-r from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">intelligent automation</span>
               </h3>
               <p className="text-slate-400 dark:text-white/60 max-w-xl">
-                "Usually, our colleagues don't jump in the air when they hear about automation, but the AI agents created with HeyAgent have sparked productivity that we haven't seen before."
+                "HeyAgent reduced our ticket resolution time by 75% and saved our team 40 hours per week. Employees love how easy it is to get things done through a simple chat."
               </p>
               
               <ul className="list-none text-slate-400 dark:text-white/60 mt-4">
@@ -104,21 +105,21 @@ export default function Home() {
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                     <polyline points="22 4 12 14.01 9 11.01"></polyline>
                   </svg>
-                  Digital Automation Solutions for Tomorrow
+                  Instant task execution through conversational AI
                 </li>
                 <li className="mb-2 flex items-center">
                   <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400 h-5 w-5 me-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                     <polyline points="22 4 12 14.01 9 11.01"></polyline>
                   </svg>
-                  Our Talented & Experienced Engineering Team
+                  Pre-built workflows for common business processes
                 </li>
                 <li className="mb-2 flex items-center">
                   <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400 h-5 w-5 me-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                     <polyline points="22 4 12 14.01 9 11.01"></polyline>
                   </svg>
-                  Create your own workflows to match your needs
+                  Custom automation tailored to your needs
                 </li>
               </ul>
               
@@ -140,10 +141,10 @@ export default function Home() {
         <div className="container relative mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-1 pb-6 text-center">
             <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
-              So, how does it works?
+              How HeyAgent works
             </h3>
             <p className="text-slate-400 dark:text-white/60 max-w-xl mx-auto">
-              Artificial intelligence makes it fast easy to create content for your blog, social media, website, and more!
+              Three simple steps to transform your employee operations with AI-powered automation
             </p>
           </div>
 
@@ -152,9 +153,9 @@ export default function Home() {
               <div className="w-[45px] h-[45px] bg-gradient-to-tl to-amber-400 from-fuchsia-600 rounded-lg flex items-center justify-center">
                 <span className="text-white text-2xl font-bold">1</span>
               </div>
-              <h5 className="text-xl font-semibold my-5">Search & Write Content</h5>
+              <h5 className="text-xl font-semibold my-5">Connect & Integrate</h5>
               <p className="text-slate-400 dark:text-white/60">
-                If the distribution of letters and words is random, the reader will not be distracted from making.
+                Connect HeyAgent to your existing tools and systems like Slack, Teams, ServiceNow, and more in minutes.
               </p>
             </div>
 
@@ -162,9 +163,9 @@ export default function Home() {
               <div className="w-[45px] h-[45px] bg-gradient-to-tl to-amber-400 from-fuchsia-600 rounded-lg flex items-center justify-center">
                 <span className="text-white text-2xl font-bold">2</span>
               </div>
-              <h5 className="text-xl font-semibold my-5">Discribe Content</h5>
+              <h5 className="text-xl font-semibold my-5">Choose Workflows</h5>
               <p className="text-slate-400 dark:text-white/60">
-                If the distribution of letters and words is random, the reader will not be distracted from making.
+                Select from our library of pre-built workflows or create custom ones tailored to your business processes.
               </p>
             </div>
 
@@ -172,9 +173,9 @@ export default function Home() {
               <div className="w-[45px] h-[45px] bg-gradient-to-tl to-amber-400 from-fuchsia-600 rounded-lg flex items-center justify-center">
                 <span className="text-white text-2xl font-bold">3</span>
               </div>
-              <h5 className="text-xl font-semibold my-5">Generate Content</h5>
+              <h5 className="text-xl font-semibold my-5">Automate Tasks</h5>
               <p className="text-slate-400 dark:text-white/60">
-                If the distribution of letters and words is random, the reader will not be distracted from making.
+                Employees chat with HeyAgent to execute tasks instantly - from IT requests to HR queries and approvals.
               </p>
             </div>
           </div>
@@ -187,19 +188,19 @@ export default function Home() {
           <div className="grid md:grid-cols-2 grid-cols-1 items-center gap-6">
             <div className="relative order-1 md:order-2">
               <div className="relative overflow-hidden rounded-lg border border-amber-400/5 bg-gradient-to-tl to-amber-400/30 from-fuchsia-600/30 dark:to-amber-400/50 dark:from-fuchsia-600/50 pe-6 pt-6 lg:ms-8">
-                {/* Placeholder for content writing dashboard */}
+                {/* Placeholder for workflow builder interface */}
                 <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-tr-lg h-80 flex items-center justify-center">
-                  <span className="text-slate-500">Content Writing Dashboard</span>
+                  <span className="text-slate-500">Workflow Builder Interface</span>
                 </div>
               </div>
             </div>
             
             <div className="order-2 md:order-1">
               <h4 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
-                Build Workflows, <br /> Integrations, & Even APIs
+                Build Custom Workflows <br /> Without Code
               </h4>
               <p className="text-slate-400 dark:text-white/60">
-                "Usually, our colleagues don't jump in the air when they hear about automation, but the AI agents created with HeyAgent have sparked productivity that we haven't seen before."
+                Create powerful automation workflows with our drag-and-drop builder. No coding required - just connect your tools and define the steps.
               </p>
               
               <ul className="list-none text-slate-400 dark:text-white/60 mt-4">
@@ -208,21 +209,21 @@ export default function Home() {
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                     <polyline points="22 4 12 14.01 9 11.01"></polyline>
                   </svg>
-                  Digital Automation Solutions for Tomorrow
+                  Instant task execution through conversational AI
                 </li>
                 <li className="mb-2 flex items-center">
                   <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400 h-5 w-5 me-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                     <polyline points="22 4 12 14.01 9 11.01"></polyline>
                   </svg>
-                  Our Talented & Experienced Engineering Team
+                  Pre-built workflows for common business processes
                 </li>
                 <li className="mb-2 flex items-center">
                   <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400 h-5 w-5 me-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                     <polyline points="22 4 12 14.01 9 11.01"></polyline>
                   </svg>
-                  Create your own workflows to match your needs
+                  Custom automation tailored to your needs
                 </li>
               </ul>
               
@@ -244,18 +245,18 @@ export default function Home() {
         <div className="container relative mx-auto px-6 max-w-7xl">
           <div className="grid md:grid-cols-2 grid-cols-1 items-center gap-6">
             <div className="relative overflow-hidden rounded-lg border border-amber-400/5 bg-gradient-to-tl to-amber-400/30 from-fuchsia-600/30 dark:to-amber-400/50 dark:from-fuchsia-600/50 ps-6 pt-6 lg:me-8">
-              {/* Dashboard placeholder */}
+              {/* AI Agent deployment interface */}
               <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-tl-lg h-80 flex items-center justify-center">
-                <span className="text-slate-500">Analytics Dashboard</span>
+                <span className="text-slate-500">Agent Deployment Interface</span>
               </div>
             </div>
             
             <div>
               <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
-                Create Agents In Single <br /> Click With AI Power
+                Deploy AI Agents Across <br /> Your Organization
               </h3>
               <p className="text-slate-400 dark:text-white/60 max-w-xl">
-                "Usually, our colleagues don't jump in the air when they hear about automation, but the AI agents created with HeyAgent have sparked productivity that we haven't seen before."
+                Roll out HeyAgent to teams company-wide with enterprise-grade security, role-based access controls, and seamless SSO integration.
               </p>
               
               <ul className="list-none text-slate-400 dark:text-white/60 mt-4">
@@ -264,21 +265,79 @@ export default function Home() {
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                     <polyline points="22 4 12 14.01 9 11.01"></polyline>
                   </svg>
-                  Digital Automation Solutions for Tomorrow
+                  Deploy to unlimited employees with one setup
                 </li>
                 <li className="mb-2 flex items-center">
                   <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400 h-5 w-5 me-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                     <polyline points="22 4 12 14.01 9 11.01"></polyline>
                   </svg>
-                  Our Talented & Experienced Engineering Team
+                  Enterprise-grade security and compliance
                 </li>
                 <li className="mb-2 flex items-center">
                   <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400 h-5 w-5 me-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                     <polyline points="22 4 12 14.01 9 11.01"></polyline>
                   </svg>
-                  Create your own workflows to match your needs
+                  Role-based permissions and access controls
+                </li>
+              </ul>
+              
+              <div className="mt-4">
+                <Link href="/" className="hover:text-amber-400 font-medium duration-500 inline-flex items-center">
+                  Find Out More 
+                  <svg className="w-5 h-5 ms-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Analytics Dashboard Section Copy */}
+      <section className="relative md:py-24 py-16">
+        <div className="container relative mx-auto px-6 max-w-7xl">
+          <div className="grid md:grid-cols-2 grid-cols-1 items-center gap-6">
+            <div className="relative order-1 md:order-2">
+              <div className="relative overflow-hidden rounded-lg border border-amber-400/5 bg-gradient-to-tl to-amber-400/30 from-fuchsia-600/30 dark:to-amber-400/50 dark:from-fuchsia-600/50 pe-6 pt-6 lg:ms-8">
+                {/* Real-time analytics interface */}
+                <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-tr-lg h-80 flex items-center justify-center">
+                  <span className="text-slate-500">Real-Time Analytics Dashboard</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="order-2 md:order-1">
+              <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
+                Real-Time Analytics & <br /> Performance Insights
+              </h3>
+              <p className="text-slate-400 dark:text-white/60 max-w-xl">
+                Monitor agent performance, track ROI, and gain insights into automation efficiency. See exactly how much time and money HeyAgent saves your organization.
+              </p>
+              
+              <ul className="list-none text-slate-400 dark:text-white/60 mt-4">
+                <li className="mb-2 flex items-center">
+                  <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400 h-5 w-5 me-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                  Track time saved and tasks automated
+                </li>
+                <li className="mb-2 flex items-center">
+                  <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400 h-5 w-5 me-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                  Measure ROI and efficiency gains
+                </li>
+                <li className="mb-2 flex items-center">
+                  <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400 h-5 w-5 me-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                  Export reports for stakeholders
                 </li>
               </ul>
               
@@ -326,7 +385,7 @@ export default function Home() {
       </section>
 
       {/* Blog Section */}
-      <section className="relative md:py-24 py-16">
+      <section className="relative md:py-16 py-12">
         <BlogSection />
       </section>
     </main>

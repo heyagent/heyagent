@@ -8,20 +8,20 @@ export default function FAQSection() {
 
   const faqs = [
     {
-      question: "How does it generate responses?",
-      answer: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form."
+      question: "How does HeyAgent integrate with our existing tools?",
+      answer: "HeyAgent seamlessly integrates with popular platforms like Slack, Microsoft Teams, ServiceNow, Jira, and Salesforce through secure APIs. Setup takes just minutes, and our team provides hands-on support for enterprise deployments."
     },
     {
-      question: "Is AI copywriting more cost-effective than hiring human writers?",
-      answer: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form."
+      question: "Is employee data secure when using HeyAgent?",
+      answer: "Absolutely. HeyAgent uses enterprise-grade encryption, SOC 2 compliance, and role-based access controls. All data is processed within your security perimeter, and we never store sensitive information. We also support SSO and comply with GDPR requirements."
     },
     {
-      question: "Can AI copywriting be customized to my brand and audience?",
-      answer: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form."
+      question: "Can we create custom workflows for our specific processes?",
+      answer: "Yes! While we offer a library of pre-built workflows for common tasks, you can easily create custom workflows using our no-code builder. Define your steps, connect your tools, and deploy to your team - all without writing a single line of code."
     },
     {
-      question: "What kind of support is available for AI copywriting tools?",
-      answer: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form."
+      question: "What kind of tasks can HeyAgent automate?",
+      answer: "HeyAgent excels at repetitive tasks like IT ticket creation, employee onboarding, PTO requests, expense approvals, password resets, report generation, and data entry. Essentially, any multi-step process that follows a pattern can be automated."
     }
   ];
 
@@ -37,7 +37,7 @@ export default function FAQSection() {
             Have a question?
           </h3>
           <p className="text-slate-400 dark:text-white/60 max-w-xl mx-auto mb-6">
-            Artificial intelligence makes it fast easy to create content for your blog, social media, website, and more!
+            Got questions about automating your employee workflows? We've got answers.
           </p>
           <a 
             className="py-2 px-5 inline-block font-semibold tracking-wide border align-middle duration-500 text-base text-center bg-transparent hover:bg-amber-400 border-gray-100 dark:border-gray-800 hover:border-amber-400 dark:hover:border-amber-400 text-slate-900 dark:text-white hover:text-white rounded-md" 
