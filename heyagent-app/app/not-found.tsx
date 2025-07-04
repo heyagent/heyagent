@@ -31,7 +31,7 @@ export default function NotFound() {
       {/* Dark mode toggle */}
       <button
         onClick={toggleDarkMode}
-        className="absolute top-4 right-4 p-2.5 rounded-lg transition-colors hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-white"
+        className="absolute top-4 right-4 p-2.5 rounded-lg transition-colors hover:bg-amber-100 dark:hover:bg-amber-900/20 text-amber-600 dark:text-amber-400"
         aria-label="Toggle dark mode"
       >
         {darkMode ? (
