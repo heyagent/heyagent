@@ -58,41 +58,44 @@ export default function Footer() {
                 </p>
               </div>
 
-              {/* Company Links */}
+              {/* Product Links */}
               <div className="lg:col-span-2 md:col-span-2 lg:ms-8">
                 <FooterLinkSection 
-                  title="Company"
+                  title="Product"
                   links={[
-                    { href: "/about", label: "About Us" },
-                    { href: "/features", label: "Features" },
                     { href: "/pricing", label: "Pricing" },
+                    { href: "#", label: "Features" },
+                    { href: "#", label: "Workflows" },
+                    { href: "#", label: "Integrations" },
+                    { href: "#", label: "Schedule Demo" }
+                  ]}
+                />
+              </div>
+
+              {/* Resources Links */}
+              <div className="lg:col-span-2 md:col-span-2">
+                <FooterLinkSection 
+                  title="Resources"
+                  links={[
+                    { href: "#", label: "About" },
+                    { href: "#", label: "ROI Calculator" },
+                    { href: "#", label: "Case Studies" },
+                    { href: "/faq", label: "FAQ" },
                     { href: "/blog", label: "Blog" }
                   ]}
                 />
               </div>
 
-              {/* Support Links */}
+              {/* Company Links */}
               <div className="lg:col-span-2 md:col-span-2">
                 <FooterLinkSection 
-                  title="Support"
+                  title="Company"
                   links={[
-                    { href: "/help", label: "Help Center" },
-                    { href: "/contact", label: "Contact Us" },
-                    { href: "/faq", label: "FAQ" },
-                    { href: "/status", label: "Status" }
-                  ]}
-                />
-              </div>
-
-              {/* Legal Links */}
-              <div className="lg:col-span-2 md:col-span-2">
-                <FooterLinkSection 
-                  title="Legal"
-                  links={[
+                    { href: "#", label: "Contact" },
+                    { href: "#", label: "Status" },
                     { href: "/terms", label: "Terms of Service" },
                     { href: "/privacy", label: "Privacy Policy" },
-                    { href: "/cookies", label: "Cookie Policy" },
-                    { href: "/license", label: "License" }
+                    { href: "/cookies", label: "Cookie Policy" }
                   ]}
                 />
               </div>

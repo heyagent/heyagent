@@ -27,7 +27,7 @@ export default function NotFound() {
   };
 
   return (
-    <section className="relative overflow-hidden h-screen flex items-center justify-center bg-amber-400/5 dark:bg-amber-400/10">
+    <section className="relative overflow-hidden h-screen flex items-center justify-center">
       {/* Dark mode toggle */}
       <button
         onClick={toggleDarkMode}

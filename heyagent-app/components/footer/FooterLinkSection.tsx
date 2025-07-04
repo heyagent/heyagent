@@ -15,8 +15,8 @@ export default function FooterLinkSection({ title, links }: FooterLinkSectionPro
     <div>
       <h5 className="text-slate-900 dark:text-white font-semibold mb-3 sm:mb-4">{title}</h5>
       <ul className="list-none space-y-2">
-        {links.map((link) => (
-          <li key={link.href}>
+        {links.map((link, index) => (
+          <li key={`${link.label}-${index}`}>
             <Link 
               href={link.href} 
               className="text-slate-600 dark:text-gray-400 hover:text-amber-400 text-sm transition-colors"
