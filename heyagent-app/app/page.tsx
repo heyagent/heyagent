@@ -77,19 +77,19 @@ export default function Home() {
               
               {/* Integration platforms */}
               <div className="mt-6 flex flex-wrap">
-                <span className="py-[6px] px-2 inline-flex items-center tracking-wider align-middle duration-500 text-sm text-center rounded bg-amber-400/5 hover:bg-amber-400 border border-amber-400/10 hover:border-amber-400 text-amber-400 hover:text-white font-semibold m-0.5">
+                <span className="py-1.5 px-2.5 inline-flex items-center tracking-wider align-middle duration-500 text-xs sm:text-sm text-center rounded bg-amber-400/5 hover:bg-amber-400 border border-amber-400/10 hover:border-amber-400 text-amber-400 hover:text-white font-semibold m-0.5">
                   Slack
                 </span>
-                <span className="py-[6px] px-2 inline-flex items-center tracking-wider align-middle duration-500 text-sm text-center rounded bg-amber-400/5 hover:bg-amber-400 border border-amber-400/10 hover:border-amber-400 text-amber-400 hover:text-white font-semibold m-0.5">
+                <span className="py-1.5 px-2.5 inline-flex items-center tracking-wider align-middle duration-500 text-xs sm:text-sm text-center rounded bg-amber-400/5 hover:bg-amber-400 border border-amber-400/10 hover:border-amber-400 text-amber-400 hover:text-white font-semibold m-0.5">
                   Microsoft Teams
                 </span>
-                <span className="py-[6px] px-2 inline-flex items-center tracking-wider align-middle duration-500 text-sm text-center rounded bg-amber-400/5 hover:bg-amber-400 border border-amber-400/10 hover:border-amber-400 text-amber-400 hover:text-white font-semibold m-0.5">
+                <span className="py-1.5 px-2.5 inline-flex items-center tracking-wider align-middle duration-500 text-xs sm:text-sm text-center rounded bg-amber-400/5 hover:bg-amber-400 border border-amber-400/10 hover:border-amber-400 text-amber-400 hover:text-white font-semibold m-0.5">
                   ServiceNow
                 </span>
-                <span className="py-[6px] px-2 inline-flex items-center tracking-wider align-middle duration-500 text-sm text-center rounded bg-amber-400/5 hover:bg-amber-400 border border-amber-400/10 hover:border-amber-400 text-amber-400 hover:text-white font-semibold m-0.5">
+                <span className="py-1.5 px-2.5 inline-flex items-center tracking-wider align-middle duration-500 text-xs sm:text-sm text-center rounded bg-amber-400/5 hover:bg-amber-400 border border-amber-400/10 hover:border-amber-400 text-amber-400 hover:text-white font-semibold m-0.5">
                   Jira
                 </span>
-                <span className="py-[6px] px-2 inline-flex items-center tracking-wider align-middle duration-500 text-sm text-center rounded bg-amber-400/5 hover:bg-amber-400 border border-amber-400/10 hover:border-amber-400 text-amber-400 hover:text-white font-semibold m-0.5">
+                <span className="py-1.5 px-2.5 inline-flex items-center tracking-wider align-middle duration-500 text-xs sm:text-sm text-center rounded bg-amber-400/5 hover:bg-amber-400 border border-amber-400/10 hover:border-amber-400 text-amber-400 hover:text-white font-semibold m-0.5">
                   Salesforce
                 </span>
               </div>
@@ -157,8 +157,8 @@ export default function Home() {
               <div className="w-[45px] h-[45px] bg-gradient-to-tl to-amber-400 from-fuchsia-600 rounded-lg flex items-center justify-center">
                 <span className="text-white text-2xl font-bold">1</span>
               </div>
-              <h5 className="text-xl font-semibold my-5">Connect & Integrate</h5>
-              <p className="text-slate-600 dark:text-slate-300">
+              <h5 className="text-lg sm:text-xl font-semibold my-4 sm:my-5">Connect & Integrate</h5>
+              <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base">
                 Connect HeyAgent to your existing tools and systems like Slack, Teams, ServiceNow, and more in minutes.
               </p>
             </div>
@@ -167,8 +167,8 @@ export default function Home() {
               <div className="w-[45px] h-[45px] bg-gradient-to-tl to-amber-400 from-fuchsia-600 rounded-lg flex items-center justify-center">
                 <span className="text-white text-2xl font-bold">2</span>
               </div>
-              <h5 className="text-xl font-semibold my-5">Choose Workflows</h5>
-              <p className="text-slate-600 dark:text-slate-300">
+              <h5 className="text-lg sm:text-xl font-semibold my-4 sm:my-5">Choose Workflows</h5>
+              <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base">
                 Select from our library of pre-built workflows or create custom ones tailored to your business processes.
               </p>
             </div>
@@ -177,8 +177,8 @@ export default function Home() {
               <div className="w-[45px] h-[45px] bg-gradient-to-tl to-amber-400 from-fuchsia-600 rounded-lg flex items-center justify-center">
                 <span className="text-white text-2xl font-bold">3</span>
               </div>
-              <h5 className="text-xl font-semibold my-5">Automate Tasks</h5>
-              <p className="text-slate-600 dark:text-slate-300">
+              <h5 className="text-lg sm:text-xl font-semibold my-4 sm:my-5">Automate Tasks</h5>
+              <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base">
                 Employees chat with HeyAgent to execute tasks instantly - from IT requests to HR queries and approvals.
               </p>
             </div>
@@ -187,8 +187,8 @@ export default function Home() {
       </section>
 
       {/* Content Writing Section */}
-      <section className="relative md:py-24 py-16">
-        <div className="container relative mx-auto px-6 max-w-7xl">
+      <section className="relative py-12 sm:py-16 md:py-24">
+        <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="grid md:grid-cols-2 grid-cols-1 items-center gap-6">
             <div className="relative order-1 md:order-2">
               <div className="relative overflow-hidden rounded-lg border border-amber-400/5 bg-gradient-to-tl to-amber-400/30 from-fuchsia-600/30 dark:to-amber-400/50 dark:from-fuchsia-600/50 pe-6 pt-6 lg:ms-8">
@@ -200,10 +200,10 @@ export default function Home() {
             </div>
             
             <div className="order-2 md:order-1">
-              <h4 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
-                Build Custom Workflows <br /> Without Code
+              <h4 className="mb-4 text-xl sm:text-2xl md:text-3xl md:leading-normal leading-normal font-semibold">
+                Build Custom Workflows <br className="hidden sm:block" /> Without Code
               </h4>
-              <p className="text-slate-600 dark:text-slate-300">
+              <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base">
                 Create powerful automation workflows with our drag-and-drop builder. No coding required - just connect your tools and define the steps.
               </p>
               
@@ -245,8 +245,8 @@ export default function Home() {
       </section>
 
       {/* Analytics Dashboard Section */}
-      <section className="relative md:py-24 py-16">
-        <div className="container relative mx-auto px-6 max-w-7xl">
+      <section className="relative py-12 sm:py-16 md:py-24">
+        <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="grid md:grid-cols-2 grid-cols-1 items-center gap-6">
             <div className="relative overflow-hidden rounded-lg border border-amber-400/5 bg-gradient-to-tl to-amber-400/30 from-fuchsia-600/30 dark:to-amber-400/50 dark:from-fuchsia-600/50 ps-6 pt-6 lg:me-8">
               {/* AI Agent deployment interface */}
@@ -256,10 +256,10 @@ export default function Home() {
             </div>
             
             <div>
-              <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
-                Deploy AI Agents Across <br /> Your Organization
+              <h3 className="mb-4 text-xl sm:text-2xl md:text-3xl md:leading-normal leading-normal font-semibold">
+                Deploy AI Agents Across <br className="hidden sm:block" /> Your Organization
               </h3>
-              <p className="text-slate-600 dark:text-slate-300 max-w-xl">
+              <p className="text-slate-600 dark:text-slate-300 max-w-xl text-sm sm:text-base">
                 Roll out HeyAgent to teams company-wide with enterprise-grade security, role-based access controls, and seamless SSO integration.
               </p>
               
@@ -301,8 +301,8 @@ export default function Home() {
       </section>
 
       {/* Analytics Dashboard Section Copy */}
-      <section className="relative md:py-24 py-16">
-        <div className="container relative mx-auto px-6 max-w-7xl">
+      <section className="relative py-12 sm:py-16 md:py-24">
+        <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="grid md:grid-cols-2 grid-cols-1 items-center gap-6">
             <div className="relative order-1 md:order-2">
               <div className="relative overflow-hidden rounded-lg border border-amber-400/5 bg-gradient-to-tl to-amber-400/30 from-fuchsia-600/30 dark:to-amber-400/50 dark:from-fuchsia-600/50 pe-6 pt-6 lg:ms-8">
@@ -314,10 +314,10 @@ export default function Home() {
             </div>
             
             <div className="order-2 md:order-1">
-              <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
-                Real-Time Analytics & <br /> Performance Insights
+              <h3 className="mb-4 text-xl sm:text-2xl md:text-3xl md:leading-normal leading-normal font-semibold">
+                Real-Time Analytics & <br className="hidden sm:block" /> Performance Insights
               </h3>
-              <p className="text-slate-600 dark:text-slate-300 max-w-xl">
+              <p className="text-slate-600 dark:text-slate-300 max-w-xl text-sm sm:text-base">
                 Monitor agent performance, track ROI, and gain insights into automation efficiency. See exactly how much time and money HeyAgent saves your organization.
               </p>
               
@@ -359,8 +359,8 @@ export default function Home() {
       </section>
 
       {/* Logo Carousel Section */}
-      <section className="relative md:py-24 py-16">
-        <div className="container relative mx-auto px-6 max-w-7xl">
+      <section className="relative py-12 sm:py-16 md:py-24">
+        <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="max-w-4xl mx-auto">
             <LogoCarousel />
           </div>
@@ -368,19 +368,19 @@ export default function Home() {
       </section>
 
       {/* Pricing Section */}
-      <section className="relative md:py-24 py-16">
-        <div className="container relative mx-auto px-6 max-w-7xl">
+      <section className="relative py-12 sm:py-16 md:py-24">
+        <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="grid grid-cols-1 pb-12 text-center">
-            <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
+            <h3 className="mb-4 text-xl sm:text-2xl md:text-3xl md:leading-normal leading-normal font-semibold">
               You don't have to choose between cost, time and quality
             </h3>
-            <p className="text-slate-600 dark:text-slate-300 max-w-xl mx-auto">
+            <p className="text-slate-600 dark:text-slate-300 max-w-xl mx-auto text-sm sm:text-base px-4 sm:px-0">
               Artificial intelligence makes it fast and easy to automate your workflows, integrate with your tools, and scale your operations!
             </p>
           </div>
 
           {/* Billing Toggle */}
-          <div className="flex justify-center items-center mb-12">
+          <div className="flex justify-center items-center mb-8 sm:mb-12">
             <span className={`text-sm font-medium mr-3 ${!isAnnual ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>
               Monthly
             </span>

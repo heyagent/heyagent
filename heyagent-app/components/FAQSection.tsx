@@ -30,28 +30,28 @@ export default function FAQSection() {
   };
 
   return (
-    <div className="container relative mx-auto px-6 max-w-7xl">
-      <div className="grid lg:grid-cols-12 md:grid-cols-2 grid-cols-1 items-center md:gap-[30px]">
-        <div className="lg:col-span-4 md:mb-0 mb-8">
-          <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
+    <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
+      <div className="grid lg:grid-cols-12 md:grid-cols-2 grid-cols-1 items-center gap-6 md:gap-[30px]">
+        <div className="lg:col-span-4 md:mb-0 mb-6">
+          <h3 className="mb-4 text-xl sm:text-2xl md:text-3xl md:leading-normal leading-normal font-semibold">
             Have a question?
           </h3>
-          <p className="text-slate-600 dark:text-slate-300 max-w-xl mx-auto mb-6">
+          <p className="text-slate-600 dark:text-slate-300 max-w-xl mx-auto mb-6 text-sm sm:text-base">
             Got questions about automating your employee workflows? We've got answers.
           </p>
           <a 
-            className="py-2 px-5 inline-block font-semibold tracking-wide border align-middle duration-500 text-base text-center bg-transparent hover:bg-amber-400 border-gray-100 dark:border-gray-800 hover:border-amber-400 dark:hover:border-amber-400 text-slate-900 dark:text-white hover:text-white rounded-md" 
+            className="py-2.5 px-6 inline-block font-semibold tracking-wide border align-middle duration-500 text-sm sm:text-base text-center bg-transparent hover:bg-amber-400 border-gray-100 dark:border-gray-800 hover:border-amber-400 dark:hover:border-amber-400 text-slate-900 dark:text-white hover:text-white rounded-md" 
             href="/contact"
           >
             Contact Us
           </a>
         </div>
 
-        <div className="lg:col-span-8 md:mt-0 mt-8">
+        <div className="lg:col-span-8 md:mt-0">
           {faqs.map((faq, index) => (
             <div 
               key={index} 
-              className="relative shadow dark:shadow-gray-800 rounded-md overflow-hidden mt-4"
+              className="relative shadow dark:shadow-gray-800 rounded-lg overflow-hidden mt-3 sm:mt-4"
             >
               <h2 className="text-base font-semibold">
                 <button
@@ -61,19 +61,26 @@ export default function FAQSection() {
                     openIndex === index 
                       ? 'bg-gray-50 dark:bg-slate-800 text-amber-400' 
                       : ''
-                  } flex justify-between items-center p-5 w-full font-medium text-start hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors`}
+                  } flex justify-between items-center p-4 sm:p-5 w-full font-medium text-start hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors`}
+                  aria-expanded={openIndex === index}
+                  aria-controls={`faq-answer-${index}`}
                 >
-                  <span>{faq.question}</span>
+                  <span className="text-sm sm:text-base pr-2">{faq.question}</span>
                   <FiChevronDown 
                     className={`${
                       openIndex === index ? 'rotate-180' : ''
-                    } w-4 h-4 shrink-0 transition-transform duration-300`}
+                    } w-5 h-5 shrink-0 transition-transform duration-300`}
                   />
                 </button>
               </h2>
-              <div className={`${openIndex === index ? '' : 'hidden'}`}>
-                <div className="p-5">
-                  <p className="text-slate-400 dark:text-gray-400">
+              <div 
+                id={`faq-answer-${index}`}
+                className={`${openIndex === index ? '' : 'hidden'}`}
+                role="region"
+                aria-labelledby={`faq-question-${index}`}
+              >
+                <div className="p-4 sm:p-5 pt-0 sm:pt-0">
+                  <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base">
                     {faq.answer}
                   </p>
                 </div>

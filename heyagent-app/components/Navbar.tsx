@@ -40,21 +40,21 @@ export default function Navbar() {
   };
 
   return (
-    <nav className={`fixed top-4 left-0 right-0 z-50 transition-all duration-300`}>
-      <div className="container mx-auto px-6 max-w-7xl">
+    <nav className={`fixed top-2 sm:top-4 left-0 right-0 z-50 transition-all duration-300`}>
+      <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
         <div className={`rounded-2xl transition-all duration-300 border ${
           isScrolled 
             ? 'bg-white/95 dark:bg-slate-800/95 shadow-md dark:shadow-amber-400/10 backdrop-blur-sm border-gray-200 dark:border-amber-400/30' 
             : 'bg-black/10 dark:bg-white/10 backdrop-blur-md border-transparent'
         }`}>
-          <div className="px-6">
-            <div className="flex items-center justify-between h-14">
+          <div className="px-4 sm:px-6">
+            <div className="flex items-center justify-between h-14 md:h-16">
               {/* Logo */}
-              <Link href="/" className="flex items-center space-x-2">
-                <span className="text-3xl bg-gradient-to-r from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">
+              <Link href="/" className="flex items-center space-x-1 sm:space-x-2">
+                <span className="text-2xl sm:text-3xl bg-gradient-to-r from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">
                   ✳
                 </span>
-                <span className={`text-2xl font-bold ${
+                <span className={`text-xl sm:text-2xl font-bold ${
                   isScrolled ? 'text-slate-900 dark:text-white' : 'text-slate-900 dark:text-white'
                 }`}>
                   HEYAGENT
@@ -62,8 +62,8 @@ export default function Navbar() {
               </Link>
 
               {/* Desktop Navigation - Centered */}
-              <div className="hidden lg:flex items-center absolute left-1/2 transform -translate-x-1/2">
-                <ul className="flex items-center space-x-8">
+              <div className="hidden md:flex items-center md:absolute md:left-1/2 md:transform md:-translate-x-1/2">
+                <ul className="flex items-center space-x-4 lg:space-x-8">
                   <li>
                     <Link href="/pricing" className={`hover:text-amber-400 transition-colors text-sm font-medium ${
                       isScrolled ? 'text-slate-700 dark:text-white' : 'text-slate-700 dark:text-white'
@@ -104,7 +104,7 @@ export default function Navbar() {
 
               {/* Auth Buttons */}
               <div className="flex items-center space-x-3">
-                <Link href="/signin" className="hidden md:inline-flex">
+                <Link href="/signin" className="hidden lg:inline-flex">
                   <span className={`py-2 px-4 text-sm font-medium transition-colors ${
                     isScrolled ? 'text-slate-700 dark:text-white hover:text-amber-400' : 'text-slate-700 dark:text-white hover:text-amber-400'
                   }`}>
@@ -115,7 +115,7 @@ export default function Navbar() {
                 {/* Theme Switcher */}
                 <button
                   onClick={toggleDarkMode}
-                  className={`hidden md:flex p-2 rounded-lg transition-colors ${
+                  className={`hidden lg:flex p-2.5 rounded-lg transition-colors ${
                     isScrolled 
                       ? 'hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-white' 
                       : 'hover:bg-slate-100 dark:hover:bg-white/10 text-slate-700 dark:text-white'
@@ -136,14 +136,15 @@ export default function Navbar() {
                 {/* Mobile menu button */}
                 <button
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                  className={`lg:hidden p-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 ${
+                  className={`md:hidden p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors ${
                     isScrolled ? 'text-slate-700 dark:text-white' : 'text-slate-700 dark:text-white'
                   }`}
+                  aria-label="Toggle navigation menu"
                 >
                   {mobileMenuOpen ? (
-                    <FiX className="w-5 h-5" />
+                    <FiX className="w-6 h-6" />
                   ) : (
-                    <FiMenu className="w-5 h-5" />
+                    <FiMenu className="w-6 h-6" />
                   )}
                 </button>
               </div>
@@ -153,58 +154,58 @@ export default function Navbar() {
         
         {/* Mobile Menu - Outside of navbar container */}
         {mobileMenuOpen && (
-          <div className={`lg:hidden mt-2 rounded-2xl transition-all duration-300 border ${
+          <div className={`md:hidden mt-2 rounded-2xl transition-all duration-300 border ${
             isScrolled 
               ? 'bg-white/95 dark:bg-slate-800/95 shadow-md backdrop-blur-sm border-gray-200 dark:border-slate-600' 
               : 'bg-black/10 dark:bg-white/10 backdrop-blur-md border-white/20'
           }`}>
-            <ul className="py-4 space-y-2 px-6">
+            <ul className="py-4 space-y-1 px-4">
               <li>
-                <Link href="/pricing" className={`block py-2 hover:text-amber-400 text-sm font-medium ${
+                <Link href="/pricing" className={`block py-3 px-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-amber-400 text-base font-medium transition-colors ${
                   isScrolled ? 'text-slate-700 dark:text-white' : 'text-slate-700 dark:text-white'
                 }`}>
                   Pricing
                 </Link>
               </li>
               <li>
-                <Link href="/platform" className={`block py-2 hover:text-amber-400 text-sm font-medium ${
+                <Link href="/platform" className={`block py-3 px-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-amber-400 text-base font-medium transition-colors ${
                   isScrolled ? 'text-slate-700 dark:text-white' : 'text-slate-700 dark:text-white'
                 }`}>
                   Platform
                 </Link>
               </li>
               <li>
-                <Link href="/integrations" className={`block py-2 hover:text-amber-400 text-sm font-medium ${
+                <Link href="/integrations" className={`block py-3 px-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-amber-400 text-base font-medium transition-colors ${
                   isScrolled ? 'text-slate-700 dark:text-white' : 'text-slate-700 dark:text-white'
                 }`}>
                   Integrations
                 </Link>
               </li>
               <li>
-                <Link href="/workflows" className={`block py-2 hover:text-amber-400 text-sm font-medium ${
+                <Link href="/workflows" className={`block py-3 px-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-amber-400 text-base font-medium transition-colors ${
                   isScrolled ? 'text-slate-700 dark:text-white' : 'text-slate-700 dark:text-white'
                 }`}>
                   Workflows
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className={`block py-2 hover:text-amber-400 text-sm font-medium ${
+                <Link href="/blog" className={`block py-3 px-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-amber-400 text-base font-medium transition-colors ${
                   isScrolled ? 'text-slate-700 dark:text-white' : 'text-slate-700 dark:text-white'
                 }`}>
                   Blog
                 </Link>
               </li>
-              <li className={`pt-4 space-y-2 border-t ${
+              <li className={`pt-4 mt-2 space-y-1 border-t ${
                 isScrolled ? 'border-slate-200 dark:border-slate-600' : 'border-white/20'
               }`}>
-                <Link href="/signin" className={`block py-2 hover:text-amber-400 text-sm font-medium ${
+                <Link href="/signin" className={`block py-3 px-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-amber-400 text-base font-medium transition-colors ${
                   isScrolled ? 'text-slate-700 dark:text-white' : 'text-slate-700 dark:text-white'
                 }`}>
                   Sign in
                 </Link>
                 <button
                   onClick={toggleDarkMode}
-                  className={`flex items-center space-x-2 py-2 hover:text-amber-400 text-sm font-medium w-full ${
+                  className={`flex items-center space-x-3 py-3 px-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-amber-400 text-base font-medium w-full transition-colors ${
                     isScrolled ? 'text-slate-700 dark:text-white' : 'text-slate-700 dark:text-white'
                   }`}
                 >

@@ -167,9 +167,9 @@ export default function LogoCarousel() {
             {topRowIcons.map((Icon, index) => (
               <div 
                 key={`top-${index}`}
-                className="p-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-500 rounded-xl shadow-sm hover:shadow-md hover:border-amber-400 dark:hover:border-amber-400 transition-all duration-300"
+                className="p-3 sm:p-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-500 rounded-lg sm:rounded-xl shadow-sm hover:shadow-md hover:border-amber-400 dark:hover:border-amber-400 transition-all duration-300 min-w-[48px] sm:min-w-[56px]"
               >
-                <Icon className="text-2xl text-slate-600 dark:text-slate-300" />
+                <Icon className="text-xl sm:text-2xl text-slate-600 dark:text-slate-300" />
               </div>
             ))}
           </div>
@@ -181,9 +181,9 @@ export default function LogoCarousel() {
             {bottomRowIcons.map((Icon, index) => (
               <div 
                 key={`bottom-${index}`}
-                className="p-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-500 rounded-xl shadow-sm hover:shadow-md hover:border-amber-400 dark:hover:border-amber-400 transition-all duration-300"
+                className="p-3 sm:p-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-500 rounded-lg sm:rounded-xl shadow-sm hover:shadow-md hover:border-amber-400 dark:hover:border-amber-400 transition-all duration-300 min-w-[48px] sm:min-w-[56px]"
               >
-                <Icon className="text-2xl text-slate-600 dark:text-slate-300" />
+                <Icon className="text-xl sm:text-2xl text-slate-600 dark:text-slate-300" />
               </div>
             ))}
           </div>
