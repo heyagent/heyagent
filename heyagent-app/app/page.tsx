@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import TypewriterEffect from "@/components/TypewriterEffect";
 import PricingSection from "@/components/PricingSection";
 import LogoCarousel from "@/components/LogoCarousel";
@@ -7,6 +10,7 @@ import FAQSection from "@/components/FAQSection";
 import BlogSection from "@/components/BlogSection";
 
 export default function Home() {
+  const [isAnnual, setIsAnnual] = useState(false);
   return (
     <main>
       <section className="relative overflow-hidden pt-48 pb-16 after:content-[''] after:absolute after:inset-0 after:mx-auto after:w-[56rem] after:h-[56rem] after:bg-gradient-to-tl after:to-amber-400/30 after:from-fuchsia-600/30 dark:after:to-amber-400/50 dark:after:from-fuchsia-600/50 after:blur-[200px] after:rounded-full after:-z-1">
@@ -14,7 +18,7 @@ export default function Home() {
           <div className="grid grid-cols-1 text-center">
             <div>
               <h4 className="font-bold lg:leading-normal leading-normal text-4xl lg:text-6xl mb-5">
-                The Employee AI <br /> Assistant That Gets
+                The AI Assistant <br /> That Gets
                 <TypewriterEffect 
                   words={["Tasks", "Workflows", "Approvals", "Requests", "Operations"]}
                   className="typewrite bg-gradient-to-br from-amber-400 to-fuchsia-600 text-transparent bg-clip-text ms-4"
@@ -366,7 +370,7 @@ export default function Home() {
       {/* Pricing Section */}
       <section className="relative md:py-24 py-16">
         <div className="container relative mx-auto px-6 max-w-7xl">
-          <div className="grid grid-cols-1 pb-6 text-center">
+          <div className="grid grid-cols-1 pb-12 text-center">
             <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
               You don't have to choose between cost, time and quality
             </h3>
@@ -375,7 +379,30 @@ export default function Home() {
             </p>
           </div>
 
-          <PricingSection />
+          {/* Billing Toggle */}
+          <div className="flex justify-center items-center mb-12">
+            <span className={`text-sm font-medium mr-3 ${!isAnnual ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>
+              Monthly
+            </span>
+            <button
+              onClick={() => setIsAnnual(!isAnnual)}
+              className="relative inline-flex h-6 w-11 items-center rounded-full bg-slate-200 dark:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
+            >
+              <span
+                className={`inline-block h-4 w-4 transform rounded-full bg-gradient-to-r from-amber-400 to-fuchsia-600 transition-transform ${
+                  isAnnual ? 'translate-x-6' : 'translate-x-1'
+                }`}
+              />
+            </button>
+            <span className={`text-sm font-medium ml-3 ${isAnnual ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>
+              Annual
+              <span className="ml-1 inline-block px-2 py-0.5 text-xs font-semibold text-green-700 dark:text-green-400 bg-green-100 dark:bg-green-900/30 rounded-full">
+                Save 20%
+              </span>
+            </span>
+          </div>
+
+          <PricingSection isAnnual={isAnnual} />
         </div>
       </section>
 

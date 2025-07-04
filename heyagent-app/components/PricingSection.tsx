@@ -4,17 +4,21 @@ import { useState } from "react";
 import Link from "next/link";
 import { FiCheck, FiX } from "react-icons/fi";
 
-export default function PricingSection() {
+interface PricingSectionProps {
+  isAnnual: boolean;
+}
+
+export default function PricingSection({ isAnnual }: PricingSectionProps) {
   const [businessMultiplier, setBusinessMultiplier] = useState(1);
   const [professionalMultiplier, setProfessionalMultiplier] = useState(1);
 
-  const businessBasePrice = 20;
-  const professionalBasePrice = 40;
+  const businessBasePrice = isAnnual ? 16 : 20;  // 20% discount for annual
+  const professionalBasePrice = isAnnual ? 32 : 40;  // 20% discount for annual
 
   return (
-    <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-6 gap-6">
+    <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-6 gap-8 lg:gap-10">
       {/* Free Plan */}
-      <div className="relative overflow-hidden rounded-md shadow dark:shadow-gray-800">
+      <div className="relative overflow-hidden rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm hover:shadow-md transition-shadow duration-300">
         <div className="p-6">
           <h5 className="text-2xl leading-normal font-semibold">Free</h5>
           <p className="text-slate-600 dark:text-slate-300 mt-2">
@@ -24,7 +28,9 @@ export default function PricingSection() {
             <span className="text-lg font-semibold">$</span>
             <span className="text-5xl font-semibold mb-0 ms-1">0</span>
           </div>
-          <p className="text-slate-600 dark:text-slate-300 uppercase text-xs">per month</p>
+          <p className="text-slate-600 dark:text-slate-300 uppercase text-xs">
+            {isAnnual ? 'per month (billed annually)' : 'per month'}
+          </p>
           
           <div className="mt-6">
             <Link 
@@ -66,8 +72,16 @@ export default function PricingSection() {
         </div>
       </div>
 
-      {/* Business Plan */}
-      <div className="relative overflow-hidden rounded-md shadow dark:shadow-gray-800">
+      {/* Business Plan - Featured */}
+      <div className="relative transform lg:scale-105 mt-5 lg:mt-0">
+        {/* Popular Badge */}
+        <div className="absolute -top-4 inset-x-0 text-center z-10">
+          <span className="bg-gradient-to-r from-amber-400 to-fuchsia-600 text-white text-xs font-semibold px-3 py-1 rounded-full inline-block">
+            MOST POPULAR
+          </span>
+        </div>
+        <div className="absolute -inset-[1px] bg-gradient-to-br from-amber-400 to-fuchsia-600 rounded-md" />
+        <div className="relative overflow-hidden rounded-md bg-white dark:bg-slate-900 shadow-lg">
         <div className="p-6">
           <h5 className="text-2xl leading-normal font-semibold">Business</h5>
           <p className="text-slate-600 dark:text-slate-300 mt-2">
@@ -81,7 +95,9 @@ export default function PricingSection() {
                 <p className="text-5xl font-semibold mb-0 ms-1">
                   {businessBasePrice * businessMultiplier}
                 </p>
-                <p className="text-slate-600 dark:text-slate-300 uppercase text-xs">per month</p>
+                <p className="text-slate-600 dark:text-slate-300 uppercase text-xs">
+                  {isAnnual ? 'per month (billed annually)' : 'per month'}
+                </p>
               </span>
             </div>
             
@@ -138,9 +154,10 @@ export default function PricingSection() {
           </ul>
         </div>
       </div>
+      </div>
 
       {/* Professional Plan */}
-      <div className="relative overflow-hidden rounded-md shadow dark:shadow-gray-800">
+      <div className="relative overflow-hidden rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm hover:shadow-md transition-shadow duration-300">
         <div className="p-6">
           <h5 className="text-2xl leading-normal font-semibold">Professional</h5>
           <p className="text-slate-600 dark:text-slate-300 mt-2">
@@ -154,7 +171,9 @@ export default function PricingSection() {
                 <p className="text-5xl font-semibold mb-0 ms-1">
                   {professionalBasePrice * professionalMultiplier}
                 </p>
-                <p className="text-slate-600 dark:text-slate-300 uppercase text-xs">per month</p>
+                <p className="text-slate-600 dark:text-slate-300 uppercase text-xs">
+                  {isAnnual ? 'per month (billed annually)' : 'per month'}
+                </p>
               </span>
             </div>
             
