@@ -1,15 +1,16 @@
 import Link from "next/link";
 import { 
-  FiShoppingCart, 
-  FiDribbble, 
   FiLinkedin, 
   FiFacebook, 
   FiInstagram, 
   FiTwitter, 
   FiMail, 
-  FiFileText,
   FiHeart
 } from "react-icons/fi";
+import Logo from "@/components/shared/Logo";
+import FooterLinkSection from "@/components/footer/FooterLinkSection";
+import SocialLink from "@/components/footer/SocialLink";
+import NewsletterForm from "@/components/footer/NewsletterForm";
 
 export default function Footer() {
   return (
@@ -51,14 +52,7 @@ export default function Footer() {
             <div className="grid lg:grid-cols-12 md:grid-cols-6 grid-cols-1 gap-6 sm:gap-8">
               {/* Logo and Description */}
               <div className="lg:col-span-3 md:col-span-6">
-                <Link href="/" className="text-[22px] focus:outline-none flex items-center space-x-1 sm:space-x-2">
-                  <span className="text-2xl sm:text-3xl bg-gradient-to-r from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">
-                    ✳
-                  </span>
-                  <span className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
-                    HEYAGENT
-                  </span>
-                </Link>
+                <Logo />
                 <p className="mt-4 text-slate-600 dark:text-gray-400 text-sm pr-0 sm:pr-8">
                   Create amazing AI-powered automation workflows with our intuitive platform. Transform your business with intelligent agents.
                 </p>
@@ -66,57 +60,46 @@ export default function Footer() {
 
               {/* Company Links */}
               <div className="lg:col-span-2 md:col-span-2 lg:ms-8">
-                <h5 className="text-slate-900 dark:text-white font-semibold mb-3 sm:mb-4">Company</h5>
-                <ul className="list-none space-y-2">
-                  <li><Link href="/about" className="text-slate-600 dark:text-gray-400 hover:text-amber-400 text-sm transition-colors">About Us</Link></li>
-                  <li><Link href="/features" className="text-slate-600 dark:text-gray-400 hover:text-amber-400 text-sm transition-colors">Features</Link></li>
-                  <li><Link href="/pricing" className="text-slate-600 dark:text-gray-400 hover:text-amber-400 text-sm transition-colors">Pricing</Link></li>
-                  <li><Link href="/blog" className="text-slate-600 dark:text-gray-400 hover:text-amber-400 text-sm transition-colors">Blog</Link></li>
-                </ul>
+                <FooterLinkSection 
+                  title="Company"
+                  links={[
+                    { href: "/about", label: "About Us" },
+                    { href: "/features", label: "Features" },
+                    { href: "/pricing", label: "Pricing" },
+                    { href: "/blog", label: "Blog" }
+                  ]}
+                />
               </div>
 
               {/* Support Links */}
               <div className="lg:col-span-2 md:col-span-2">
-                <h5 className="text-slate-900 dark:text-white font-semibold mb-3 sm:mb-4">Support</h5>
-                <ul className="list-none space-y-2">
-                  <li><Link href="/help" className="text-slate-600 dark:text-gray-400 hover:text-amber-400 text-sm transition-colors">Help Center</Link></li>
-                  <li><Link href="/contact" className="text-slate-600 dark:text-gray-400 hover:text-amber-400 text-sm transition-colors">Contact Us</Link></li>
-                  <li><Link href="/faq" className="text-slate-600 dark:text-gray-400 hover:text-amber-400 text-sm transition-colors">FAQ</Link></li>
-                  <li><Link href="/status" className="text-slate-600 dark:text-gray-400 hover:text-amber-400 text-sm transition-colors">Status</Link></li>
-                </ul>
+                <FooterLinkSection 
+                  title="Support"
+                  links={[
+                    { href: "/help", label: "Help Center" },
+                    { href: "/contact", label: "Contact Us" },
+                    { href: "/faq", label: "FAQ" },
+                    { href: "/status", label: "Status" }
+                  ]}
+                />
               </div>
 
               {/* Legal Links */}
               <div className="lg:col-span-2 md:col-span-2">
-                <h5 className="text-slate-900 dark:text-white font-semibold mb-3 sm:mb-4">Legal</h5>
-                <ul className="list-none space-y-2">
-                  <li><Link href="/terms" className="text-slate-600 dark:text-gray-400 hover:text-amber-400 text-sm transition-colors">Terms of Service</Link></li>
-                  <li><Link href="/privacy" className="text-slate-600 dark:text-gray-400 hover:text-amber-400 text-sm transition-colors">Privacy Policy</Link></li>
-                  <li><Link href="/cookies" className="text-slate-600 dark:text-gray-400 hover:text-amber-400 text-sm transition-colors">Cookie Policy</Link></li>
-                  <li><Link href="/license" className="text-slate-600 dark:text-gray-400 hover:text-amber-400 text-sm transition-colors">License</Link></li>
-                </ul>
+                <FooterLinkSection 
+                  title="Legal"
+                  links={[
+                    { href: "/terms", label: "Terms of Service" },
+                    { href: "/privacy", label: "Privacy Policy" },
+                    { href: "/cookies", label: "Cookie Policy" },
+                    { href: "/license", label: "License" }
+                  ]}
+                />
               </div>
 
               {/* Newsletter */}
               <div className="lg:col-span-3 md:col-span-6">
-                <h5 className="text-slate-900 dark:text-white font-semibold mb-3 sm:mb-4 mt-6 md:mt-0">Newsletter</h5>
-                <p className="text-slate-600 dark:text-gray-400 text-sm mb-4">
-                  Sign up and receive the latest tips via email.
-                </p>
-                <form className="relative">
-                  <input
-                    type="email"
-                    className="w-full py-3 px-4 pe-12 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-slate-900 dark:text-gray-100 rounded-md focus:border-amber-400 focus:outline-none placeholder:text-slate-400 dark:placeholder:text-gray-500"
-                    placeholder="Your email:"
-                  />
-                  <button
-                    type="submit"
-                    className="absolute top-[2px] end-[3px] h-[46px] px-4 bg-amber-400 hover:bg-amber-500 text-white rounded-md transition-colors"
-                    aria-label="Subscribe to newsletter"
-                  >
-                    <FiMail className="h-5 w-5" />
-                  </button>
-                </form>
+                <NewsletterForm />
               </div>
             </div>
           </div>
@@ -148,59 +131,31 @@ export default function Footer() {
             {/* Social Links - Right */}
             <div className="md:text-end text-center">
               <ul className="list-none flex justify-center md:justify-end gap-2">
-                <li className="inline">
-                  <a 
-                    className="h-11 w-11 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center border border-gray-300 dark:border-gray-800 rounded-md hover:border-amber-400 hover:bg-amber-400 text-slate-600 dark:text-slate-300 hover:text-white" 
-                    href="https://facebook.com/heyagent"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Facebook"
-                  >
-                    <FiFacebook className="h-5 w-5" />
-                  </a>
-                </li>
-                <li className="inline">
-                  <a 
-                    className="h-11 w-11 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center border border-gray-300 dark:border-gray-800 rounded-md hover:border-amber-400 hover:bg-amber-400 text-slate-600 dark:text-slate-300 hover:text-white" 
-                    href="https://instagram.com/heyagent"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Instagram"
-                  >
-                    <FiInstagram className="h-5 w-5" />
-                  </a>
-                </li>
-                <li className="inline">
-                  <a 
-                    className="h-11 w-11 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center border border-gray-300 dark:border-gray-800 rounded-md hover:border-amber-400 hover:bg-amber-400 text-slate-600 dark:text-slate-300 hover:text-white" 
-                    href="https://twitter.com/heyagent"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Twitter"
-                  >
-                    <FiTwitter className="h-5 w-5" />
-                  </a>
-                </li>
-                <li className="inline">
-                  <a 
-                    className="h-11 w-11 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center border border-gray-300 dark:border-gray-800 rounded-md hover:border-amber-400 hover:bg-amber-400 text-slate-600 dark:text-slate-300 hover:text-white" 
-                    href="https://linkedin.com/heyagent"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="LinkedIn"
-                  >
-                    <FiLinkedin className="h-5 w-5" />
-                  </a>
-                </li>
-                <li className="inline">
-                  <a 
-                    className="h-11 w-11 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center border border-gray-300 dark:border-gray-800 rounded-md hover:border-amber-400 hover:bg-amber-400 text-slate-600 dark:text-slate-300 hover:text-white" 
-                    href="mailto:support@heyagent.ai"
-                    aria-label="Email"
-                  >
-                    <FiMail className="h-5 w-5" />
-                  </a>
-                </li>
+                <SocialLink 
+                  href="https://facebook.com/heyagent"
+                  icon={<FiFacebook className="h-5 w-5" />}
+                  ariaLabel="Facebook"
+                />
+                <SocialLink 
+                  href="https://instagram.com/heyagent"
+                  icon={<FiInstagram className="h-5 w-5" />}
+                  ariaLabel="Instagram"
+                />
+                <SocialLink 
+                  href="https://twitter.com/heyagent"
+                  icon={<FiTwitter className="h-5 w-5" />}
+                  ariaLabel="Twitter"
+                />
+                <SocialLink 
+                  href="https://linkedin.com/heyagent"
+                  icon={<FiLinkedin className="h-5 w-5" />}
+                  ariaLabel="LinkedIn"
+                />
+                <SocialLink 
+                  href="mailto:support@heyagent.ai"
+                  icon={<FiMail className="h-5 w-5" />}
+                  ariaLabel="Email"
+                />
               </ul>
             </div>
           </div>

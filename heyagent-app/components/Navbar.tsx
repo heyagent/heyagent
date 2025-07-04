@@ -1,9 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState, useEffect } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
+import Logo from "@/components/shared/Logo";
+import NavLink from "@/components/navbar/NavLink";
+import ThemeToggle from "@/components/navbar/ThemeToggle";
+import MobileMenuButton from "@/components/navbar/MobileMenuButton";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -50,55 +52,16 @@ export default function Navbar() {
           <div className="px-4 sm:px-6">
             <div className="flex items-center justify-between h-14 md:h-16">
               {/* Logo */}
-              <Link href="/" className="flex items-center space-x-1 sm:space-x-2">
-                <span className="text-2xl sm:text-3xl bg-gradient-to-r from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">
-                  ✳
-                </span>
-                <span className={`text-xl sm:text-2xl font-bold ${
-                  isScrolled ? 'text-slate-900 dark:text-white' : 'text-slate-900 dark:text-white'
-                }`}>
-                  HEYAGENT
-                </span>
-              </Link>
+              <Logo isScrolled={isScrolled} />
 
               {/* Desktop Navigation - Centered */}
               <div className="hidden lg:flex items-center lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2">
                 <ul className="flex items-center space-x-4 xl:space-x-8">
-                  <li>
-                    <Link href="/pricing" className={`hover:text-amber-400 transition-colors text-sm font-medium ${
-                      isScrolled ? 'text-slate-700 dark:text-white' : 'text-slate-700 dark:text-white'
-                    }`}>
-                      Pricing
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/platform" className={`hover:text-amber-400 transition-colors text-sm font-medium ${
-                      isScrolled ? 'text-slate-700 dark:text-white' : 'text-slate-700 dark:text-white'
-                    }`}>
-                      Platform
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/integrations" className={`hover:text-amber-400 transition-colors text-sm font-medium ${
-                      isScrolled ? 'text-slate-700 dark:text-white' : 'text-slate-700 dark:text-white'
-                    }`}>
-                      Integrations
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/workflows" className={`hover:text-amber-400 transition-colors text-sm font-medium ${
-                      isScrolled ? 'text-slate-700 dark:text-white' : 'text-slate-700 dark:text-white'
-                    }`}>
-                      Workflows
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/blog" className={`hover:text-amber-400 transition-colors text-sm font-medium ${
-                      isScrolled ? 'text-slate-700 dark:text-white' : 'text-slate-700 dark:text-white'
-                    }`}>
-                      Blog
-                    </Link>
-                  </li>
+                  <li><NavLink href="/pricing" isScrolled={isScrolled}>Pricing</NavLink></li>
+                  <li><NavLink href="/platform" isScrolled={isScrolled}>Platform</NavLink></li>
+                  <li><NavLink href="/integrations" isScrolled={isScrolled}>Integrations</NavLink></li>
+                  <li><NavLink href="/workflows" isScrolled={isScrolled}>Workflows</NavLink></li>
+                  <li><NavLink href="/blog" isScrolled={isScrolled}>Blog</NavLink></li>
                 </ul>
               </div>
 
@@ -113,42 +76,18 @@ export default function Navbar() {
                 </Link>
                 
                 {/* Theme Switcher */}
-                <button
-                  onClick={toggleDarkMode}
-                  className={`hidden lg:flex p-2.5 rounded-lg transition-colors ${
-                    isScrolled 
-                      ? 'hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-white' 
-                      : 'hover:bg-white/20 dark:hover:bg-white/10 text-slate-700 dark:text-white'
-                  }`}
-                  aria-label="Toggle dark mode"
-                >
-                  {darkMode ? (
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
-                  ) : (
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                    </svg>
-                  )}
-                </button>
+                <ThemeToggle 
+                  darkMode={darkMode} 
+                  toggleDarkMode={toggleDarkMode} 
+                  isScrolled={isScrolled} 
+                />
 
                 {/* Mobile menu button */}
-                <button
-                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                  className={`lg:hidden p-2.5 rounded-lg transition-colors ${
-                    isScrolled 
-                      ? 'hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-white' 
-                      : 'hover:bg-white/20 dark:hover:bg-white/10 text-slate-700 dark:text-white'
-                  }`}
-                  aria-label="Toggle navigation menu"
-                >
-                  {mobileMenuOpen ? (
-                    <FiX className="w-6 h-6" />
-                  ) : (
-                    <FiMenu className="w-6 h-6" />
-                  )}
-                </button>
+                <MobileMenuButton 
+                  mobileMenuOpen={mobileMenuOpen}
+                  setMobileMenuOpen={setMobileMenuOpen}
+                  isScrolled={isScrolled}
+                />
               </div>
             </div>
           </div>
@@ -162,71 +101,21 @@ export default function Navbar() {
               : 'bg-black/10 dark:bg-white/10 backdrop-blur-md border-white/20'
           }`}>
             <ul className="py-4 space-y-1 px-4">
-              <li>
-                <Link href="/pricing" className={`block py-3 px-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-amber-400 text-base font-medium transition-colors ${
-                  isScrolled ? 'text-slate-700 dark:text-white' : 'text-slate-700 dark:text-white'
-                }`}>
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <Link href="/platform" className={`block py-3 px-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-amber-400 text-base font-medium transition-colors ${
-                  isScrolled ? 'text-slate-700 dark:text-white' : 'text-slate-700 dark:text-white'
-                }`}>
-                  Platform
-                </Link>
-              </li>
-              <li>
-                <Link href="/integrations" className={`block py-3 px-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-amber-400 text-base font-medium transition-colors ${
-                  isScrolled ? 'text-slate-700 dark:text-white' : 'text-slate-700 dark:text-white'
-                }`}>
-                  Integrations
-                </Link>
-              </li>
-              <li>
-                <Link href="/workflows" className={`block py-3 px-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-amber-400 text-base font-medium transition-colors ${
-                  isScrolled ? 'text-slate-700 dark:text-white' : 'text-slate-700 dark:text-white'
-                }`}>
-                  Workflows
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className={`block py-3 px-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-amber-400 text-base font-medium transition-colors ${
-                  isScrolled ? 'text-slate-700 dark:text-white' : 'text-slate-700 dark:text-white'
-                }`}>
-                  Blog
-                </Link>
-              </li>
+              <li><NavLink href="/pricing" isScrolled={isScrolled} mobile>Pricing</NavLink></li>
+              <li><NavLink href="/platform" isScrolled={isScrolled} mobile>Platform</NavLink></li>
+              <li><NavLink href="/integrations" isScrolled={isScrolled} mobile>Integrations</NavLink></li>
+              <li><NavLink href="/workflows" isScrolled={isScrolled} mobile>Workflows</NavLink></li>
+              <li><NavLink href="/blog" isScrolled={isScrolled} mobile>Blog</NavLink></li>
               <li className={`pt-4 mt-2 space-y-1 border-t ${
                 isScrolled ? 'border-slate-200 dark:border-slate-600' : 'border-white/20'
               }`}>
-                <Link href="/signin" className={`block py-3 px-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-amber-400 text-base font-medium transition-colors ${
-                  isScrolled ? 'text-slate-700 dark:text-white' : 'text-slate-700 dark:text-white'
-                }`}>
-                  Sign in
-                </Link>
-                <button
-                  onClick={toggleDarkMode}
-                  className={`flex items-center space-x-3 py-3 px-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-amber-400 text-base font-medium w-full transition-colors ${
-                    isScrolled ? 'text-slate-700 dark:text-white' : 'text-slate-700 dark:text-white'
-                  }`}
-                >
-                  {darkMode ? (
-                    <>
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                      </svg>
-                      <span>Light Mode</span>
-                    </>
-                  ) : (
-                    <>
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                      </svg>
-                      <span>Dark Mode</span>
-                    </>
-                  )}
-                </button>
+                <NavLink href="/signin" isScrolled={isScrolled} mobile>Sign in</NavLink>
+                <ThemeToggle 
+                  darkMode={darkMode} 
+                  toggleDarkMode={toggleDarkMode} 
+                  isScrolled={isScrolled} 
+                  mobile
+                />
               </li>
             </ul>
           </div>
