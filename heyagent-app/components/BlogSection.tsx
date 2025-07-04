@@ -43,7 +43,7 @@ export default function BlogSection() {
   ];
 
   return (
-    <div className="container relative md:mt-24 mt-12 mx-auto px-4 sm:px-6 max-w-7xl">
+    <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
       <div className="grid grid-cols-1 pb-6 text-center">
         <h3 className="mb-4 text-xl sm:text-2xl md:text-3xl md:leading-normal leading-normal font-semibold">
           Latest News

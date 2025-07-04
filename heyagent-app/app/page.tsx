@@ -55,8 +55,8 @@ export default function Home() {
       </section>
 
       {/* Video Section */}
-      <section className="relative md:py-24 py-16">
-        <div className="container relative md:mt-12 mt-8 mx-auto px-6 max-w-7xl">
+      <section className="relative py-8 sm:py-12 md:py-16 lg:py-24">
+        <div className="container relative mt-4 sm:mt-6 md:mt-8 lg:mt-12 mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="grid md:grid-cols-2 grid-cols-1 items-center gap-6">
             <div className="relative overflow-hidden after:content-[''] after:absolute after:inset-0 after:mx-auto after:w-72 after:h-72 after:bg-gradient-to-tl after:to-amber-400 after:from-fuchsia-600 after:blur-[80px] after:rounded-full p-6 bg-white dark:bg-slate-900 rounded-md shadow dark:shadow-slate-800">
               <div className="relative overflow-hidden rounded-lg shadow-md dark:shadow-gray-800 z-1">
@@ -141,8 +141,8 @@ export default function Home() {
       </section>
 
       {/* How It Works Section */}
-      <section className="relative md:py-24 py-16">
-        <div className="container relative mx-auto px-6 max-w-7xl">
+      <section className="relative py-8 sm:py-12 md:py-16 lg:py-24">
+        <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="grid grid-cols-1 pb-6 text-center">
             <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
               How <span className="bg-gradient-to-r from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">HeyAgent</span> works
@@ -407,12 +407,12 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="relative md:py-6 py-4">
+      <section className="relative py-8 sm:py-12 md:py-16 lg:py-24">
         <FAQSection />
       </section>
 
       {/* Blog Section */}
-      <section className="relative md:py-16 py-12">
+      <section className="relative py-8 sm:py-12 md:py-16 lg:py-24">
         <BlogSection />
       </section>
     </main>
