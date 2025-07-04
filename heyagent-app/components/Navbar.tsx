@@ -117,8 +117,8 @@ export default function Navbar() {
                   onClick={toggleDarkMode}
                   className={`hidden lg:flex p-2.5 rounded-lg transition-colors ${
                     isScrolled 
-                      ? 'hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-white' 
-                      : 'hover:bg-slate-100 dark:hover:bg-white/10 text-slate-700 dark:text-white'
+                      ? 'hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-white' 
+                      : 'hover:bg-white/20 dark:hover:bg-white/10 text-slate-700 dark:text-white'
                   }`}
                   aria-label="Toggle dark mode"
                 >
@@ -136,8 +136,10 @@ export default function Navbar() {
                 {/* Mobile menu button */}
                 <button
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                  className={`lg:hidden p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors ${
-                    isScrolled ? 'text-slate-700 dark:text-white' : 'text-slate-700 dark:text-white'
+                  className={`lg:hidden p-2.5 rounded-lg transition-colors ${
+                    isScrolled 
+                      ? 'hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-white' 
+                      : 'hover:bg-white/20 dark:hover:bg-white/10 text-slate-700 dark:text-white'
                   }`}
                   aria-label="Toggle navigation menu"
                 >
