@@ -1,13 +1,22 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 import TypewriterEffect from "@/components/TypewriterEffect";
 import PricingSection from "@/components/PricingSection";
 import LogoCarousel from "@/components/LogoCarousel";
 import FAQSection from "@/components/FAQSection";
 import BlogSection from "@/components/BlogSection";
+import PrimaryButton from "@/components/shared/PrimaryButton";
+import SectionHeader from "@/components/shared/SectionHeader";
+import FeatureCard from "@/components/shared/FeatureCard";
+import FeatureListItem from "@/components/shared/FeatureListItem";
+import IntegrationTag from "@/components/shared/IntegrationTag";
+import LinkButton from "@/components/shared/LinkButton";
+import VideoPlayer from "@/components/shared/VideoPlayer";
+import GradientText from "@/components/shared/GradientText";
+import BillingToggle from "@/components/shared/BillingToggle";
+import FeatureSection from "@/components/shared/FeatureSection";
 
 export default function Home() {
   const [isAnnual, setIsAnnual] = useState(false);
@@ -20,7 +29,7 @@ export default function Home() {
               <h4 className="font-bold lg:leading-normal leading-normal text-3xl sm:text-4xl lg:text-6xl mb-5">
                 {/* Mobile: Static text */}
                 <span className="sm:hidden">
-                  The AI Assistant <br /> That Gets <span className="bg-gradient-to-br from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">Things</span> Done
+                  The AI Assistant <br /> That Gets <GradientText>Things</GradientText> Done
                 </span>
                 {/* Desktop: Typewriter effect */}
                 <span className="hidden sm:block">
@@ -36,12 +45,9 @@ export default function Home() {
                 Empower your employees with an AI chatbot that automates workflows, streamlines operations, and boosts productivity across your entire organization
               </p>
               <div className="mt-6">
-                <a 
-                  className="py-3 px-6 inline-block font-semibold tracking-wide border align-middle duration-500 text-sm sm:text-base text-center bg-amber-400 hover:bg-amber-500 border-amber-400 hover:border-amber-500 text-white rounded-md" 
-                  href="/"
-                >
+                <PrimaryButton href="/">
                   Try For Free
-                </a>
+                </PrimaryButton>
                 <p className="text-slate-600 dark:text-slate-300 text-sm mt-3">
                   No credit card required. Free 14-days trial
                 </p>
@@ -84,63 +90,30 @@ export default function Home() {
               
               {/* Integration platforms */}
               <div className="mt-6 flex flex-wrap">
-                <span className="py-1.5 px-2.5 inline-flex items-center tracking-wider align-middle duration-500 text-xs sm:text-sm text-center rounded bg-amber-400/5 hover:bg-amber-400 border border-amber-400/10 hover:border-amber-400 text-amber-400 hover:text-white font-semibold m-0.5">
-                  Slack
-                </span>
-                <span className="py-1.5 px-2.5 inline-flex items-center tracking-wider align-middle duration-500 text-xs sm:text-sm text-center rounded bg-amber-400/5 hover:bg-amber-400 border border-amber-400/10 hover:border-amber-400 text-amber-400 hover:text-white font-semibold m-0.5">
-                  Microsoft Teams
-                </span>
-                <span className="py-1.5 px-2.5 inline-flex items-center tracking-wider align-middle duration-500 text-xs sm:text-sm text-center rounded bg-amber-400/5 hover:bg-amber-400 border border-amber-400/10 hover:border-amber-400 text-amber-400 hover:text-white font-semibold m-0.5">
-                  ServiceNow
-                </span>
-                <span className="py-1.5 px-2.5 inline-flex items-center tracking-wider align-middle duration-500 text-xs sm:text-sm text-center rounded bg-amber-400/5 hover:bg-amber-400 border border-amber-400/10 hover:border-amber-400 text-amber-400 hover:text-white font-semibold m-0.5">
-                  Jira
-                </span>
-                <span className="py-1.5 px-2.5 inline-flex items-center tracking-wider align-middle duration-500 text-xs sm:text-sm text-center rounded bg-amber-400/5 hover:bg-amber-400 border border-amber-400/10 hover:border-amber-400 text-amber-400 hover:text-white font-semibold m-0.5">
-                  Salesforce
-                </span>
+                <IntegrationTag>Slack</IntegrationTag>
+                <IntegrationTag>Microsoft Teams</IntegrationTag>
+                <IntegrationTag>ServiceNow</IntegrationTag>
+                <IntegrationTag>Jira</IntegrationTag>
+                <IntegrationTag>Salesforce</IntegrationTag>
               </div>
             </div>
             
             <div>
               <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
-                Transform employee productivity with <br /> <span className="bg-gradient-to-r from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">intelligent automation</span>
+                Transform employee productivity with <br /> <GradientText>intelligent automation</GradientText>
               </h3>
               <p className="text-slate-600 dark:text-slate-300 max-w-xl">
                 "HeyAgent reduced our ticket resolution time by 75% and saved our team 40 hours per week. Employees love how easy it is to get things done through a simple chat."
               </p>
               
               <ul className="list-none text-slate-600 dark:text-slate-300 mt-4">
-                <li className="mb-2 flex items-center">
-                  <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400 h-5 w-5 me-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                  </svg>
-                  Instant task execution through conversational AI
-                </li>
-                <li className="mb-2 flex items-center">
-                  <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400 h-5 w-5 me-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                  </svg>
-                  Pre-built workflows for common business processes
-                </li>
-                <li className="mb-2 flex items-center">
-                  <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400 h-5 w-5 me-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                  </svg>
-                  Custom automation tailored to your needs
-                </li>
+                <FeatureListItem>Instant task execution through conversational AI</FeatureListItem>
+                <FeatureListItem>Pre-built workflows for common business processes</FeatureListItem>
+                <FeatureListItem>Custom automation tailored to your needs</FeatureListItem>
               </ul>
               
               <div className="mt-4">
-                <Link href="/" className="hover:text-amber-400 font-medium duration-500 inline-flex items-center">
-                  Find Out More 
-                  <svg className="w-5 h-5 ms-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
+                <LinkButton href="/">Find Out More</LinkButton>
               </div>
             </div>
           </div>
@@ -150,45 +123,29 @@ export default function Home() {
       {/* How It Works Section */}
       <section className="relative py-6 sm:py-8 md:py-12 lg:py-24">
         <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
-          <div className="grid grid-cols-1 pb-6 text-center">
-            <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
-              How <span className="bg-gradient-to-r from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">HeyAgent</span> works
-            </h3>
-            <p className="text-slate-600 dark:text-slate-300 max-w-xl mx-auto">
-              Three simple steps to transform your employee operations with AI-powered automation
-            </p>
-          </div>
+          <SectionHeader 
+            title={<>How <GradientText>HeyAgent</GradientText> works</>}
+            description="Three simple steps to transform your employee operations with AI-powered automation"
+          />
 
           <div className="grid md:grid-cols-3 grid-cols-1 mt-6 gap-6">
-            <div className="relative p-6 bg-white dark:bg-slate-900 rounded-lg shadow dark:shadow-gray-800 border border-gray-50 dark:border-gray-600">
-              <div className="w-[45px] h-[45px] bg-gradient-to-tl to-amber-400 from-fuchsia-600 rounded-lg flex items-center justify-center">
-                <span className="text-white text-2xl font-bold">1</span>
-              </div>
-              <h5 className="text-lg sm:text-xl font-semibold my-4 sm:my-5">Connect & Integrate</h5>
-              <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base">
-                Connect HeyAgent to your existing tools and systems like Slack, Teams, ServiceNow, and more in minutes.
-              </p>
-            </div>
+            <FeatureCard 
+              number={1}
+              title="Connect & Integrate"
+              description="Connect HeyAgent to your existing tools and systems like Slack, Teams, ServiceNow, and more in minutes."
+            />
 
-            <div className="relative p-6 bg-white dark:bg-slate-900 rounded-lg shadow dark:shadow-gray-800 border border-gray-50 dark:border-gray-600">
-              <div className="w-[45px] h-[45px] bg-gradient-to-tl to-amber-400 from-fuchsia-600 rounded-lg flex items-center justify-center">
-                <span className="text-white text-2xl font-bold">2</span>
-              </div>
-              <h5 className="text-lg sm:text-xl font-semibold my-4 sm:my-5">Choose Workflows</h5>
-              <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base">
-                Select from our library of pre-built workflows or create custom ones tailored to your business processes.
-              </p>
-            </div>
+            <FeatureCard 
+              number={2}
+              title="Choose Workflows"
+              description="Select from our library of pre-built workflows or create custom ones tailored to your business processes."
+            />
 
-            <div className="relative p-6 bg-white dark:bg-slate-900 rounded-lg shadow dark:shadow-gray-800 border border-gray-50 dark:border-gray-600">
-              <div className="w-[45px] h-[45px] bg-gradient-to-tl to-amber-400 from-fuchsia-600 rounded-lg flex items-center justify-center">
-                <span className="text-white text-2xl font-bold">3</span>
-              </div>
-              <h5 className="text-lg sm:text-xl font-semibold my-4 sm:my-5">Automate Tasks</h5>
-              <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base">
-                Employees chat with HeyAgent to execute tasks instantly - from IT requests to HR queries and approvals.
-              </p>
-            </div>
+            <FeatureCard 
+              number={3}
+              title="Automate Tasks"
+              description="Employees chat with HeyAgent to execute tasks instantly - from IT requests to HR queries and approvals."
+            />
           </div>
         </div>
       </section>
@@ -215,36 +172,13 @@ export default function Home() {
               </p>
               
               <ul className="list-none text-slate-600 dark:text-slate-300 mt-4">
-                <li className="mb-2 flex items-center">
-                  <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400 h-5 w-5 me-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                  </svg>
-                  Instant task execution through conversational AI
-                </li>
-                <li className="mb-2 flex items-center">
-                  <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400 h-5 w-5 me-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                  </svg>
-                  Pre-built workflows for common business processes
-                </li>
-                <li className="mb-2 flex items-center">
-                  <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400 h-5 w-5 me-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                  </svg>
-                  Custom automation tailored to your needs
-                </li>
+                <FeatureListItem>Instant task execution through conversational AI</FeatureListItem>
+                <FeatureListItem>Pre-built workflows for common business processes</FeatureListItem>
+                <FeatureListItem>Custom automation tailored to your needs</FeatureListItem>
               </ul>
               
               <div className="mt-4">
-                <Link href="/" className="hover:text-amber-400 font-medium duration-500 inline-flex items-center">
-                  Find Out More 
-                  <svg className="w-5 h-5 ms-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
+                <LinkButton href="/">Find Out More</LinkButton>
               </div>
             </div>
           </div>
@@ -271,36 +205,13 @@ export default function Home() {
               </p>
               
               <ul className="list-none text-slate-600 dark:text-slate-300 mt-4">
-                <li className="mb-2 flex items-center">
-                  <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400 h-5 w-5 me-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                  </svg>
-                  Deploy to unlimited employees with one setup
-                </li>
-                <li className="mb-2 flex items-center">
-                  <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400 h-5 w-5 me-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                  </svg>
-                  Enterprise-grade security and compliance
-                </li>
-                <li className="mb-2 flex items-center">
-                  <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400 h-5 w-5 me-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                  </svg>
-                  Role-based permissions and access controls
-                </li>
+                <FeatureListItem>Deploy to unlimited employees with one setup</FeatureListItem>
+                <FeatureListItem>Enterprise-grade security and compliance</FeatureListItem>
+                <FeatureListItem>Role-based permissions and access controls</FeatureListItem>
               </ul>
               
               <div className="mt-4">
-                <Link href="/" className="hover:text-amber-400 font-medium duration-500 inline-flex items-center">
-                  Find Out More 
-                  <svg className="w-5 h-5 ms-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
+                <LinkButton href="/">Find Out More</LinkButton>
               </div>
             </div>
           </div>
@@ -329,36 +240,13 @@ export default function Home() {
               </p>
               
               <ul className="list-none text-slate-600 dark:text-slate-300 mt-4">
-                <li className="mb-2 flex items-center">
-                  <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400 h-5 w-5 me-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                  </svg>
-                  Track time saved and tasks automated
-                </li>
-                <li className="mb-2 flex items-center">
-                  <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400 h-5 w-5 me-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                  </svg>
-                  Measure ROI and efficiency gains
-                </li>
-                <li className="mb-2 flex items-center">
-                  <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400 h-5 w-5 me-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                  </svg>
-                  Export reports for stakeholders
-                </li>
+                <FeatureListItem>Track time saved and tasks automated</FeatureListItem>
+                <FeatureListItem>Measure ROI and efficiency gains</FeatureListItem>
+                <FeatureListItem>Export reports for stakeholders</FeatureListItem>
               </ul>
               
               <div className="mt-4">
-                <Link href="/" className="hover:text-amber-400 font-medium duration-500 inline-flex items-center">
-                  Find Out More 
-                  <svg className="w-5 h-5 ms-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
+                <LinkButton href="/">Find Out More</LinkButton>
               </div>
             </div>
           </div>
@@ -377,37 +265,14 @@ export default function Home() {
       {/* Pricing Section */}
       <section className="relative py-6 sm:py-8 md:py-12 lg:py-24">
         <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
-          <div className="grid grid-cols-1 pb-12 text-center">
-            <h3 className="mb-4 text-xl sm:text-2xl md:text-3xl md:leading-normal leading-normal font-semibold">
-              You don't have to choose between cost, time and quality
-            </h3>
-            <p className="text-slate-600 dark:text-slate-300 max-w-xl mx-auto text-sm sm:text-base px-4 sm:px-0">
-              Artificial intelligence makes it fast and easy to automate your workflows, integrate with your tools, and scale your operations!
-            </p>
-          </div>
+          <SectionHeader 
+            title="You don't have to choose between cost, time and quality"
+            description="Artificial intelligence makes it fast and easy to automate your workflows, integrate with your tools, and scale your operations!"
+            className="pb-12"
+          />
 
           {/* Billing Toggle */}
-          <div className="flex justify-center items-center mb-8 sm:mb-12">
-            <span className={`text-sm font-medium mr-3 ${!isAnnual ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>
-              Monthly
-            </span>
-            <button
-              onClick={() => setIsAnnual(!isAnnual)}
-              className="relative inline-flex h-6 w-11 items-center rounded-full bg-slate-200 dark:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
-            >
-              <span
-                className={`inline-block h-4 w-4 transform rounded-full bg-gradient-to-r from-amber-400 to-fuchsia-600 transition-transform ${
-                  isAnnual ? 'translate-x-6' : 'translate-x-1'
-                }`}
-              />
-            </button>
-            <span className={`text-sm font-medium ml-3 ${isAnnual ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>
-              Annual
-              <span className="ml-1 inline-block px-2 py-0.5 text-xs font-semibold text-green-700 dark:text-green-400 bg-green-100 dark:bg-green-900/30 rounded-full">
-                Save 20%
-              </span>
-            </span>
-          </div>
+          <BillingToggle isAnnual={isAnnual} onChange={setIsAnnual} />
 
           <PricingSection isAnnual={isAnnual} />
         </div>
