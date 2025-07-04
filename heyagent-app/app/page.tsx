@@ -145,7 +145,7 @@ export default function Home() {
         <div className="container relative mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-1 pb-6 text-center">
             <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
-              How HeyAgent works
+              How <span className="bg-gradient-to-r from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">HeyAgent</span> works
             </h3>
             <p className="text-slate-600 dark:text-slate-300 max-w-xl mx-auto">
               Three simple steps to transform your employee operations with AI-powered automation
