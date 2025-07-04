@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import TypewriterEffect from "@/components/TypewriterEffect";
-import TabsSection from "@/components/TabsSection";
+import PricingSection from "@/components/PricingSection";
+import LogoCarousel from "@/components/LogoCarousel";
 
 export default function Home() {
   return (
@@ -132,6 +133,52 @@ export default function Home() {
         </div>
       </section>
 
+      {/* How It Works Section */}
+      <section className="relative md:py-24 py-16">
+        <div className="container relative mx-auto px-6 max-w-7xl">
+          <div className="grid grid-cols-1 pb-6 text-center">
+            <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
+              So, how does it works?
+            </h3>
+            <p className="text-slate-400 dark:text-white/60 max-w-xl mx-auto">
+              Artificial intelligence makes it fast easy to create content for your blog, social media, website, and more!
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 grid-cols-1 mt-6 gap-6">
+            <div className="relative p-6 bg-white dark:bg-slate-900 rounded-lg shadow dark:shadow-gray-800 border border-gray-50 dark:border-gray-800/50">
+              <div className="w-[45px] h-[45px] bg-gradient-to-tl to-amber-400 from-fuchsia-600 rounded-lg flex items-center justify-center">
+                <span className="text-white text-2xl font-bold">1</span>
+              </div>
+              <h5 className="text-xl font-semibold my-5">Search & Write Content</h5>
+              <p className="text-slate-400 dark:text-white/60">
+                If the distribution of letters and words is random, the reader will not be distracted from making.
+              </p>
+            </div>
+
+            <div className="relative p-6 bg-white dark:bg-slate-900 rounded-lg shadow dark:shadow-gray-800 border border-gray-50 dark:border-gray-800/50">
+              <div className="w-[45px] h-[45px] bg-gradient-to-tl to-amber-400 from-fuchsia-600 rounded-lg flex items-center justify-center">
+                <span className="text-white text-2xl font-bold">2</span>
+              </div>
+              <h5 className="text-xl font-semibold my-5">Discribe Content</h5>
+              <p className="text-slate-400 dark:text-white/60">
+                If the distribution of letters and words is random, the reader will not be distracted from making.
+              </p>
+            </div>
+
+            <div className="relative p-6 bg-white dark:bg-slate-900 rounded-lg shadow dark:shadow-gray-800 border border-gray-50 dark:border-gray-800/50">
+              <div className="w-[45px] h-[45px] bg-gradient-to-tl to-amber-400 from-fuchsia-600 rounded-lg flex items-center justify-center">
+                <span className="text-white text-2xl font-bold">3</span>
+              </div>
+              <h5 className="text-xl font-semibold my-5">Generate Content</h5>
+              <p className="text-slate-400 dark:text-white/60">
+                If the distribution of letters and words is random, the reader will not be distracted from making.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Content Writing Section */}
       <section className="relative md:py-24 py-16">
         <div className="container relative mx-auto px-6 max-w-7xl">
@@ -246,10 +293,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Tabbed Features Section */}
+      {/* Logo Carousel Section */}
       <section className="relative md:py-24 py-16">
         <div className="container relative mx-auto px-6 max-w-7xl">
-          <TabsSection />
+          <div className="max-w-4xl mx-auto">
+            <LogoCarousel />
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="relative md:py-24 py-16">
+        <div className="container relative mx-auto px-6 max-w-7xl">
+          <div className="grid grid-cols-1 pb-6 text-center">
+            <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
+              You don't have to choose between cost, time and quality
+            </h3>
+            <p className="text-slate-400 dark:text-white/60 max-w-xl mx-auto">
+              Artificial intelligence makes it fast and easy to automate your workflows, integrate with your tools, and scale your operations!
+            </p>
+          </div>
+
+          <PricingSection />
         </div>
       </section>
     </main>

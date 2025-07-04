@@ -46,3 +46,30 @@ html, body {
 .container {
   @apply px-6 md:px-8 lg:px-12;
 }
+
+/* Logo carousel animations */
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-left {
+  animation: scrollLeft 60s linear infinite;
+}
+
+.animate-scroll-right {
+  animation: scrollRight 60s linear infinite;
+}
