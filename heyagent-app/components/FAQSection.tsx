@@ -36,7 +36,7 @@ export default function FAQSection() {
           <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
             Have a question?
           </h3>
-          <p className="text-slate-400 dark:text-white/60 max-w-xl mx-auto mb-6">
+          <p className="text-slate-600 dark:text-slate-300 max-w-xl mx-auto mb-6">
             Got questions about automating your employee workflows? We've got answers.
           </p>
           <a 

@@ -21,7 +21,7 @@ export default function Home() {
                 />
                 Done
               </h4>
-              <p className="text-slate-400 dark:text-white/60 text-lg max-w-xl mx-auto">
+              <p className="text-slate-600 dark:text-slate-300 text-lg max-w-xl mx-auto">
                 Empower your employees with an AI chatbot that automates workflows, streamlines operations, and boosts productivity across your entire organization
               </p>
               <div className="mt-6">
@@ -31,7 +31,7 @@ export default function Home() {
                 >
                   Try For Free
                 </a>
-                <p className="text-slate-400 dark:text-white/60 text-sm mt-3">
+                <p className="text-slate-600 dark:text-slate-300 text-sm mt-3">
                   No credit card required. Free 14-days trial
                 </p>
               </div>
@@ -39,15 +39,15 @@ export default function Home() {
             <div className="relative mt-8 z-3">
               <div className="relative w-full max-w-4xl mx-auto">
                 <div className="relative p-[2px] bg-gradient-to-br from-amber-400 to-fuchsia-600 rounded-xl">
-                  <div className="aspect-[16/10] bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg shadow-2xl flex items-center justify-center">
-                    <span className="text-slate-500">Hero Image Placeholder</span>
+                  <div className="aspect-[16/10] bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-800 dark:to-slate-900 rounded-lg shadow-2xl flex items-center justify-center">
+                    <span className="text-slate-600 dark:text-slate-500">Hero Image Placeholder</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="relative after:content-[''] after:absolute lg:after:-bottom-40 after:-bottom-28 after:end-0 after:start-0 after:mx-auto xl:after:w-[56rem] lg:after:w-[48rem] md:after:w-[32rem] after:w-[22rem] xl:after:h-[56rem] lg:after:h-[48rem] md:after:h-[32rem] after:h-[22rem] after:border-2 after:border-dashed after:border-slate-700/10 dark:after:border-slate-200/10 after:rounded-full after:-z-1 before:content-[''] before:absolute lg:before:-bottom-72 before:-bottom-56 before:end-0 before:start-0 before:mx-auto xl:before:w-[72rem] lg:before:w-[64rem] md:before:w-[48rem] before:w-[24rem] xl:before:h-[72rem] lg:before:h-[64rem] md:before:h-[48rem] before:h-[24rem] before:border-2 before:border-dashed before:border-slate-700/10 dark:before:border-slate-200/10 before:rounded-full before:-z-1"></div>
+        <div className="relative after:content-[''] after:absolute lg:after:-bottom-40 after:-bottom-28 after:end-0 after:start-0 after:mx-auto xl:after:w-[56rem] lg:after:w-[48rem] md:after:w-[32rem] after:w-[22rem] xl:after:h-[56rem] lg:after:h-[48rem] md:after:h-[32rem] after:h-[22rem] after:border-2 after:border-dashed after:border-slate-700/10 dark:after:border-slate-600/30 after:rounded-full after:-z-1 before:content-[''] before:absolute lg:before:-bottom-72 before:-bottom-56 before:end-0 before:start-0 before:mx-auto xl:before:w-[72rem] lg:before:w-[64rem] md:before:w-[48rem] before:w-[24rem] xl:before:h-[72rem] lg:before:h-[64rem] md:before:h-[48rem] before:h-[24rem] before:border-2 before:border-dashed before:border-slate-700/10 dark:before:border-slate-600/30 before:rounded-full before:-z-1"></div>
       </section>
 
       {/* Video Section */}
@@ -95,11 +95,11 @@ export default function Home() {
               <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
                 Transform employee productivity with <br /> <span className="bg-gradient-to-r from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">intelligent automation</span>
               </h3>
-              <p className="text-slate-400 dark:text-white/60 max-w-xl">
+              <p className="text-slate-600 dark:text-slate-300 max-w-xl">
                 "HeyAgent reduced our ticket resolution time by 75% and saved our team 40 hours per week. Employees love how easy it is to get things done through a simple chat."
               </p>
               
-              <ul className="list-none text-slate-400 dark:text-white/60 mt-4">
+              <ul className="list-none text-slate-600 dark:text-slate-300 mt-4">
                 <li className="mb-2 flex items-center">
                   <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400 h-5 w-5 me-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
@@ -143,38 +143,38 @@ export default function Home() {
             <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
               How HeyAgent works
             </h3>
-            <p className="text-slate-400 dark:text-white/60 max-w-xl mx-auto">
+            <p className="text-slate-600 dark:text-slate-300 max-w-xl mx-auto">
               Three simple steps to transform your employee operations with AI-powered automation
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 grid-cols-1 mt-6 gap-6">
-            <div className="relative p-6 bg-white dark:bg-slate-900 rounded-lg shadow dark:shadow-gray-800 border border-gray-50 dark:border-gray-800/50">
+            <div className="relative p-6 bg-white dark:bg-slate-900 rounded-lg shadow dark:shadow-gray-800 border border-gray-50 dark:border-gray-600">
               <div className="w-[45px] h-[45px] bg-gradient-to-tl to-amber-400 from-fuchsia-600 rounded-lg flex items-center justify-center">
                 <span className="text-white text-2xl font-bold">1</span>
               </div>
               <h5 className="text-xl font-semibold my-5">Connect & Integrate</h5>
-              <p className="text-slate-400 dark:text-white/60">
+              <p className="text-slate-600 dark:text-slate-300">
                 Connect HeyAgent to your existing tools and systems like Slack, Teams, ServiceNow, and more in minutes.
               </p>
             </div>
 
-            <div className="relative p-6 bg-white dark:bg-slate-900 rounded-lg shadow dark:shadow-gray-800 border border-gray-50 dark:border-gray-800/50">
+            <div className="relative p-6 bg-white dark:bg-slate-900 rounded-lg shadow dark:shadow-gray-800 border border-gray-50 dark:border-gray-600">
               <div className="w-[45px] h-[45px] bg-gradient-to-tl to-amber-400 from-fuchsia-600 rounded-lg flex items-center justify-center">
                 <span className="text-white text-2xl font-bold">2</span>
               </div>
               <h5 className="text-xl font-semibold my-5">Choose Workflows</h5>
-              <p className="text-slate-400 dark:text-white/60">
+              <p className="text-slate-600 dark:text-slate-300">
                 Select from our library of pre-built workflows or create custom ones tailored to your business processes.
               </p>
             </div>
 
-            <div className="relative p-6 bg-white dark:bg-slate-900 rounded-lg shadow dark:shadow-gray-800 border border-gray-50 dark:border-gray-800/50">
+            <div className="relative p-6 bg-white dark:bg-slate-900 rounded-lg shadow dark:shadow-gray-800 border border-gray-50 dark:border-gray-600">
               <div className="w-[45px] h-[45px] bg-gradient-to-tl to-amber-400 from-fuchsia-600 rounded-lg flex items-center justify-center">
                 <span className="text-white text-2xl font-bold">3</span>
               </div>
               <h5 className="text-xl font-semibold my-5">Automate Tasks</h5>
-              <p className="text-slate-400 dark:text-white/60">
+              <p className="text-slate-600 dark:text-slate-300">
                 Employees chat with HeyAgent to execute tasks instantly - from IT requests to HR queries and approvals.
               </p>
             </div>
@@ -189,8 +189,8 @@ export default function Home() {
             <div className="relative order-1 md:order-2">
               <div className="relative overflow-hidden rounded-lg border border-amber-400/5 bg-gradient-to-tl to-amber-400/30 from-fuchsia-600/30 dark:to-amber-400/50 dark:from-fuchsia-600/50 pe-6 pt-6 lg:ms-8">
                 {/* Placeholder for workflow builder interface */}
-                <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-tr-lg h-80 flex items-center justify-center">
-                  <span className="text-slate-500">Workflow Builder Interface</span>
+                <div className="bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-800 dark:to-slate-900 rounded-tr-lg h-80 flex items-center justify-center">
+                  <span className="text-slate-600 dark:text-slate-500">Workflow Builder Interface</span>
                 </div>
               </div>
             </div>
@@ -199,11 +199,11 @@ export default function Home() {
               <h4 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
                 Build Custom Workflows <br /> Without Code
               </h4>
-              <p className="text-slate-400 dark:text-white/60">
+              <p className="text-slate-600 dark:text-slate-300">
                 Create powerful automation workflows with our drag-and-drop builder. No coding required - just connect your tools and define the steps.
               </p>
               
-              <ul className="list-none text-slate-400 dark:text-white/60 mt-4">
+              <ul className="list-none text-slate-600 dark:text-slate-300 mt-4">
                 <li className="mb-2 flex items-center">
                   <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400 h-5 w-5 me-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
@@ -246,8 +246,8 @@ export default function Home() {
           <div className="grid md:grid-cols-2 grid-cols-1 items-center gap-6">
             <div className="relative overflow-hidden rounded-lg border border-amber-400/5 bg-gradient-to-tl to-amber-400/30 from-fuchsia-600/30 dark:to-amber-400/50 dark:from-fuchsia-600/50 ps-6 pt-6 lg:me-8">
               {/* AI Agent deployment interface */}
-              <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-tl-lg h-80 flex items-center justify-center">
-                <span className="text-slate-500">Agent Deployment Interface</span>
+              <div className="bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-800 dark:to-slate-900 rounded-tl-lg h-80 flex items-center justify-center">
+                <span className="text-slate-600 dark:text-slate-500">Agent Deployment Interface</span>
               </div>
             </div>
             
@@ -255,11 +255,11 @@ export default function Home() {
               <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
                 Deploy AI Agents Across <br /> Your Organization
               </h3>
-              <p className="text-slate-400 dark:text-white/60 max-w-xl">
+              <p className="text-slate-600 dark:text-slate-300 max-w-xl">
                 Roll out HeyAgent to teams company-wide with enterprise-grade security, role-based access controls, and seamless SSO integration.
               </p>
               
-              <ul className="list-none text-slate-400 dark:text-white/60 mt-4">
+              <ul className="list-none text-slate-600 dark:text-slate-300 mt-4">
                 <li className="mb-2 flex items-center">
                   <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400 h-5 w-5 me-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
@@ -303,8 +303,8 @@ export default function Home() {
             <div className="relative order-1 md:order-2">
               <div className="relative overflow-hidden rounded-lg border border-amber-400/5 bg-gradient-to-tl to-amber-400/30 from-fuchsia-600/30 dark:to-amber-400/50 dark:from-fuchsia-600/50 pe-6 pt-6 lg:ms-8">
                 {/* Real-time analytics interface */}
-                <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-tr-lg h-80 flex items-center justify-center">
-                  <span className="text-slate-500">Real-Time Analytics Dashboard</span>
+                <div className="bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-800 dark:to-slate-900 rounded-tr-lg h-80 flex items-center justify-center">
+                  <span className="text-slate-600 dark:text-slate-500">Real-Time Analytics Dashboard</span>
                 </div>
               </div>
             </div>
@@ -313,11 +313,11 @@ export default function Home() {
               <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
                 Real-Time Analytics & <br /> Performance Insights
               </h3>
-              <p className="text-slate-400 dark:text-white/60 max-w-xl">
+              <p className="text-slate-600 dark:text-slate-300 max-w-xl">
                 Monitor agent performance, track ROI, and gain insights into automation efficiency. See exactly how much time and money HeyAgent saves your organization.
               </p>
               
-              <ul className="list-none text-slate-400 dark:text-white/60 mt-4">
+              <ul className="list-none text-slate-600 dark:text-slate-300 mt-4">
                 <li className="mb-2 flex items-center">
                   <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400 h-5 w-5 me-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
@@ -370,7 +370,7 @@ export default function Home() {
             <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
               You don't have to choose between cost, time and quality
             </h3>
-            <p className="text-slate-400 dark:text-white/60 max-w-xl mx-auto">
+            <p className="text-slate-600 dark:text-slate-300 max-w-xl mx-auto">
               Artificial intelligence makes it fast and easy to automate your workflows, integrate with your tools, and scale your operations!
             </p>
           </div>

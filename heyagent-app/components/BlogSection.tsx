@@ -48,7 +48,7 @@ export default function BlogSection() {
         <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
           Latest News
         </h3>
-        <p className="text-slate-400 dark:text-white/60 max-w-xl mx-auto">
+        <p className="text-slate-600 dark:text-slate-300 max-w-xl mx-auto">
           Artificial intelligence makes it fast easy to create content for your blog, social media, website, and more!
         </p>
       </div>
@@ -76,7 +76,7 @@ export default function BlogSection() {
                 </div>
                 <span className="flex items-center text-sm">
                   <FiClock className="h-4 w-4" />
-                  <span className="ms-1 text-slate-400">{post.readTime}</span>
+                  <span className="ms-1 text-slate-600 dark:text-slate-300">{post.readTime}</span>
                 </span>
               </div>
               
@@ -91,13 +91,13 @@ export default function BlogSection() {
                   <div className="h-7 w-7 rounded-full bg-gradient-to-br from-slate-300 to-slate-400 dark:from-slate-600 dark:to-slate-700 flex items-center justify-center text-xs text-white">
                     {post.author.name.charAt(0)}
                   </div>
-                  <Link href="/" className="ms-1 text-slate-400 hover:text-amber-400 text-sm">
+                  <Link href="/" className="ms-1 text-slate-600 dark:text-slate-300 hover:text-amber-400 text-sm">
                     {post.author.name}
                   </Link>
                 </span>
                 <span className="flex items-center text-sm">
                   <FiCalendar className="h-4 w-4" />
-                  <span className="ms-1 text-slate-400">{post.date}</span>
+                  <span className="ms-1 text-slate-600 dark:text-slate-300">{post.date}</span>
                 </span>
               </div>
             </div>

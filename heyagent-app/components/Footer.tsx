@@ -13,7 +13,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="relative bg-gray-900 overflow-hidden">
+    <footer className="relative bg-gray-50 dark:bg-gray-900 overflow-hidden">
       {/* Gradient ridge/line at the top */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-400 to-fuchsia-600"></div>
       
@@ -25,10 +25,10 @@ export default function Footer() {
         <div className="container relative mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-1 text-center">
             <div>
-              <h4 className="font-bold lg:leading-normal leading-normal text-4xl lg:text-5xl text-white tracking-normal mb-4">
+              <h4 className="font-bold lg:leading-normal leading-normal text-4xl lg:text-5xl text-slate-900 dark:text-white tracking-normal mb-4">
                 Start Your Free Trial.
               </h4>
-              <p className="text-white/70 text-lg max-w-xl mx-auto">
+              <p className="text-slate-600 dark:text-white/80 text-lg max-w-xl mx-auto">
                 Artificial intelligence makes it fast easy to create content for your blog, social media, website, and more!
               </p>
               <div className="mt-6">
@@ -46,7 +46,7 @@ export default function Footer() {
 
       {/* Main Footer Content */}
       <div className="container relative mx-auto px-6 max-w-7xl">
-        <div className="grid grid-cols-1 border-t border-gray-800 dark:border-slate-800">
+        <div className="grid grid-cols-1 border-t border-gray-200 dark:border-gray-800">
           <div className="py-[30px] px-0">
             <div className="grid lg:grid-cols-12 grid-cols-1 gap-8">
               {/* Logo and Description */}
@@ -55,58 +55,58 @@ export default function Footer() {
                   <span className="text-3xl bg-gradient-to-r from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">
                     ✳
                   </span>
-                  <span className="text-2xl font-bold text-white">
+                  <span className="text-2xl font-bold text-slate-900 dark:text-white">
                     HEYAGENT
                   </span>
                 </Link>
-                <p className="mt-4 text-gray-400 text-sm">
+                <p className="mt-4 text-slate-600 dark:text-gray-400 text-sm">
                   Create amazing AI-powered automation workflows with our intuitive platform. Transform your business with intelligent agents.
                 </p>
               </div>
 
               {/* Company Links */}
               <div className="lg:col-span-2 lg:ms-8">
-                <h5 className="text-white font-semibold mb-4">Company</h5>
+                <h5 className="text-slate-900 dark:text-white font-semibold mb-4">Company</h5>
                 <ul className="list-none space-y-2">
-                  <li><Link href="/about" className="text-gray-400 hover:text-amber-400 text-sm transition-colors">About Us</Link></li>
-                  <li><Link href="/features" className="text-gray-400 hover:text-amber-400 text-sm transition-colors">Features</Link></li>
-                  <li><Link href="/pricing" className="text-gray-400 hover:text-amber-400 text-sm transition-colors">Pricing</Link></li>
-                  <li><Link href="/blog" className="text-gray-400 hover:text-amber-400 text-sm transition-colors">Blog</Link></li>
+                  <li><Link href="/about" className="text-slate-600 dark:text-gray-400 hover:text-amber-400 text-sm transition-colors">About Us</Link></li>
+                  <li><Link href="/features" className="text-slate-600 dark:text-gray-400 hover:text-amber-400 text-sm transition-colors">Features</Link></li>
+                  <li><Link href="/pricing" className="text-slate-600 dark:text-gray-400 hover:text-amber-400 text-sm transition-colors">Pricing</Link></li>
+                  <li><Link href="/blog" className="text-slate-600 dark:text-gray-400 hover:text-amber-400 text-sm transition-colors">Blog</Link></li>
                 </ul>
               </div>
 
               {/* Support Links */}
               <div className="lg:col-span-2">
-                <h5 className="text-white font-semibold mb-4">Support</h5>
+                <h5 className="text-slate-900 dark:text-white font-semibold mb-4">Support</h5>
                 <ul className="list-none space-y-2">
-                  <li><Link href="/help" className="text-gray-400 hover:text-amber-400 text-sm transition-colors">Help Center</Link></li>
-                  <li><Link href="/contact" className="text-gray-400 hover:text-amber-400 text-sm transition-colors">Contact Us</Link></li>
-                  <li><Link href="/faq" className="text-gray-400 hover:text-amber-400 text-sm transition-colors">FAQ</Link></li>
-                  <li><Link href="/status" className="text-gray-400 hover:text-amber-400 text-sm transition-colors">Status</Link></li>
+                  <li><Link href="/help" className="text-slate-600 dark:text-gray-400 hover:text-amber-400 text-sm transition-colors">Help Center</Link></li>
+                  <li><Link href="/contact" className="text-slate-600 dark:text-gray-400 hover:text-amber-400 text-sm transition-colors">Contact Us</Link></li>
+                  <li><Link href="/faq" className="text-slate-600 dark:text-gray-400 hover:text-amber-400 text-sm transition-colors">FAQ</Link></li>
+                  <li><Link href="/status" className="text-slate-600 dark:text-gray-400 hover:text-amber-400 text-sm transition-colors">Status</Link></li>
                 </ul>
               </div>
 
               {/* Legal Links */}
               <div className="lg:col-span-2">
-                <h5 className="text-white font-semibold mb-4">Legal</h5>
+                <h5 className="text-slate-900 dark:text-white font-semibold mb-4">Legal</h5>
                 <ul className="list-none space-y-2">
-                  <li><Link href="/terms" className="text-gray-400 hover:text-amber-400 text-sm transition-colors">Terms of Service</Link></li>
-                  <li><Link href="/privacy" className="text-gray-400 hover:text-amber-400 text-sm transition-colors">Privacy Policy</Link></li>
-                  <li><Link href="/cookies" className="text-gray-400 hover:text-amber-400 text-sm transition-colors">Cookie Policy</Link></li>
-                  <li><Link href="/license" className="text-gray-400 hover:text-amber-400 text-sm transition-colors">License</Link></li>
+                  <li><Link href="/terms" className="text-slate-600 dark:text-gray-400 hover:text-amber-400 text-sm transition-colors">Terms of Service</Link></li>
+                  <li><Link href="/privacy" className="text-slate-600 dark:text-gray-400 hover:text-amber-400 text-sm transition-colors">Privacy Policy</Link></li>
+                  <li><Link href="/cookies" className="text-slate-600 dark:text-gray-400 hover:text-amber-400 text-sm transition-colors">Cookie Policy</Link></li>
+                  <li><Link href="/license" className="text-slate-600 dark:text-gray-400 hover:text-amber-400 text-sm transition-colors">License</Link></li>
                 </ul>
               </div>
 
               {/* Newsletter */}
               <div className="lg:col-span-3">
-                <h5 className="text-white font-semibold mb-4">Newsletter</h5>
-                <p className="text-gray-400 text-sm mb-4">
+                <h5 className="text-slate-900 dark:text-white font-semibold mb-4">Newsletter</h5>
+                <p className="text-slate-600 dark:text-gray-400 text-sm mb-4">
                   Sign up and receive the latest tips via email.
                 </p>
                 <form className="relative">
                   <input
                     type="email"
-                    className="w-full py-3 px-4 pe-12 bg-gray-800 border border-gray-700 text-gray-100 rounded-md focus:border-amber-400 focus:outline-none placeholder:text-gray-500"
+                    className="w-full py-3 px-4 pe-12 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-slate-900 dark:text-gray-100 rounded-md focus:border-amber-400 focus:outline-none placeholder:text-slate-400 dark:placeholder:text-gray-500"
                     placeholder="Your email:"
                   />
                   <button
@@ -123,17 +123,17 @@ export default function Footer() {
       </div>
 
       {/* Copyright Section */}
-      <div className="py-[30px] px-0 border-t border-gray-800 dark:border-slate-800">
+      <div className="py-[30px] px-0 border-t border-gray-200 dark:border-gray-800">
         <div className="container relative mx-auto px-6 max-w-7xl">
           <div className="grid md:grid-cols-2 grid-cols-1 items-center">
             {/* Copyright Text - Left */}
             <div className="md:text-start text-center">
-              <p className="text-gray-400 text-sm">
+              <p className="text-slate-600 dark:text-gray-400 text-sm">
                 © 2025 HeyAgent.AI. Design with{" "}
                 <FiHeart className="text-orange-700 inline-block" />{" "}
                 by{" "}
                 <a 
-                  className="text-gray-400 hover:text-amber-400 transition-colors" 
+                  className="text-slate-600 dark:text-gray-400 hover:text-amber-400 transition-colors" 
                   href="https://heyagent.ai/" 
                   target="_blank"
                   rel="noopener noreferrer"
@@ -149,7 +149,7 @@ export default function Footer() {
               <ul className="list-none space-x-1">
                 <li className="inline">
                   <a 
-                    className="h-8 w-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center border border-gray-800 dark:border-slate-800 rounded-md hover:border-amber-400 dark:hover:border-amber-400 hover:bg-amber-400 dark:hover:bg-amber-400 text-slate-300 hover:text-white" 
+                    className="h-8 w-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center border border-gray-300 dark:border-gray-800 rounded-md hover:border-amber-400 hover:bg-amber-400 text-slate-600 dark:text-slate-300 hover:text-white" 
                     href="https://facebook.com/heyagent"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -159,7 +159,7 @@ export default function Footer() {
                 </li>
                 <li className="inline">
                   <a 
-                    className="h-8 w-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center border border-gray-800 dark:border-slate-800 rounded-md hover:border-amber-400 dark:hover:border-amber-400 hover:bg-amber-400 dark:hover:bg-amber-400 text-slate-300 hover:text-white" 
+                    className="h-8 w-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center border border-gray-300 dark:border-gray-800 rounded-md hover:border-amber-400 hover:bg-amber-400 text-slate-600 dark:text-slate-300 hover:text-white" 
                     href="https://instagram.com/heyagent"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -169,7 +169,7 @@ export default function Footer() {
                 </li>
                 <li className="inline">
                   <a 
-                    className="h-8 w-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center border border-gray-800 dark:border-slate-800 rounded-md hover:border-amber-400 dark:hover:border-amber-400 hover:bg-amber-400 dark:hover:bg-amber-400 text-slate-300 hover:text-white" 
+                    className="h-8 w-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center border border-gray-300 dark:border-gray-800 rounded-md hover:border-amber-400 hover:bg-amber-400 text-slate-600 dark:text-slate-300 hover:text-white" 
                     href="https://twitter.com/heyagent"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -179,7 +179,7 @@ export default function Footer() {
                 </li>
                 <li className="inline">
                   <a 
-                    className="h-8 w-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center border border-gray-800 dark:border-slate-800 rounded-md hover:border-amber-400 dark:hover:border-amber-400 hover:bg-amber-400 dark:hover:bg-amber-400 text-slate-300 hover:text-white" 
+                    className="h-8 w-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center border border-gray-300 dark:border-gray-800 rounded-md hover:border-amber-400 hover:bg-amber-400 text-slate-600 dark:text-slate-300 hover:text-white" 
                     href="https://linkedin.com/heyagent"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -189,7 +189,7 @@ export default function Footer() {
                 </li>
                 <li className="inline">
                   <a 
-                    className="h-8 w-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center border border-gray-800 dark:border-slate-800 rounded-md hover:border-amber-400 dark:hover:border-amber-400 hover:bg-amber-400 dark:hover:bg-amber-400 text-slate-300 hover:text-white" 
+                    className="h-8 w-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center border border-gray-300 dark:border-gray-800 rounded-md hover:border-amber-400 hover:bg-amber-400 text-slate-600 dark:text-slate-300 hover:text-white" 
                     href="mailto:support@heyagent.ai"
                   >
                     <FiMail className="h-4 w-4" />

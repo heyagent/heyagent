@@ -17,14 +17,14 @@ export default function PricingSection() {
       <div className="relative overflow-hidden rounded-md shadow dark:shadow-gray-800">
         <div className="p-6">
           <h5 className="text-2xl leading-normal font-semibold">Free</h5>
-          <p className="text-slate-400 dark:text-white/60 mt-2">
+          <p className="text-slate-600 dark:text-slate-300 mt-2">
             Test HeyAgent with your team
           </p>
           <div className="flex mt-4">
             <span className="text-lg font-semibold">$</span>
             <span className="text-5xl font-semibold mb-0 ms-1">0</span>
           </div>
-          <p className="text-slate-400 dark:text-white/60 uppercase text-xs">per month</p>
+          <p className="text-slate-600 dark:text-slate-300 uppercase text-xs">per month</p>
           
           <div className="mt-6">
             <Link 
@@ -33,14 +33,14 @@ export default function PricingSection() {
             >
               Try For Free
             </Link>
-            <p className="text-slate-400 dark:text-white/60 text-sm mt-3">
+            <p className="text-slate-600 dark:text-slate-300 text-sm mt-3">
               No credit card required. Free 14-days trial
             </p>
           </div>
         </div>
         
         <div className="p-6 bg-gray-50 dark:bg-slate-800">
-          <ul className="list-none text-slate-400 dark:text-white/60">
+          <ul className="list-none text-slate-600 dark:text-slate-300">
             <li className="font-semibold text-slate-900 dark:text-white text-sm uppercase">Features:</li>
             <li className="flex items-center mt-2">
               <FiCheck className="text-green-600 h-[18px] w-[18px] me-2" />
@@ -54,11 +54,11 @@ export default function PricingSection() {
               <FiCheck className="text-green-600 h-[18px] w-[18px] me-2" />
               <span className="text-slate-900 dark:text-white me-1 font-semibold">Basic</span> integrations
             </li>
-            <li className="flex items-center mt-2 text-slate-400">
+            <li className="flex items-center mt-2 text-slate-600 dark:text-slate-300">
               <FiX className="h-[18px] w-[18px] me-2" />
               Custom workflows
             </li>
-            <li className="flex items-center mt-2 text-slate-400">
+            <li className="flex items-center mt-2 text-slate-600 dark:text-slate-300">
               <FiX className="h-[18px] w-[18px] me-2" />
               Analytics dashboard
             </li>
@@ -70,7 +70,7 @@ export default function PricingSection() {
       <div className="relative overflow-hidden rounded-md shadow dark:shadow-gray-800">
         <div className="p-6">
           <h5 className="text-2xl leading-normal font-semibold">Business</h5>
-          <p className="text-slate-400 dark:text-white/60 mt-2">
+          <p className="text-slate-600 dark:text-slate-300 mt-2">
             For teams embracing automation
           </p>
           
@@ -81,7 +81,7 @@ export default function PricingSection() {
                 <p className="text-5xl font-semibold mb-0 ms-1">
                   {businessBasePrice * businessMultiplier}
                 </p>
-                <p className="text-slate-400 dark:text-white/60 uppercase text-xs">per month</p>
+                <p className="text-slate-600 dark:text-slate-300 uppercase text-xs">per month</p>
               </span>
             </div>
             
@@ -113,7 +113,7 @@ export default function PricingSection() {
         </div>
         
         <div className="p-6 bg-gray-50 dark:bg-slate-800">
-          <ul className="list-none text-slate-400 dark:text-white/60">
+          <ul className="list-none text-slate-600 dark:text-slate-300">
             <li className="font-semibold text-slate-900 dark:text-white text-sm uppercase">Features:</li>
             <li className="flex items-center mt-2">
               <FiCheck className="text-green-600 h-[18px] w-[18px] me-2" />
@@ -143,7 +143,7 @@ export default function PricingSection() {
       <div className="relative overflow-hidden rounded-md shadow dark:shadow-gray-800">
         <div className="p-6">
           <h5 className="text-2xl leading-normal font-semibold">Professional</h5>
-          <p className="text-slate-400 dark:text-white/60 mt-2">
+          <p className="text-slate-600 dark:text-slate-300 mt-2">
             For enterprise automation
           </p>
           
@@ -154,7 +154,7 @@ export default function PricingSection() {
                 <p className="text-5xl font-semibold mb-0 ms-1">
                   {professionalBasePrice * professionalMultiplier}
                 </p>
-                <p className="text-slate-400 dark:text-white/60 uppercase text-xs">per month</p>
+                <p className="text-slate-600 dark:text-slate-300 uppercase text-xs">per month</p>
               </span>
             </div>
             
@@ -186,7 +186,7 @@ export default function PricingSection() {
         </div>
         
         <div className="p-6 bg-gray-50 dark:bg-slate-800">
-          <ul className="list-none text-slate-400 dark:text-white/60">
+          <ul className="list-none text-slate-600 dark:text-slate-300">
             <li className="font-semibold text-slate-900 dark:text-white text-sm uppercase">Features:</li>
             <li className="flex items-center mt-2">
               <FiCheck className="text-green-600 h-[18px] w-[18px] me-2" />

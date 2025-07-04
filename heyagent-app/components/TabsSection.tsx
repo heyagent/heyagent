@@ -43,8 +43,8 @@ export default function TabsSection() {
       <div className="mt-6">
         <div className="relative overflow-hidden rounded-lg border border-amber-400/5 bg-gradient-to-tl to-amber-400/30 from-fuchsia-600/30 dark:to-amber-400/50 dark:from-fuchsia-600/50 px-12 pt-12">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-t-lg h-96 flex items-center justify-center">
-              <span className="text-slate-500">
+            <div className="bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-800 dark:to-slate-900 rounded-t-lg h-96 flex items-center justify-center">
+              <span className="text-slate-600 dark:text-slate-500">
                 {activeTab === 0 && "Drag & Drop Interface"}
                 {activeTab === 1 && "Talent Enhancement Dashboard"}
                 {activeTab === 2 && "Live Deployment Console"}
