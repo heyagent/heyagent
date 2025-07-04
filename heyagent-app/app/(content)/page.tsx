@@ -7,6 +7,7 @@ import PricingSection from "@/components/PricingSection";
 import LogoCarousel from "@/components/LogoCarousel";
 import FAQSection from "@/components/FAQSection";
 import BlogSection from "@/components/BlogSection";
+import WorkflowsSection from "@/components/WorkflowsSection";
 import PrimaryButton from "@/components/shared/PrimaryButton";
 import SectionHeader from "@/components/shared/SectionHeader";
 import FeatureCard from "@/components/shared/FeatureCard";
@@ -252,6 +253,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Workflows Section */}
+      <WorkflowsSection />
 
       {/* Logo Carousel Section */}
       <section className="relative py-6 sm:py-8 md:py-12 lg:py-24">
