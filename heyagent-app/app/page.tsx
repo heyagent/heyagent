@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import TypewriterEffect from "@/components/TypewriterEffect";
+import TabsSection from "@/components/TabsSection";
 
 export default function Home() {
   return (
@@ -242,6 +243,13 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Tabbed Features Section */}
+      <section className="relative md:py-24 py-16">
+        <div className="container relative mx-auto px-6 max-w-7xl">
+          <TabsSection />
         </div>
       </section>
     </main>
