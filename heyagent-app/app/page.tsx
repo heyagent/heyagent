@@ -13,8 +13,8 @@ export default function Home() {
   const [isAnnual, setIsAnnual] = useState(false);
   return (
     <main>
-      <section className="relative overflow-hidden pt-48 pb-16 after:content-[''] after:absolute after:inset-0 after:mx-auto after:w-[56rem] after:h-[56rem] after:bg-gradient-to-tl after:to-amber-400/30 after:from-fuchsia-600/30 dark:after:to-amber-400/50 dark:after:from-fuchsia-600/50 after:blur-[200px] after:rounded-full after:-z-1">
-        <div className="container relative z-2 mx-auto px-6 max-w-7xl">
+      <section className="relative overflow-hidden pt-24 sm:pt-32 md:pt-40 lg:pt-48 pb-8 sm:pb-12 md:pb-16 after:content-[''] after:absolute after:inset-0 after:mx-auto after:w-[56rem] after:h-[56rem] after:bg-gradient-to-tl after:to-amber-400/30 after:from-fuchsia-600/30 dark:after:to-amber-400/50 dark:after:from-fuchsia-600/50 after:blur-[200px] after:rounded-full after:-z-1">
+        <div className="container relative z-2 mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="grid grid-cols-1 text-center">
             <div>
               <h4 className="font-bold lg:leading-normal leading-normal text-4xl lg:text-6xl mb-5">
@@ -55,7 +55,7 @@ export default function Home() {
       </section>
 
       {/* Video Section */}
-      <section className="relative py-8 sm:py-12 md:py-16 lg:py-24">
+      <section className="relative py-6 sm:py-8 md:py-12 lg:py-24">
         <div className="container relative mt-4 sm:mt-6 md:mt-8 lg:mt-12 mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="grid md:grid-cols-2 grid-cols-1 items-center gap-6">
             <div className="relative overflow-hidden after:content-[''] after:absolute after:inset-0 after:mx-auto after:w-72 after:h-72 after:bg-gradient-to-tl after:to-amber-400 after:from-fuchsia-600 after:blur-[80px] after:rounded-full p-6 bg-white dark:bg-slate-900 rounded-md shadow dark:shadow-slate-800">
@@ -141,7 +141,7 @@ export default function Home() {
       </section>
 
       {/* How It Works Section */}
-      <section className="relative py-8 sm:py-12 md:py-16 lg:py-24">
+      <section className="relative py-6 sm:py-8 md:py-12 lg:py-24">
         <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="grid grid-cols-1 pb-6 text-center">
             <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
@@ -187,7 +187,7 @@ export default function Home() {
       </section>
 
       {/* Content Writing Section */}
-      <section className="relative py-12 sm:py-16 md:py-24">
+      <section className="relative py-6 sm:py-8 md:py-12 lg:py-24">
         <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="grid md:grid-cols-2 grid-cols-1 items-center gap-6">
             <div className="relative order-1 md:order-2">
@@ -245,7 +245,7 @@ export default function Home() {
       </section>
 
       {/* Analytics Dashboard Section */}
-      <section className="relative py-12 sm:py-16 md:py-24">
+      <section className="relative py-6 sm:py-8 md:py-12 lg:py-24">
         <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="grid md:grid-cols-2 grid-cols-1 items-center gap-6">
             <div className="relative overflow-hidden rounded-lg border border-amber-400/5 bg-gradient-to-tl to-amber-400/30 from-fuchsia-600/30 dark:to-amber-400/50 dark:from-fuchsia-600/50 ps-6 pt-6 lg:me-8">
@@ -301,7 +301,7 @@ export default function Home() {
       </section>
 
       {/* Analytics Dashboard Section Copy */}
-      <section className="relative py-12 sm:py-16 md:py-24">
+      <section className="relative py-6 sm:py-8 md:py-12 lg:py-24">
         <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="grid md:grid-cols-2 grid-cols-1 items-center gap-6">
             <div className="relative order-1 md:order-2">
@@ -359,7 +359,7 @@ export default function Home() {
       </section>
 
       {/* Logo Carousel Section */}
-      <section className="relative py-12 sm:py-16 md:py-24">
+      <section className="relative py-6 sm:py-8 md:py-12 lg:py-24">
         <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="max-w-4xl mx-auto">
             <LogoCarousel />
@@ -368,7 +368,7 @@ export default function Home() {
       </section>
 
       {/* Pricing Section */}
-      <section className="relative py-12 sm:py-16 md:py-24">
+      <section className="relative py-6 sm:py-8 md:py-12 lg:py-24">
         <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="grid grid-cols-1 pb-12 text-center">
             <h3 className="mb-4 text-xl sm:text-2xl md:text-3xl md:leading-normal leading-normal font-semibold">
@@ -407,12 +407,12 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="relative py-8 sm:py-12 md:py-16 lg:py-24">
+      <section className="relative py-6 sm:py-8 md:py-12 lg:py-24">
         <FAQSection />
       </section>
 
       {/* Blog Section */}
-      <section className="relative py-8 sm:py-12 md:py-16 lg:py-24">
+      <section className="relative py-6 sm:py-8 md:py-12 lg:py-24">
         <BlogSection />
       </section>
     </main>

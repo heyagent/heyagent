@@ -21,7 +21,7 @@ export default function Footer() {
       <span className="absolute blur-[200px] w-[300px] h-[300px] rounded-full top-0 -start-[0] bg-gradient-to-tl to-amber-400 from-fuchsia-600 z-0"></span>
       
       {/* CTA Section */}
-      <div className="container-fluid relative py-8 sm:py-12 md:py-16 lg:py-24">
+      <div className="container-fluid relative py-6 sm:py-8 md:py-12 lg:py-24">
         <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="grid grid-cols-1 text-center">
             <div>
