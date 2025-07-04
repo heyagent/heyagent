@@ -7,7 +7,7 @@ export default function PrivacyPolicy() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative pt-24 sm:pt-32 md:pt-40 lg:pt-48 pb-6 sm:pb-8 md:pb-12 bg-gradient-to-b from-orange-300/20 via-red-200/15 dark:from-orange-300/30 dark:via-red-200/20 to-transparent">
+      <section className="relative pt-24 sm:pt-32 md:pt-40 lg:pt-48 pb-6 sm:pb-8 md:pb-12 bg-gradient-to-b from-orange-400/30 via-red-300/20 dark:from-orange-400/40 dark:via-red-300/30 to-transparent">
         <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="grid grid-cols-1 text-center mt-6">
             <div>
