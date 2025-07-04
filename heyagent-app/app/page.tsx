@@ -312,9 +312,9 @@ export default function Home() {
         <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="grid md:grid-cols-2 grid-cols-1 items-center gap-6">
             <div className="relative order-1 md:order-2">
-              <div className="relative overflow-hidden rounded-lg border border-amber-400/5 bg-gradient-to-tl to-amber-400/30 from-fuchsia-600/30 dark:to-amber-400/50 dark:from-fuchsia-600/50 pe-6 pt-6 lg:ms-8">
+              <div className="relative overflow-hidden rounded-lg border border-amber-400/5 bg-gradient-to-tl to-amber-400/30 from-fuchsia-600/30 dark:to-amber-400/50 dark:from-fuchsia-600/50 px-6 pt-6 lg:ms-8">
                 {/* Real-time analytics interface */}
-                <div className="bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-800 dark:to-slate-900 rounded-tr-lg h-80 flex items-center justify-center">
+                <div className="bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-800 dark:to-slate-900 rounded-t-lg h-80 flex items-center justify-center">
                   <span className="text-slate-600 dark:text-slate-500">Real-Time Analytics Dashboard</span>
                 </div>
               </div>
