@@ -1,42 +1,23 @@
 "use client";
 
 import Link from "next/link";
-import { FiArrowRight } from "react-icons/fi";
+import LegalPageLayout from "@/components/legal/LegalPageLayout";
+import LegalSection from "@/components/legal/LegalSection";
+import LegalListItem from "@/components/legal/LegalListItem";
 
 export default function CookiePolicy() {
   return (
-    <main>
-      {/* Hero Section */}
-      <section className="relative pt-24 sm:pt-32 md:pt-40 lg:pt-48 pb-6 sm:pb-8 md:pb-12 bg-gradient-to-b from-amber-400/20 dark:from-amber-400/40 to-transparent">
-        <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
-          <div className="grid grid-cols-1 text-center mt-6">
-            <div>
-              <h5 className="text-2xl sm:text-3xl md:text-4xl md:leading-normal leading-normal tracking-wider font-semibold mb-0">
-                Cookie Policy
-              </h5>
-            </div>
-            <p className="text-slate-600 dark:text-slate-300 mt-5">
-              Last updated: January 4, 2025
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Content Section */}
-      <section className="relative py-6 sm:py-8 md:py-10 lg:py-24">
-        <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
-          <div className="md:flex justify-center">
-            <div className="md:w-3/4">
-              <div className="p-6 bg-white dark:bg-slate-900 shadow dark:shadow-gray-800 rounded-md border border-gray-200 dark:border-gray-800">
-                <h5 className="text-xl font-semibold mb-4">1. Introduction</h5>
+    <LegalPageLayout title="Cookie Policy" lastUpdated="January 4, 2025">
+                <LegalSection title="1. Introduction">
                 <p className="text-slate-600 dark:text-slate-300">
                   This Cookie Policy explains how HeyAgent ("we," "us," or "our") uses cookies and similar tracking technologies when you use our AI-powered automation services and visit our website. This policy provides you with clear and comprehensive information about the cookies we use, their purpose, and your choices regarding their use.
                 </p>
                 <p className="text-slate-600 dark:text-slate-300 mt-4">
                   <strong>What are cookies?</strong> Cookies are small text files that are placed on your device when you visit a website. They help websites remember information about your visit, making your online experience easier and more personalized.
                 </p>
+                </LegalSection>
 
-                <h5 className="text-xl font-semibold mb-4 mt-8">2. Types of Cookies We Use</h5>
+                <LegalSection title="2. Types of Cookies We Use" className="mt-8">
                 <p className="text-slate-600 dark:text-slate-300 mb-4">
                   We use the following categories of cookies on our website and in our services:
                 </p>
@@ -70,8 +51,9 @@ export default function CookiePolicy() {
                     </p>
                   </div>
                 </div>
+                </LegalSection>
 
-                <h5 className="text-xl font-semibold mb-4 mt-8">3. Detailed Cookie Information</h5>
+                <LegalSection title="3. Detailed Cookie Information" className="mt-8">
                 <p className="text-slate-600 dark:text-slate-300 mb-4">
                   Below is a detailed list of the specific cookies we use:
                 </p>
@@ -206,27 +188,26 @@ export default function CookiePolicy() {
                     <strong>Note:</strong> Disabling cookies may impact your ability to use certain features of HeyAgent, including staying logged in, maintaining chat context, and accessing personalized settings.
                   </p>
                 </div>
+                </LegalSection>
 
-                <h5 className="text-xl font-semibold mb-4 mt-8">7. Legal Basis for Cookie Use</h5>
+                <LegalSection title="7. Legal Basis for Cookie Use" className="mt-8">
                 <p className="text-slate-600 dark:text-slate-300">
                   We use cookies based on the following legal grounds:
                 </p>
                 <ul className="list-none text-slate-600 dark:text-slate-300 mt-4">
-                  <li className="flex mt-2">
-                    <FiArrowRight className="text-amber-400 text-lg align-middle me-2 flex-shrink-0 mt-0.5" />
-                    <span><strong>Consent:</strong> For analytics and marketing cookies, we obtain your explicit consent</span>
-                  </li>
-                  <li className="flex mt-2">
-                    <FiArrowRight className="text-amber-400 text-lg align-middle me-2 flex-shrink-0 mt-0.5" />
-                    <span><strong>Legitimate Interests:</strong> For essential cookies necessary to provide our services securely</span>
-                  </li>
-                  <li className="flex mt-2">
-                    <FiArrowRight className="text-amber-400 text-lg align-middle me-2 flex-shrink-0 mt-0.5" />
-                    <span><strong>Contract Performance:</strong> For cookies required to deliver the services you've requested</span>
-                  </li>
+                  <LegalListItem>
+                    <strong>Consent:</strong> For analytics and marketing cookies, we obtain your explicit consent
+                  </LegalListItem>
+                  <LegalListItem>
+                    <strong>Legitimate Interests:</strong> For essential cookies necessary to provide our services securely
+                  </LegalListItem>
+                  <LegalListItem>
+                    <strong>Contract Performance:</strong> For cookies required to deliver the services you've requested
+                  </LegalListItem>
                 </ul>
+                </LegalSection>
 
-                <h5 className="text-xl font-semibold mb-4 mt-8">8. Compliance with Privacy Laws</h5>
+                <LegalSection title="8. Compliance with Privacy Laws" className="mt-8">
                 <p className="text-slate-600 dark:text-slate-300">
                   Our use of cookies complies with applicable privacy laws:
                 </p>
@@ -241,27 +222,26 @@ export default function CookiePolicy() {
                     <strong>ePrivacy Directive:</strong> We comply with requirements for cookie consent and provide mechanisms for users to manage their preferences.
                   </p>
                 </div>
+                </LegalSection>
 
-                <h5 className="text-xl font-semibold mb-4 mt-8">9. Updates to This Policy</h5>
+                <LegalSection title="9. Updates to This Policy" className="mt-8">
                 <p className="text-slate-600 dark:text-slate-300">
                   We may update this Cookie Policy from time to time to reflect changes in our practices or for legal, operational, or regulatory reasons. When we make material changes:
                 </p>
                 <ul className="list-none text-slate-600 dark:text-slate-300 mt-4">
-                  <li className="flex mt-2">
-                    <FiArrowRight className="text-amber-400 text-lg align-middle me-2 flex-shrink-0" />
+                  <LegalListItem>
                     We'll update the "Last updated" date at the top of this policy
-                  </li>
-                  <li className="flex mt-2">
-                    <FiArrowRight className="text-amber-400 text-lg align-middle me-2 flex-shrink-0" />
+                  </LegalListItem>
+                  <LegalListItem>
                     We'll notify you through our website or via email for significant changes
-                  </li>
-                  <li className="flex mt-2">
-                    <FiArrowRight className="text-amber-400 text-lg align-middle me-2 flex-shrink-0" />
+                  </LegalListItem>
+                  <LegalListItem>
                     We may request renewed consent for certain cookie uses if required
-                  </li>
+                  </LegalListItem>
                 </ul>
+                </LegalSection>
 
-                <h5 className="text-xl font-semibold mb-4 mt-8">10. Contact Us</h5>
+                <LegalSection title="10. Contact Us" className="mt-8">
                 <p className="text-slate-600 dark:text-slate-300">
                   If you have any questions about our use of cookies or this Cookie Policy, please contact us:
                 </p>
@@ -277,11 +257,7 @@ export default function CookiePolicy() {
                     For more information about how we handle your personal data, please see our <Link href="/privacy" className="text-amber-400 hover:text-amber-500">Privacy Policy</Link>.
                   </p>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+                </LegalSection>
+    </LegalPageLayout>
   );
 }
