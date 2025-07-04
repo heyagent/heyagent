@@ -48,11 +48,11 @@ export default function NotFound() {
       <div className="container relative mx-auto px-4">
         <div className="flex justify-center">
           <div className="lg:w-1/2 text-center">
-            <Link href="/" className="inline-flex items-center space-x-2 mb-8">
-              <span className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">
+            <Link href="/" className="inline-flex items-center space-x-3 mb-8">
+              <span className="text-6xl sm:text-7xl font-bold bg-gradient-to-r from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">
                 ✳
               </span>
-              <span className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">
+              <span className="text-5xl sm:text-6xl font-bold text-slate-900 dark:text-white">
                 HEYAGENT
               </span>
             </Link>
