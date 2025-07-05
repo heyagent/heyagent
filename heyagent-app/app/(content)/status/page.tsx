@@ -38,33 +38,6 @@ export default function Status() {
         </div>
       </section>
 
-      {/* Footer Links */}
-      <section className="relative pb-8">
-        <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
-          <div className="text-center text-sm text-gray-500 dark:text-gray-400">
-            <p>
-              Powered by{' '}
-              <a 
-                href="https://github.com/upptime/upptime" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-amber-400 hover:text-amber-500"
-              >
-                Upptime
-              </a>
-              {' '}•{' '}
-              <a 
-                href="https://github.com/heyagent/heyagent-status" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-amber-400 hover:text-amber-500"
-              >
-                View on GitHub
-              </a>
-            </p>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
