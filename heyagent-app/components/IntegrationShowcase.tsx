@@ -36,7 +36,7 @@ export default function IntegrationShowcase() {
   };
 
   return (
-    <section className="relative py-8 bg-slate-900 overflow-hidden">
+    <section className="relative pt-12 pb-8 bg-slate-900 overflow-hidden">
       {/* Dotted grid background with fade */}
       <div className="absolute inset-0 z-0">
         <div 
@@ -165,7 +165,7 @@ export default function IntegrationShowcase() {
           <p className="text-slate-400 mb-6">
             ... and hundreds more integrations through our API and webhook system
           </p>
-          <button className="py-3 px-8 inline-block font-semibold tracking-wide align-middle duration-500 text-base text-center bg-amber-400 hover:bg-amber-500 border border-amber-400 hover:border-amber-500 text-slate-900 rounded-md">
+          <button className="py-3 px-8 inline-block font-semibold tracking-wide align-middle duration-500 text-base text-center bg-amber-400 hover:bg-amber-500 border border-amber-400 hover:border-amber-500 text-slate-900 dark:text-white rounded-md">
             Explore All Integrations
           </button>
         </div>
