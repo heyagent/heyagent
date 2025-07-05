@@ -30,13 +30,13 @@ export default function IntegrationShowcase() {
   const calculatePosition = (angle: number, distance: number) => {
     const radian = (angle * Math.PI) / 180;
     // Create ellipse with 1.6x width ratio for slightly more circular shape
-    const x = Math.cos(radian) * distance * 1.6;
-    const y = Math.sin(radian) * distance * 0.9;
+    const x = Math.round(Math.cos(radian) * distance * 1.6 * 100) / 100;
+    const y = Math.round(Math.sin(radian) * distance * 0.9 * 100) / 100;
     return { x, y };
   };
 
   return (
-    <section className="relative pt-12 pb-8 bg-white dark:bg-slate-900 overflow-hidden">
+    <section className="relative pt-12 pb-4 bg-white dark:bg-slate-900 overflow-hidden">
       {/* Dotted grid background with fade */}
       <div className="absolute inset-0 z-0">
         <div 
@@ -103,13 +103,13 @@ export default function IntegrationShowcase() {
               
               // Create perpendicular offset for the curve
               const perpAngle = (integration.angle + 90) * Math.PI / 180;
-              const offsetX = Math.cos(perpAngle) * curveStrength * curveDirection;
-              const offsetY = Math.sin(perpAngle) * curveStrength * curveDirection;
+              const offsetX = Math.round(Math.cos(perpAngle) * curveStrength * curveDirection * 100) / 100;
+              const offsetY = Math.round(Math.sin(perpAngle) * curveStrength * curveDirection * 100) / 100;
               
-              controlX1 = centerX + pos.x * 0.3 + offsetX;
-              controlY1 = centerY + pos.y * 0.3 + offsetY;
-              controlX2 = centerX + pos.x * 0.7 + offsetX * 0.6;
-              controlY2 = centerY + pos.y * 0.7 + offsetY * 0.6;
+              controlX1 = Math.round((centerX + pos.x * 0.3 + offsetX) * 100) / 100;
+              controlY1 = Math.round((centerY + pos.y * 0.3 + offsetY) * 100) / 100;
+              controlX2 = Math.round((centerX + pos.x * 0.7 + offsetX * 0.6) * 100) / 100;
+              controlY2 = Math.round((centerY + pos.y * 0.7 + offsetY * 0.6) * 100) / 100;
               
               return (
                 <g key={integration.name}>

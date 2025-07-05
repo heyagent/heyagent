@@ -98,6 +98,20 @@ const workflows = [
     icon: FiShield,
     subtitle: 'Security and access control',
     integrations: [FiShield, FiUser, FiCloud, FiServer]
+  },
+  {
+    id: 'hr-operations',
+    title: 'HR Operations',
+    icon: FiUsers,
+    subtitle: 'Employee onboarding and HR workflows',
+    integrations: [FiUsers, FiCalendar, FiMail, FiTrello, FiSlack]
+  },
+  {
+    id: 'finance',
+    title: 'Finance',
+    icon: FiDollarSign,
+    subtitle: 'Expense approvals and financial workflows',
+    integrations: [FiDollarSign, FiCreditCard, FiPieChart, FiTrendingUp, FiDatabase]
   }
 ];
 
@@ -129,7 +143,7 @@ export default function WorkflowsSection() {
     <section className="relative py-6 sm:py-8 md:py-12 lg:py-24">
       <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
         <SectionHeader 
-          title="Automate Any Workflow, Simple or Complex"
+          title={<><span className="bg-gradient-to-r from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">Automate Any Workflow</span>, Simple or Complex</>}
           description="From HR requests to IT tickets, from expense approvals to customer onboarding - HeyAgent adapts to your unique business processes"
         />
         

@@ -53,7 +53,7 @@ export default function PlatformHero() {
           <div className="lg:col-span-7">
             <div className="lg:me-6 lg:text-start text-center">
               <h1 className="font-bold lg:leading-normal leading-normal text-4xl lg:text-6xl mb-5">
-                Enterprise AI Platform <br /> Built for Scale.
+                Enterprise AI Platform <br /> <span className="bg-gradient-to-r from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">Built for Scale.</span>
               </h1>
               <p className="text-lg max-w-xl lg:ms-0 mx-auto">
                 Deploy intelligent agents across your organization to automate workflows, streamline operations, and empower employees to focus on what matters most.

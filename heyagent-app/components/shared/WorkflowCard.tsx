@@ -32,7 +32,7 @@ export default function WorkflowCard({
         <div className="border-t border-gray-200 dark:border-gray-700 pt-3 sm:pt-4 mb-3 sm:mb-4"></div>
         
         {/* Integration Icons */}
-        <div className="flex items-center">
+        <div className="flex items-center mb-4">
           <div className="flex items-center">
             {integrations.slice(0, 3).map((Icon, index) => (
               <IntegrationIcon key={index} icon={Icon} index={index} />
@@ -47,6 +47,17 @@ export default function WorkflowCard({
             )}
           </div>
         </div>
+        
+        {/* Find Out More Button */}
+        <a 
+          href="#" 
+          className="inline-flex items-center text-sm font-medium text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300 transition-colors"
+        >
+          Find Out More
+          <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
       </div>
       
       {/* Fancy Bottom Border */}

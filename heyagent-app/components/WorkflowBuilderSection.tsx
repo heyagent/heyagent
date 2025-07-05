@@ -31,7 +31,7 @@ export default function WorkflowBuilderSection() {
 
   return (
     <section className="relative py-6 sm:py-8 md:py-12 lg:py-24 bg-white dark:bg-slate-900">
-      <div className="container relative md:mt-12 mt-8 mx-auto px-4 sm:px-6 max-w-7xl">
+      <div className="container relative md:mt-6 mt-4 mx-auto px-4 sm:px-6 max-w-7xl">
         <div className="lg:flex justify-center">
           <div className="lg:w-4/5">
             {/* Tab Navigation */}

@@ -5,6 +5,8 @@ import HowItWorksSection from "@/components/HowItWorksSection";
 import IntegrationShowcase from "@/components/IntegrationShowcase";
 import WorkflowBuilderSection from "@/components/WorkflowBuilderSection";
 import FeatureSection from "@/components/shared/FeatureSection";
+import PlatformWorkflowsSection from "@/components/PlatformWorkflowsSection";
+import MobileDeviceMockup from "@/components/shared/MobileDeviceMockup";
 
 export default function Platform() {
   return (
@@ -16,7 +18,7 @@ export default function Platform() {
       
       {/* Intelligent Workflow Orchestration */}
       <FeatureSection
-        title={<>Intelligent Workflow <br className="hidden sm:block" /> Orchestration</>}
+        title={<>Intelligent <span className="bg-gradient-to-r from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">Workflow</span> <br className="hidden sm:block" /> Orchestration</>}
         description="Orchestrate complex multi-step workflows with conditional logic, parallel processing, and intelligent routing based on real-time data."
         features={[
           "Smart routing based on workload and availability",
@@ -34,7 +36,7 @@ export default function Platform() {
       
       {/* Enterprise Integration Hub */}
       <FeatureSection
-        title={<>Enterprise Integration <br className="hidden sm:block" /> Hub</>}
+        title={<>Enterprise <span className="bg-gradient-to-r from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">Integration</span> <br className="hidden sm:block" /> Hub</>}
         description="Connect all your enterprise systems through our unified integration platform with pre-built connectors and custom API support."
         features={[
           "500+ pre-built enterprise connectors",
@@ -53,7 +55,7 @@ export default function Platform() {
       
       {/* Advanced Agent Analytics */}
       <FeatureSection
-        title={<>Advanced Agent <br className="hidden sm:block" /> Analytics</>}
+        title={<>Advanced Agent <br className="hidden sm:block" /> <span className="bg-gradient-to-r from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">Analytics</span></>}
         description="Deep dive into agent performance with advanced analytics, custom dashboards, and predictive insights powered by machine learning."
         features={[
           "Custom dashboard builder",
@@ -61,13 +63,16 @@ export default function Platform() {
           "Automated insight generation"
         ]}
         imagePlaceholder={
-          <div className="relative overflow-hidden rounded-lg border border-amber-400/5 bg-gradient-to-tl to-amber-400/30 from-fuchsia-600/30 dark:to-amber-400/50 dark:from-fuchsia-600/50 px-6 pt-6 lg:ms-8">
-            <div className="bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-800 dark:to-slate-900 rounded-t-lg h-80 flex items-center justify-center">
-              <span className="text-slate-600 dark:text-slate-500">Advanced Analytics Platform</span>
-            </div>
-          </div>
+          <MobileDeviceMockup 
+            deviceType="iphone"
+            className="lg:ms-8"
+            placeholderText="Analytics Dashboard"
+          />
         }
       />
+      
+      {/* Platform Workflows Carousel */}
+      <PlatformWorkflowsSection />
     </main>
   );
 }
