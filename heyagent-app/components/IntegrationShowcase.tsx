@@ -36,13 +36,22 @@ export default function IntegrationShowcase() {
   };
 
   return (
-    <section className="relative pt-12 pb-8 bg-slate-900 overflow-hidden">
+    <section className="relative pt-12 pb-8 bg-white dark:bg-slate-900 overflow-hidden">
       {/* Dotted grid background with fade */}
       <div className="absolute inset-0 z-0">
         <div 
-          className="absolute inset-0"
+          className="absolute inset-0 dark:hidden"
           style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.15) 1px, transparent 1px)`,
+            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(148, 163, 184, 0.8) 1px, transparent 1px)`,
+            backgroundSize: '40px 40px',
+            maskImage: 'radial-gradient(ellipse at center, black 30%, transparent 70%)',
+            WebkitMaskImage: 'radial-gradient(ellipse at center, black 30%, transparent 70%)',
+          }}
+        />
+        <div 
+          className="absolute inset-0 hidden dark:block"
+          style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.2) 1px, transparent 1px)`,
             backgroundSize: '40px 40px',
             maskImage: 'radial-gradient(ellipse at center, black 30%, transparent 70%)',
             WebkitMaskImage: 'radial-gradient(ellipse at center, black 30%, transparent 70%)',
@@ -52,10 +61,10 @@ export default function IntegrationShowcase() {
       
       <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl z-10">
         <div className="grid grid-cols-1 pb-0 text-center">
-          <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold text-white">
+          <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold text-slate-900 dark:text-white">
             Automation for your entire ecosystem
           </h3>
-          <p className="text-slate-400 max-w-xl mx-auto">
+          <p className="text-slate-600 dark:text-slate-400 max-w-xl mx-auto">
             Connect HeyAgent to your existing tools and watch as intelligent workflows transform your operations
           </p>
         </div>
@@ -132,7 +141,7 @@ export default function IntegrationShowcase() {
 
           {/* Center Logo */}
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-            <div className="bg-slate-800 p-10 rounded-2xl shadow-2xl border border-slate-700">
+            <div className="bg-white dark:bg-slate-800 p-10 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700">
               <span className="text-6xl font-bold bg-gradient-to-r from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">
                 ✳
               </span>
@@ -151,8 +160,8 @@ export default function IntegrationShowcase() {
                   top: `${(300 + pos.y) / 600 * 100}%`,
                 }}
               >
-                <div className="bg-slate-800 p-5 rounded-xl shadow-lg border border-slate-700 hover:border-amber-400 transition-all duration-300 hover:scale-110 group">
-                  <div className="text-slate-400 group-hover:text-amber-400 transition-colors">
+                <div className="bg-white dark:bg-slate-800 p-5 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 hover:border-amber-400 transition-all duration-300 hover:scale-110 group">
+                  <div className="text-slate-600 dark:text-slate-400 group-hover:text-amber-400 transition-colors">
                     {integration.icon}
                   </div>
                 </div>
@@ -162,7 +171,7 @@ export default function IntegrationShowcase() {
         </div>
 
         <div className="text-center mt-6">
-          <p className="text-slate-400 mb-6">
+          <p className="text-slate-600 dark:text-slate-400 mb-6">
             ... and hundreds more integrations through our API and webhook system
           </p>
           <button className="py-3 px-8 inline-block font-semibold tracking-wide align-middle duration-500 text-base text-center bg-amber-400 hover:bg-amber-500 border border-amber-400 hover:border-amber-500 text-slate-900 dark:text-white rounded-md">
