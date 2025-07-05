@@ -28,7 +28,7 @@ interface ChangelogFix {
   display_order: number;
 }
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
     const { env } = getCloudflareContext();
     const db = env.DB_CHANGELOG;
@@ -41,25 +41,95 @@ export async function GET() {
       );
     }
 
-    // Fetch all changelog entries ordered by date DESC
-    const entriesResult = await db.prepare(
-      `SELECT * FROM changelog_entries ORDER BY date DESC`
-    ).all<ChangelogEntry>();
+    // Parse query parameters
+    const { searchParams } = new URL(request.url);
+    const page = Math.max(1, parseInt(searchParams.get('page') || '1', 10));
+    const limit = Math.min(50, Math.max(1, parseInt(searchParams.get('limit') || '10', 10)));
+    const search = searchParams.get('search') || '';
+    const offset = (page - 1) * limit;
 
-    if (!entriesResult.success) {
+    let entriesQuery: string;
+    let countQuery: string;
+    const searchPattern = search ? `%${search}%` : '';
+
+    if (search) {
+      // Search query with DISTINCT to avoid duplicates
+      entriesQuery = `
+        SELECT DISTINCT e.* 
+        FROM changelog_entries e
+        LEFT JOIN changelog_improvements i ON e.id = i.entry_id
+        LEFT JOIN changelog_fixes f ON e.id = f.entry_id
+        WHERE e.title LIKE ? OR e.summary LIKE ? 
+          OR i.improvement LIKE ? OR f.fix LIKE ?
+        ORDER BY e.date DESC
+        LIMIT ? OFFSET ?
+      `;
+      
+      countQuery = `
+        SELECT COUNT(DISTINCT e.id) as total
+        FROM changelog_entries e
+        LEFT JOIN changelog_improvements i ON e.id = i.entry_id
+        LEFT JOIN changelog_fixes f ON e.id = f.entry_id
+        WHERE e.title LIKE ? OR e.summary LIKE ? 
+          OR i.improvement LIKE ? OR f.fix LIKE ?
+      `;
+    } else {
+      // Regular pagination query
+      entriesQuery = `
+        SELECT * FROM changelog_entries 
+        ORDER BY date DESC 
+        LIMIT ? OFFSET ?
+      `;
+      
+      countQuery = `SELECT COUNT(*) as total FROM changelog_entries`;
+    }
+
+    // Execute queries
+    const [entriesResult, countResult] = await Promise.all([
+      search 
+        ? db.prepare(entriesQuery).bind(searchPattern, searchPattern, searchPattern, searchPattern, limit, offset).all<ChangelogEntry>()
+        : db.prepare(entriesQuery).bind(limit, offset).all<ChangelogEntry>(),
+      search
+        ? db.prepare(countQuery).bind(searchPattern, searchPattern, searchPattern, searchPattern).first<{ total: number }>()
+        : db.prepare(countQuery).first<{ total: number }>()
+    ]);
+
+    if (!entriesResult.success || !countResult) {
       throw new Error('Failed to fetch changelog entries');
     }
 
     const entries = entriesResult.results;
+    const totalItems = countResult.total || 0;
+    const totalPages = Math.ceil(totalItems / limit);
 
-    // Fetch all improvements and fixes in one query each
+    // Fetch improvements and fixes only for the entries we found
+    const entryIds = entries.map(e => e.id);
+    
+    if (entryIds.length === 0) {
+      // No entries found, return empty result
+      return NextResponse.json({
+        data: [],
+        pagination: {
+          currentPage: page,
+          totalPages: 0,
+          totalItems: 0,
+          hasNextPage: false,
+          hasPreviousPage: false,
+          limit
+        }
+      });
+    }
+
+    // Create placeholders for the IN clause
+    const placeholders = entryIds.map(() => '?').join(',');
+    
     const improvementsResult = await db.prepare(
-      `SELECT * FROM changelog_improvements ORDER BY entry_id, display_order`
-    ).all<ChangelogImprovement>();
+      `SELECT * FROM changelog_improvements WHERE entry_id IN (${placeholders}) ORDER BY entry_id, display_order`
+    ).bind(...entryIds).all<ChangelogImprovement>();
 
     const fixesResult = await db.prepare(
-      `SELECT * FROM changelog_fixes ORDER BY entry_id, display_order`
-    ).all<ChangelogFix>();
+      `SELECT * FROM changelog_fixes WHERE entry_id IN (${placeholders}) ORDER BY entry_id, display_order`
+    ).bind(...entryIds).all<ChangelogFix>();
 
     if (!improvementsResult.success || !fixesResult.success) {
       throw new Error('Failed to fetch improvements or fixes');
@@ -92,7 +162,18 @@ export async function GET() {
       fixes: fixesByEntry[entry.id] || []
     }));
 
-    return NextResponse.json(changelogData);
+    // Return data with pagination metadata
+    return NextResponse.json({
+      data: changelogData,
+      pagination: {
+        currentPage: page,
+        totalPages,
+        totalItems,
+        hasNextPage: page < totalPages,
+        hasPreviousPage: page > 1,
+        limit
+      }
+    });
   } catch (error) {
     console.error('Error fetching changelog data:', error);
     return NextResponse.json(
