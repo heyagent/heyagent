@@ -3,16 +3,17 @@
 interface DayData {
   date: string;
   uptime: number; // 0-100
-  status: 'up' | 'down' | 'partial';
+  status: 'up' | 'down' | 'partial' | 'no-data';
 }
 
 interface StatusHistoryProps {
   serviceName: string;
   history: DayData[];
   uptimePercentage: string;
+  currentStatus?: string;
 }
 
-export default function StatusHistory({ serviceName, history, uptimePercentage }: StatusHistoryProps) {
+export default function StatusHistory({ serviceName, history, uptimePercentage, currentStatus = 'up' }: StatusHistoryProps) {
   // Generate 90 days of data (fill with mock data if not available)
   const generateHistoryBars = () => {
     const bars = [];
@@ -39,12 +40,44 @@ export default function StatusHistory({ serviceName, history, uptimePercentage }
   const bars = generateHistoryBars();
 
   const getBarColor = (status: string, uptime: number) => {
-    if (status === 'down' || uptime === 0) {
+    if (status === 'no-data') {
+      return 'bg-gray-200 dark:bg-gray-700';
+    } else if (status === 'down' || uptime === 0) {
       return 'bg-red-500';
     } else if (status === 'partial' || uptime < 100) {
       return 'bg-yellow-500';
     }
     return 'bg-green-500';
+  };
+
+  const getStatusText = (status: string) => {
+    switch (status) {
+      case 'up':
+        return 'Operational';
+      case 'down':
+        return 'Down';
+      case 'degraded':
+        return 'Degraded';
+      case 'unknown':
+        return 'Unknown';
+      default:
+        return 'Unknown';
+    }
+  };
+
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case 'up':
+        return 'text-green-600';
+      case 'down':
+        return 'text-red-600';
+      case 'degraded':
+        return 'text-yellow-600';
+      case 'unknown':
+        return 'text-gray-500';
+      default:
+        return 'text-gray-500';
+    }
   };
 
   return (
@@ -53,24 +86,19 @@ export default function StatusHistory({ serviceName, history, uptimePercentage }
         <h6 className="font-medium text-slate-900 dark:text-slate-100">
           {serviceName}
         </h6>
-        <span className="text-sm text-green-600">
-          Operational
+        <span className={`text-sm ${getStatusColor(currentStatus)}`}>
+          {getStatusText(currentStatus)}
         </span>
       </div>
       
       {/* History bars */}
       <div>
-        <div className="flex items-end justify-between h-10 gap-[1px]">
+        <div className="flex items-center h-10 gap-[1px]">
           {bars.map((day, index) => (
             <div
               key={index}
-              className="flex-1 flex items-end"
-            >
-              <div
-                className={`w-full rounded-sm ${getBarColor(day.status, day.uptime)}`}
-                style={{ height: '100%' }}
-              />
-            </div>
+              className={`flex-1 h-full rounded-sm ${getBarColor(day.status, day.uptime)}`}
+            />
           ))}
         </div>
         

@@ -13,14 +13,26 @@ export async function GET() {
     );
 
     if (!response.ok) {
-      // If summary.json doesn't exist yet (GitHub Actions still running)
-      return NextResponse.json(
-        { 
-          message: 'Status data not available yet',
-          services: [] 
-        },
-        { status: 200 }
-      );
+      // If summary.json doesn't exist yet, return services with unknown status
+      const unknownServices = [
+        { name: 'Website', url: 'https://heyagent-app.heyagentai.workers.dev/', status: 'unknown' },
+        { name: 'Help and Support', url: 'https://help.heyagentai.workers.dev/', status: 'unknown' },
+        { name: 'Runner', url: 'https://runner.heyagentai.workers.dev/', status: 'unknown' },
+        { name: 'Backend', url: 'https://backend.heyagentai.workers.dev/', status: 'unknown' }
+      ].map(service => ({
+        ...service,
+        uptime: 'N/A',
+        uptimeDay: 'N/A',
+        uptimeWeek: 'N/A',
+        uptimeMonth: 'N/A',
+        responseTime: 0,
+        dailyMinutesDown: {}
+      }));
+
+      return NextResponse.json({
+        lastUpdated: new Date().toISOString(),
+        services: unknownServices
+      });
     }
 
     const data = await response.json();
@@ -38,18 +50,32 @@ export async function GET() {
         uptimeMonth: service.uptimeMonth,
         responseTime: service.time,
         icon: service.icon,
+        dailyMinutesDown: service.dailyMinutesDown || {},
       })),
     };
 
     return NextResponse.json(transformedData);
   } catch (error) {
     console.error('Error fetching status data:', error);
-    return NextResponse.json(
-      { 
-        error: 'Failed to fetch status data',
-        services: [] 
-      },
-      { status: 500 }
-    );
+    // Return services with unknown status on error
+    const unknownServices = [
+      { name: 'Website', url: 'https://heyagent-app.heyagentai.workers.dev/', status: 'unknown' },
+      { name: 'Help and Support', url: 'https://help.heyagentai.workers.dev/', status: 'unknown' },
+      { name: 'Runner', url: 'https://runner.heyagentai.workers.dev/', status: 'unknown' },
+      { name: 'Backend', url: 'https://backend.heyagentai.workers.dev/', status: 'unknown' }
+    ].map(service => ({
+      ...service,
+      uptime: 'N/A',
+      uptimeDay: 'N/A',
+      uptimeWeek: 'N/A',
+      uptimeMonth: 'N/A',
+      responseTime: 0,
+      dailyMinutesDown: {}
+    }));
+
+    return NextResponse.json({
+      lastUpdated: new Date().toISOString(),
+      services: unknownServices
+    });
   }
 }

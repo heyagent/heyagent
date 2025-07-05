@@ -7,7 +7,7 @@ import StatusHistory from './StatusHistory';
 interface Service {
   name: string;
   url: string;
-  status: 'up' | 'down' | 'degraded';
+  status: 'up' | 'down' | 'degraded' | 'unknown';
   uptime: string;
   uptimeDay: string;
   uptimeWeek: string;
@@ -58,6 +58,8 @@ export default function StatusPage() {
         return <FiXCircle className="w-5 h-5 text-red-600" />;
       case 'degraded':
         return <FiAlertCircle className="w-5 h-5 text-yellow-600" />;
+      case 'unknown':
+        return <FiAlertCircle className="w-5 h-5 text-gray-500" />;
       default:
         return <FiAlertCircle className="w-5 h-5 text-gray-500" />;
     }
@@ -71,6 +73,8 @@ export default function StatusPage() {
         return 'Down';
       case 'degraded':
         return 'Degraded';
+      case 'unknown':
+        return 'Unknown';
       default:
         return 'Unknown';
     }
@@ -84,8 +88,10 @@ export default function StatusPage() {
         return 'text-red-600';
       case 'degraded':
         return 'text-yellow-600';
+      case 'unknown':
+        return 'text-gray-500';
       default:
-        return 'text-gray-600';
+        return 'text-gray-500';
     }
   };
 
@@ -104,22 +110,30 @@ export default function StatusPage() {
     );
   }
 
-  if (error) {
-    return (
-      <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded">
-        <p className="text-red-800 dark:text-red-300">Error loading status: {error}</p>
-      </div>
-    );
-  }
-
-  if (!statusData || statusData.services.length === 0) {
-    return (
-      <div className="p-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded">
-        <p className="text-slate-600 dark:text-slate-300">
-          Status data is being initialized. Please check back in a few minutes.
-        </p>
-      </div>
-    );
+  if (error || !statusData || statusData.services.length === 0) {
+    // Show services with unknown status when there's an error or no data
+    const unknownServices = [
+      { name: 'Website', status: 'unknown', uptime: 'N/A', responseTime: 0 },
+      { name: 'Help and Support', status: 'unknown', uptime: 'N/A', responseTime: 0 },
+      { name: 'Runner', status: 'unknown', uptime: 'N/A', responseTime: 0 },
+      { name: 'Backend', status: 'unknown', uptime: 'N/A', responseTime: 0 }
+    ];
+    
+    const fallbackData = {
+      services: unknownServices.map(s => ({
+        ...s,
+        url: '',
+        uptimeDay: 'N/A',
+        uptimeWeek: 'N/A',
+        uptimeMonth: 'N/A',
+        dailyMinutesDown: {}
+      })),
+      lastUpdated: new Date().toISOString()
+    };
+    
+    setStatusData(fallbackData);
+    setError(null);
+    return null; // Re-render will happen with fallback data
   }
 
   const allOperational = statusData.services.every(service => service.status === 'up');
@@ -174,29 +188,74 @@ export default function StatusPage() {
 
       {/* History Section */}
       <div>
-        <div className="flex items-center justify-between mb-4">
+        <div className="mb-4">
           <h5 className="text-xl font-semibold">90-Day History</h5>
-          <a 
-            href="https://github.com/heyagent/heyagent-status"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-amber-400 hover:text-amber-500"
-          >
-            View details →
-          </a>
         </div>
 
         <div className="space-y-6">
           {statusData.services.map((service) => {
-            // Generate mock history data for now
-            const mockHistory = Array.from({ length: 90 }, (_, i) => {
+            const today = new Date().toISOString().split('T')[0];
+            
+            // Generate history for each day
+            const history = Array.from({ length: 90 }, (_, i) => {
               const date = new Date();
               date.setDate(date.getDate() - (89 - i));
-              const isDown = service.status === 'down' || Math.random() < 0.02;
+              const dateStr = date.toISOString().split('T')[0];
+              const isToday = dateStr === today;
+              
+              // For today, always use the current status
+              if (isToday) {
+                let status: 'up' | 'down' | 'partial' | 'no-data';
+                let uptime = 100;
+                
+                if (service.status === 'unknown') {
+                  status = 'no-data';
+                } else if (service.status === 'down') {
+                  status = 'down';
+                  uptime = 0;
+                } else if (service.status === 'degraded') {
+                  status = 'partial';
+                  uptime = 50;
+                } else {
+                  status = 'up';
+                  uptime = 100;
+                }
+                
+                return {
+                  date: dateStr,
+                  uptime,
+                  status
+                };
+              }
+              
+              // Check if this specific date exists in the data
+              if (!service.dailyMinutesDown || !(dateStr in service.dailyMinutesDown)) {
+                // No data for this date - show gray bar
+                return {
+                  date: dateStr,
+                  uptime: 100,
+                  status: 'no-data' as const
+                };
+              }
+              
+              // We have data for this date
+              const minutesDown = service.dailyMinutesDown[dateStr];
+              const uptime = minutesDown > 0 ? ((1440 - minutesDown) / 1440) * 100 : 100;
+              
+              // Determine status based on downtime
+              let status: 'up' | 'down' | 'partial' | 'no-data';
+              if (minutesDown === 0) {
+                status = 'up';
+              } else if (minutesDown >= 720) { // 12+ hours
+                status = 'down';
+              } else {
+                status = 'partial';
+              }
+              
               return {
-                date: date.toISOString().split('T')[0],
-                uptime: isDown ? 0 : 100,
-                status: isDown ? 'down' as const : 'up' as const
+                date: dateStr,
+                uptime,
+                status
               };
             });
 
@@ -204,8 +263,9 @@ export default function StatusPage() {
               <StatusHistory
                 key={service.name}
                 serviceName={service.name}
-                history={mockHistory}
-                uptimePercentage={service.uptime}
+                history={history}
+                uptimePercentage={service.uptime || 'N/A'}
+                currentStatus={service.status}
               />
             );
           })}
