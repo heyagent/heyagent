@@ -122,7 +122,7 @@ export default function WorkflowsSection() {
   const getDisplayedWorkflows = () => {
     const selected = workflows.find(w => w.id === selectedWorkflow);
     const others = workflows.filter(w => w.id !== selectedWorkflow);
-    return [selected, ...others.slice(0, 3)].filter(Boolean);
+    return selected ? [selected, ...others.slice(0, 3)] : others.slice(0, 4);
   };
 
   return (
