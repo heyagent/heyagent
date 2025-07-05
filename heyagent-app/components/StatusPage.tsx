@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { CheckCircle, XCircle, AlertCircle, Clock, Activity } from 'lucide-react';
+import { FiCheckCircle, FiXCircle, FiAlertCircle, FiClock, FiActivity } from 'react-icons/fi';
 import StatusHistory from './StatusHistory';
 
 interface Service {
@@ -53,13 +53,13 @@ export default function StatusPage() {
   const getStatusIcon = (status: string) => {
     switch (status) {
       case 'up':
-        return <CheckCircle className="w-5 h-5 text-green-500 dark:text-green-400" />;
+        return <FiCheckCircle className="w-5 h-5 text-green-600" />;
       case 'down':
-        return <XCircle className="w-5 h-5 text-red-500 dark:text-red-400" />;
+        return <FiXCircle className="w-5 h-5 text-red-600" />;
       case 'degraded':
-        return <AlertCircle className="w-5 h-5 text-yellow-500 dark:text-yellow-400" />;
+        return <FiAlertCircle className="w-5 h-5 text-yellow-600" />;
       default:
-        return <AlertCircle className="w-5 h-5 text-gray-500 dark:text-gray-400" />;
+        return <FiAlertCircle className="w-5 h-5 text-gray-500" />;
     }
   };
 
@@ -79,31 +79,26 @@ export default function StatusPage() {
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'up':
-        return 'text-green-600 dark:text-green-400';
+        return 'text-green-600';
       case 'down':
-        return 'text-red-600 dark:text-red-400';
+        return 'text-red-600';
       case 'degraded':
-        return 'text-yellow-600 dark:text-yellow-400';
+        return 'text-yellow-600';
       default:
-        return 'text-gray-600 dark:text-gray-400';
+        return 'text-gray-600';
     }
   };
 
   if (loading) {
     return (
-      <div className="space-y-8">
-        {/* Loading skeleton for status banner */}
+      <div className="space-y-6">
         <div className="animate-pulse">
-          <div className="h-16 bg-gray-200 dark:bg-gray-700 rounded-lg"></div>
-        </div>
-
-        {/* Loading skeleton for service cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="animate-pulse">
-              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 h-32"></div>
-            </div>
-          ))}
+          <div className="h-8 bg-gray-200 dark:bg-gray-700 rounded w-48 mb-4"></div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[1, 2, 3, 4].map((i) => (
+              <div key={i} className="bg-gray-100 dark:bg-gray-800 rounded p-4 h-24"></div>
+            ))}
+          </div>
         </div>
       </div>
     );
@@ -111,7 +106,7 @@ export default function StatusPage() {
 
   if (error) {
     return (
-      <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4">
+      <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded">
         <p className="text-red-800 dark:text-red-300">Error loading status: {error}</p>
       </div>
     );
@@ -119,90 +114,85 @@ export default function StatusPage() {
 
   if (!statusData || statusData.services.length === 0) {
     return (
-      <div className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4">
-        <p className="text-gray-600 dark:text-gray-300">Status data is being initialized. Please check back in a few minutes.</p>
+      <div className="p-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded">
+        <p className="text-slate-600 dark:text-slate-300">
+          Status data is being initialized. Please check back in a few minutes.
+        </p>
       </div>
     );
   }
 
   const allOperational = statusData.services.every(service => service.status === 'up');
-  const hasIssues = statusData.services.some(service => service.status === 'down');
 
   return (
     <div className="space-y-8">
-      {/* Overall Status Banner */}
-      <div className={`p-6 rounded-lg text-white ${
-        allOperational 
-          ? 'bg-green-600 dark:bg-green-700' 
-          : hasIssues 
-            ? 'bg-red-600 dark:bg-red-700' 
-            : 'bg-yellow-600 dark:bg-yellow-700'
-      }`}>
-        <h2 className="text-xl font-semibold">
-          {allOperational 
-            ? 'All Systems Operational' 
-            : hasIssues 
-              ? 'System Issues Detected' 
-              : 'Degraded Performance'}
-        </h2>
+      {/* Overall Status */}
+      <div>
+        <h5 className="text-xl font-semibold mb-4">Current Status</h5>
+        <p className={`text-lg ${allOperational ? 'text-green-600' : 'text-red-600'}`}>
+          {allOperational ? 'All Systems Operational' : 'Some Services May Be Down'}
+        </p>
       </div>
 
-      {/* Service Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {statusData.services.map((service) => (
-          <div 
-            key={service.name} 
-            className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition-shadow"
-          >
-            <div className="flex items-start justify-between mb-4">
-              <div className="flex items-center gap-3">
-                {getStatusIcon(service.status)}
-                <div>
-                  <h3 className="font-semibold text-gray-900 dark:text-gray-100">
+      {/* Service Cards */}
+      <div>
+        <h5 className="text-xl font-semibold mb-4">Services</h5>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {statusData.services.map((service) => (
+            <div 
+              key={service.name} 
+              className="p-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded"
+            >
+              <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center gap-2">
+                  {getStatusIcon(service.status)}
+                  <h6 className="font-semibold text-slate-900 dark:text-slate-100">
                     {service.name}
-                  </h3>
-                  <p className={`text-sm font-medium ${getStatusColor(service.status)}`}>
-                    {getStatusText(service.status)}
-                  </p>
+                  </h6>
+                </div>
+                <span className={`text-sm font-medium ${getStatusColor(service.status)}`}>
+                  {getStatusText(service.status)}
+                </span>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-4 text-sm text-slate-600 dark:text-slate-300">
+                <div>
+                  <span className="block text-xs text-slate-500 dark:text-slate-400">Uptime</span>
+                  <span className="font-medium">{service.uptime}</span>
+                </div>
+                <div>
+                  <span className="block text-xs text-slate-500 dark:text-slate-400">Response</span>
+                  <span className="font-medium">
+                    {service.responseTime > 0 ? `${service.responseTime}ms` : 'N/A'}
+                  </span>
                 </div>
               </div>
             </div>
-
-            {/* Metrics */}
-            <div className="grid grid-cols-2 gap-4 text-sm">
-              <div>
-                <div className="text-gray-500 dark:text-gray-400">Uptime</div>
-                <p className="font-medium text-gray-900 dark:text-gray-100">{service.uptime}</p>
-              </div>
-              <div>
-                <div className="text-gray-500 dark:text-gray-400">Response</div>
-                <p className="font-medium text-gray-900 dark:text-gray-100">
-                  {service.responseTime > 0 ? `${service.responseTime}ms` : 'N/A'}
-                </p>
-              </div>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       {/* History Section */}
-      <div className="space-y-6">
-        <div className="flex items-center justify-between">
-          <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
-            Uptime over the past 90 days
-          </h2>
-          <button className="text-sm text-blue-600 dark:text-blue-400 hover:underline">
-            View historical uptime
-          </button>
+      <div>
+        <div className="flex items-center justify-between mb-4">
+          <h5 className="text-xl font-semibold">90-Day History</h5>
+          <a 
+            href="https://github.com/heyagent/heyagent-status"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-amber-400 hover:text-amber-500"
+          >
+            View details →
+          </a>
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-6">
           {statusData.services.map((service) => {
             // Generate mock history data for now
             const mockHistory = Array.from({ length: 90 }, (_, i) => {
               const date = new Date();
               date.setDate(date.getDate() - (89 - i));
-              const isDown = service.status === 'down' || Math.random() < 0.05;
+              const isDown = service.status === 'down' || Math.random() < 0.02;
               return {
                 date: date.toISOString().split('T')[0],
                 uptime: isDown ? 0 : 100,
@@ -223,7 +213,7 @@ export default function StatusPage() {
       </div>
 
       {/* Last Updated */}
-      <div className="text-sm text-gray-500 dark:text-gray-400 text-center">
+      <div className="text-sm text-slate-500 dark:text-slate-400">
         Last updated: {new Date(statusData.lastUpdated).toLocaleString()}
       </div>
     </div>

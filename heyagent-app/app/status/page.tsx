@@ -8,40 +8,63 @@ export const metadata: Metadata = {
 
 export default function Status() {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-4 py-8 max-w-6xl">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Service Status</h1>
-          <p className="mt-2 text-gray-600 dark:text-gray-400">
-            Monitor the real-time status and performance of HeyAgent services
-          </p>
+    <main>
+      {/* Hero Section */}
+      <section className="relative pt-24 sm:pt-32 md:pt-40 lg:pt-48 pb-6 sm:pb-8 md:pb-12 bg-gradient-to-b from-amber-400/20 dark:from-amber-400/40 to-transparent">
+        <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
+          <div className="grid grid-cols-1 text-center mt-6">
+            <div>
+              <h5 className="text-2xl sm:text-3xl md:text-4xl md:leading-normal leading-normal tracking-wider font-semibold mb-0">
+                Service Status
+              </h5>
+            </div>
+            <p className="text-slate-600 dark:text-slate-300 mt-5">
+              Monitor the real-time status and performance of HeyAgent services
+            </p>
+          </div>
         </div>
-        
-        <StatusPage />
-        
-        <div className="mt-12 text-center text-sm text-gray-500 dark:text-gray-400">
-          <p>
-            Powered by{' '}
-            <a 
-              href="https://github.com/upptime/upptime" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:underline"
-            >
-              Upptime
-            </a>
-            {' '}•{' '}
-            <a 
-              href="https://github.com/heyagent/heyagent-status" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:underline"
-            >
-              View on GitHub
-            </a>
-          </p>
+      </section>
+
+      {/* Content Section */}
+      <section className="relative py-6 sm:py-8 md:py-10 lg:py-24">
+        <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
+          <div className="md:flex justify-center">
+            <div className="md:w-3/4">
+              <div className="p-6 bg-white dark:bg-slate-900 shadow dark:shadow-gray-800 rounded-md border border-gray-200 dark:border-gray-800">
+                <StatusPage />
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+
+      {/* Footer Links */}
+      <section className="relative pb-8">
+        <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
+          <div className="text-center text-sm text-gray-500 dark:text-gray-400">
+            <p>
+              Powered by{' '}
+              <a 
+                href="https://github.com/upptime/upptime" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-amber-400 hover:text-amber-500"
+              >
+                Upptime
+              </a>
+              {' '}•{' '}
+              <a 
+                href="https://github.com/heyagent/heyagent-status" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-amber-400 hover:text-amber-500"
+              >
+                View on GitHub
+              </a>
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
