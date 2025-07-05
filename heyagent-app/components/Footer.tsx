@@ -11,7 +11,6 @@ import Logo from "@/components/shared/Logo";
 import FooterLinkSection from "@/components/footer/FooterLinkSection";
 import SocialLink from "@/components/footer/SocialLink";
 import NewsletterForm from "@/components/footer/NewsletterForm";
-import StatusIndicator from "@/components/StatusIndicator";
 
 export default function Footer() {
   return (
@@ -130,11 +129,6 @@ export default function Footer() {
                 </a>
                 .
               </p>
-              <div className="mt-2">
-                <Link href="/status" className="inline-flex items-center hover:text-amber-400 transition-colors">
-                  <StatusIndicator />
-                </Link>
-              </div>
             </div>
 
             {/* Social Links - Right */}
