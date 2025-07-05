@@ -64,7 +64,7 @@ export default function Footer() {
                   title="Product"
                   links={[
                     { href: "/pricing", label: "Pricing" },
-                    { href: "#", label: "Features" },
+                    { href: "/platform", label: "Platform" },
                     { href: "#", label: "Workflows" },
                     { href: "#", label: "Integrations" },
                     { href: "#", label: "Schedule Demo" }
