@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
-import { getRequestContext } from '@cloudflare/next-on-pages';
+import { getCloudflareContext } from '@opennextjs/cloudflare';
 
-export const runtime = 'edge';
+// Remove edge runtime as it's not supported with OpenNext yet
+// export const runtime = 'edge';
 
 interface ChangelogEntry {
   id: number;
@@ -29,7 +30,7 @@ interface ChangelogFix {
 
 export async function GET() {
   try {
-    const { env } = getRequestContext();
+    const { env } = getCloudflareContext();
     const db = env.DB_CHANGELOG;
 
     if (!db) {
