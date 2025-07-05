@@ -13,6 +13,9 @@ export default function TypewriterEffect({ words, className }: TypewriterEffectP
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
+    // Handle empty words array
+    if (words.length === 0) return;
+    
     const word = words[currentWordIndex];
     const timeout = setTimeout(() => {
       if (!isDeleting) {
