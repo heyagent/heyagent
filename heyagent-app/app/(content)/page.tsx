@@ -152,107 +152,59 @@ export default function Home() {
       </section>
 
       {/* Content Writing Section */}
-      <section className="relative py-6 sm:py-8 md:py-12 lg:py-24">
-        <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
-          <div className="grid md:grid-cols-2 grid-cols-1 items-center gap-6">
-            <div className="relative order-1 md:order-2">
-              <div className="relative overflow-hidden rounded-lg border border-amber-400/5 bg-gradient-to-tl to-amber-400/30 from-fuchsia-600/30 dark:to-amber-400/50 dark:from-fuchsia-600/50 pe-6 pt-6 lg:ms-8">
-                {/* Placeholder for workflow builder interface */}
-                <div className="bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-800 dark:to-slate-900 rounded-tr-lg h-80 flex items-center justify-center">
-                  <span className="text-slate-600 dark:text-slate-500">Workflow Builder Interface</span>
-                </div>
-              </div>
-            </div>
-            
-            <div className="order-2 md:order-1">
-              <h4 className="mb-4 text-xl sm:text-2xl md:text-3xl md:leading-normal leading-normal font-semibold">
-                Build Custom Workflows <br className="hidden sm:block" /> Without Code
-              </h4>
-              <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base">
-                Create powerful automation workflows with our drag-and-drop builder. No coding required - just connect your tools and define the steps.
-              </p>
-              
-              <ul className="list-none text-slate-600 dark:text-slate-300 mt-4">
-                <FeatureListItem>Instant task execution through conversational AI</FeatureListItem>
-                <FeatureListItem>Pre-built workflows for common business processes</FeatureListItem>
-                <FeatureListItem>Custom automation tailored to your needs</FeatureListItem>
-              </ul>
-              
-              <div className="mt-4">
-                <LinkButton href="/">Find Out More</LinkButton>
-              </div>
+      <FeatureSection
+        title={<>Build Custom Workflows <br className="hidden sm:block" /> Without Code</>}
+        description="Create powerful automation workflows with our drag-and-drop builder. No coding required - just connect your tools and define the steps."
+        features={[
+          "Instant task execution through conversational AI",
+          "Pre-built workflows for common business processes",
+          "Custom automation tailored to your needs"
+        ]}
+        imagePlaceholder={
+          <div className="relative overflow-hidden rounded-lg border border-amber-400/5 bg-gradient-to-tl to-amber-400/30 from-fuchsia-600/30 dark:to-amber-400/50 dark:from-fuchsia-600/50 pe-6 pt-6 lg:ms-8">
+            <div className="bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-800 dark:to-slate-900 rounded-tr-lg h-80 flex items-center justify-center">
+              <span className="text-slate-600 dark:text-slate-500">Workflow Builder Interface</span>
             </div>
           </div>
-        </div>
-      </section>
+        }
+      />
 
       {/* Analytics Dashboard Section */}
-      <section className="relative py-6 sm:py-8 md:py-12 lg:py-24">
-        <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
-          <div className="grid md:grid-cols-2 grid-cols-1 items-center gap-6">
-            <div className="relative overflow-hidden rounded-lg border border-amber-400/5 bg-gradient-to-tl to-amber-400/30 from-fuchsia-600/30 dark:to-amber-400/50 dark:from-fuchsia-600/50 ps-6 pt-6 lg:me-8">
-              {/* AI Agent deployment interface */}
-              <div className="bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-800 dark:to-slate-900 rounded-tl-lg h-80 flex items-center justify-center">
-                <span className="text-slate-600 dark:text-slate-500">Agent Deployment Interface</span>
-              </div>
-            </div>
-            
-            <div>
-              <h3 className="mb-4 text-xl sm:text-2xl md:text-3xl md:leading-normal leading-normal font-semibold">
-                Deploy AI Agents Across <br className="hidden sm:block" /> Your Organization
-              </h3>
-              <p className="text-slate-600 dark:text-slate-300 max-w-xl text-sm sm:text-base">
-                Roll out HeyAgent to teams company-wide with enterprise-grade security, role-based access controls, and seamless SSO integration.
-              </p>
-              
-              <ul className="list-none text-slate-600 dark:text-slate-300 mt-4">
-                <FeatureListItem>Deploy to unlimited employees with one setup</FeatureListItem>
-                <FeatureListItem>Enterprise-grade security and compliance</FeatureListItem>
-                <FeatureListItem>Role-based permissions and access controls</FeatureListItem>
-              </ul>
-              
-              <div className="mt-4">
-                <LinkButton href="/">Find Out More</LinkButton>
-              </div>
+      <FeatureSection
+        title={<>Deploy AI Agents Across <br className="hidden sm:block" /> Your Organization</>}
+        description="Roll out HeyAgent to teams company-wide with enterprise-grade security, role-based access controls, and seamless SSO integration."
+        features={[
+          "Deploy to unlimited employees with one setup",
+          "Enterprise-grade security and compliance",
+          "Role-based permissions and access controls"
+        ]}
+        imagePosition="left"
+        imagePlaceholder={
+          <div className="relative overflow-hidden rounded-lg border border-amber-400/5 bg-gradient-to-tl to-amber-400/30 from-fuchsia-600/30 dark:to-amber-400/50 dark:from-fuchsia-600/50 ps-6 pt-6 lg:me-8">
+            <div className="bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-800 dark:to-slate-900 rounded-tl-lg h-80 flex items-center justify-center">
+              <span className="text-slate-600 dark:text-slate-500">Agent Deployment Interface</span>
             </div>
           </div>
-        </div>
-      </section>
+        }
+      />
 
       {/* Analytics Dashboard Section Copy */}
-      <section className="relative py-6 sm:py-8 md:py-12 lg:py-24">
-        <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
-          <div className="grid md:grid-cols-2 grid-cols-1 items-center gap-6">
-            <div className="relative order-1 md:order-2">
-              <div className="relative overflow-hidden rounded-lg border border-amber-400/5 bg-gradient-to-tl to-amber-400/30 from-fuchsia-600/30 dark:to-amber-400/50 dark:from-fuchsia-600/50 px-6 pt-6 lg:ms-8">
-                {/* Real-time analytics interface */}
-                <div className="bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-800 dark:to-slate-900 rounded-t-lg h-80 flex items-center justify-center">
-                  <span className="text-slate-600 dark:text-slate-500">Real-Time Analytics Dashboard</span>
-                </div>
-              </div>
-            </div>
-            
-            <div className="order-2 md:order-1">
-              <h3 className="mb-4 text-xl sm:text-2xl md:text-3xl md:leading-normal leading-normal font-semibold">
-                Real-Time Analytics & <br className="hidden sm:block" /> Performance Insights
-              </h3>
-              <p className="text-slate-600 dark:text-slate-300 max-w-xl text-sm sm:text-base">
-                Monitor agent performance, track ROI, and gain insights into automation efficiency. See exactly how much time and money HeyAgent saves your organization.
-              </p>
-              
-              <ul className="list-none text-slate-600 dark:text-slate-300 mt-4">
-                <FeatureListItem>Track time saved and tasks automated</FeatureListItem>
-                <FeatureListItem>Measure ROI and efficiency gains</FeatureListItem>
-                <FeatureListItem>Export reports for stakeholders</FeatureListItem>
-              </ul>
-              
-              <div className="mt-4">
-                <LinkButton href="/">Find Out More</LinkButton>
-              </div>
+      <FeatureSection
+        title={<>Real-Time Analytics & <br className="hidden sm:block" /> Performance Insights</>}
+        description="Monitor agent performance, track ROI, and gain insights into automation efficiency. See exactly how much time and money HeyAgent saves your organization."
+        features={[
+          "Track time saved and tasks automated",
+          "Measure ROI and efficiency gains",
+          "Export reports for stakeholders"
+        ]}
+        imagePlaceholder={
+          <div className="relative overflow-hidden rounded-lg border border-amber-400/5 bg-gradient-to-tl to-amber-400/30 from-fuchsia-600/30 dark:to-amber-400/50 dark:from-fuchsia-600/50 px-6 pt-6 lg:ms-8">
+            <div className="bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-800 dark:to-slate-900 rounded-t-lg h-80 flex items-center justify-center">
+              <span className="text-slate-600 dark:text-slate-500">Real-Time Analytics Dashboard</span>
             </div>
           </div>
-        </div>
-      </section>
+        }
+      />
 
       {/* Workflows Section */}
       <WorkflowsSection />
