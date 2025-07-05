@@ -34,7 +34,7 @@ export default function StatusPage() {
         if (!response.ok) {
           throw new Error('Failed to fetch status');
         }
-        const data = await response.json();
+        const data: StatusData = await response.json();
         setStatusData(data);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Unknown error');
@@ -110,33 +110,18 @@ export default function StatusPage() {
     );
   }
 
-  if (error || !statusData || statusData.services.length === 0) {
-    // Show services with unknown status when there's an error or no data
-    const unknownServices = [
-      { name: 'Website', status: 'unknown', uptime: 'N/A', responseTime: 0 },
-      { name: 'Help and Support', status: 'unknown', uptime: 'N/A', responseTime: 0 },
-      { name: 'Runner', status: 'unknown', uptime: 'N/A', responseTime: 0 },
-      { name: 'Backend', status: 'unknown', uptime: 'N/A', responseTime: 0 }
-    ];
-    
-    const fallbackData = {
-      services: unknownServices.map(s => ({
-        ...s,
-        url: '',
-        uptimeDay: 'N/A',
-        uptimeWeek: 'N/A',
-        uptimeMonth: 'N/A',
-        dailyMinutesDown: {}
-      })),
-      lastUpdated: new Date().toISOString()
-    };
-    
-    setStatusData(fallbackData);
-    setError(null);
-    return null; // Re-render will happen with fallback data
-  }
+  // Use fallback data when there's an error or no data
+  const displayData: StatusData = statusData || {
+    services: [
+      { name: 'Website', status: 'unknown', uptime: 'N/A', responseTime: 0, url: '', uptimeDay: 'N/A', uptimeWeek: 'N/A', uptimeMonth: 'N/A', dailyMinutesDown: {} },
+      { name: 'Help and Support', status: 'unknown', uptime: 'N/A', responseTime: 0, url: '', uptimeDay: 'N/A', uptimeWeek: 'N/A', uptimeMonth: 'N/A', dailyMinutesDown: {} },
+      { name: 'Runner', status: 'unknown', uptime: 'N/A', responseTime: 0, url: '', uptimeDay: 'N/A', uptimeWeek: 'N/A', uptimeMonth: 'N/A', dailyMinutesDown: {} },
+      { name: 'Backend', status: 'unknown', uptime: 'N/A', responseTime: 0, url: '', uptimeDay: 'N/A', uptimeWeek: 'N/A', uptimeMonth: 'N/A', dailyMinutesDown: {} }
+    ],
+    lastUpdated: new Date().toISOString()
+  };
 
-  const allOperational = statusData.services.every(service => service.status === 'up');
+  const allOperational = displayData.services.every(service => service.status === 'up');
 
   return (
     <div className="space-y-8">
@@ -152,7 +137,7 @@ export default function StatusPage() {
       <div>
         <h5 className="text-xl font-semibold mb-4">Services</h5>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {statusData.services.map((service) => (
+          {displayData.services.map((service) => (
             <div 
               key={service.name} 
               className="p-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded"
@@ -193,7 +178,7 @@ export default function StatusPage() {
         </div>
 
         <div className="space-y-6">
-          {statusData.services.map((service) => {
+          {displayData.services.map((service) => {
             const today = new Date().toISOString().split('T')[0];
             
             // Generate history for each day
@@ -274,7 +259,7 @@ export default function StatusPage() {
 
       {/* Last Updated */}
       <div className="text-sm text-slate-500 dark:text-slate-400">
-        Last updated: {new Date(statusData.lastUpdated).toLocaleString()}
+        Last updated: {new Date(displayData.lastUpdated).toLocaleString()}
       </div>
     </div>
   );
