@@ -19,7 +19,7 @@ export default function ChangelogPage() {
         if (!response.ok) {
           throw new Error('Failed to fetch changelog');
         }
-        const data = await response.json();
+        const data: ChangelogEntryType[] = await response.json();
         setChangelogData(data);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to load changelog');
