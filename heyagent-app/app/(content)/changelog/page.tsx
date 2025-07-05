@@ -1,12 +1,35 @@
 "use client";
 
-import { changelogData } from "@/lib/changelog-data";
 import ChangelogTabs from "@/components/changelog/ChangelogTabs";
 import { useEffect, useRef, useState } from "react";
+import { ChangelogEntryType } from "@/lib/changelog-data";
 
 export default function ChangelogPage() {
   const dateRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [isMobile, setIsMobile] = useState(false);
+  const [changelogData, setChangelogData] = useState<ChangelogEntryType[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  // Fetch changelog data
+  useEffect(() => {
+    const fetchChangelog = async () => {
+      try {
+        const response = await fetch('/api/changelog');
+        if (!response.ok) {
+          throw new Error('Failed to fetch changelog');
+        }
+        const data = await response.json();
+        setChangelogData(data);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Failed to load changelog');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchChangelog();
+  }, []);
 
   useEffect(() => {
     // Check if mobile/tablet
@@ -75,7 +98,22 @@ export default function ChangelogPage() {
       {/* Content Section */}
       <section className="relative pb-12 sm:pb-16 md:pb-20 lg:pb-24">
         <div className="container relative mx-auto px-4 sm:px-6 max-w-5xl">
-          {changelogData.map((entry, index) => (
+          {loading ? (
+            <div className="text-center py-12">
+              <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-amber-400"></div>
+              <p className="mt-4 text-gray-600 dark:text-gray-400">Loading changelog...</p>
+            </div>
+          ) : error ? (
+            <div className="text-center py-12">
+              <p className="text-red-600 dark:text-red-400">Error: {error}</p>
+              <p className="mt-2 text-gray-600 dark:text-gray-400">Please try again later.</p>
+            </div>
+          ) : changelogData.length === 0 ? (
+            <div className="text-center py-12">
+              <p className="text-gray-600 dark:text-gray-400">No changelog entries found.</p>
+            </div>
+          ) : (
+            changelogData.map((entry, index) => (
             <div key={entry.version} className="changelog-section mb-12 sm:mb-14 md:mb-16 last:mb-0">
               <div className="lg:flex lg:gap-8">
                 {/* Date Column */}
@@ -109,7 +147,7 @@ export default function ChangelogPage() {
                 </div>
               </div>
             </div>
-          ))}
+          )))}
         </div>
       </section>
     </main>
