@@ -36,7 +36,7 @@ export default function IntegrationShowcase() {
   };
 
   return (
-    <section className="relative py-6 sm:py-8 md:py-12 lg:py-24 bg-white dark:bg-slate-900 overflow-hidden">
+    <section className="relative pt-6 sm:pt-6 md:pt-8 lg:pt-12 pb-6 sm:pb-0 bg-white dark:bg-slate-900 overflow-hidden">
       {/* Dotted grid background with fade */}
       <div className="absolute inset-0 z-0">
         <div 
@@ -69,7 +69,7 @@ export default function IntegrationShowcase() {
           </p>
         </div>
 
-        <div className="relative mx-auto overflow-visible" style={{ width: '100%', maxWidth: '1400px' }}>
+        <div className="relative mx-auto overflow-visible mt-8 sm:mt-12 lg:mt-16 mb-8 sm:mb-12 lg:mb-16" style={{ width: '100%', maxWidth: '1400px' }}>
           <div className="sm:block hidden" style={{ height: '400px' }}>
           {/* SVG for rays */}
           <svg
