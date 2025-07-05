@@ -97,7 +97,7 @@ export default function ChangelogPage() {
                 <div className="lg:flex-1">
                   <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 sm:p-5 md:p-6 shadow-sm">
                     <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 dark:text-white mb-4 sm:mb-5 md:mb-6">
-                      Version {entry.version} Release
+                      {entry.title}
                     </h3>
                     
                     <ChangelogTabs

@@ -1,6 +1,7 @@
 export interface ChangelogEntryType {
   version: string;
   date: string;
+  title: string;
   summary: string;
   improvements: string[];
   fixes: string[];
@@ -10,6 +11,7 @@ export const changelogData: ChangelogEntryType[] = [
   {
     version: "1.2.0",
     date: "Jan 5, 2025",
+    title: "Powerful Workflow Automation & Enhanced AI",
     summary: "This release introduces powerful new workflow automation features, enhanced AI capabilities, and improved integration support. We've also made significant performance improvements to ensure faster response times across all workflows.",
     improvements: [
       "Added support for custom workflow templates with drag-and-drop builder",
@@ -33,6 +35,7 @@ export const changelogData: ChangelogEntryType[] = [
   {
     version: "1.1.0",
     date: "Dec 15, 2024",
+    title: "Enterprise Features & Security Enhancements",
     summary: "Major update focusing on enterprise features, security enhancements, and improved user experience. This release also includes our new AI model with better context understanding and response accuracy.",
     improvements: [
       "Implemented SSO support for enterprise customers",
@@ -56,6 +59,7 @@ export const changelogData: ChangelogEntryType[] = [
   {
     version: "1.0.0",
     date: "Nov 1, 2024",
+    title: "HeyAgent Launch - Welcome to the Future of Work",
     summary: "Initial release of HeyAgent! This marks the beginning of our journey to revolutionize workplace automation. Our AI-powered chatbot is now ready to help businesses automate their workflows and boost productivity.",
     improvements: [
       "Core chatbot functionality with natural language understanding",
