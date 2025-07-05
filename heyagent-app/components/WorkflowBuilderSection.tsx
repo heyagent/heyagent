@@ -35,23 +35,23 @@ export default function WorkflowBuilderSection() {
         <div className="lg:flex justify-center">
           <div className="lg:w-4/5">
             {/* Tab Navigation */}
-            <ul className="md:flex inline-block w-fit mx-auto flex-wrap justify-center text-center p-2 bg-white dark:bg-slate-900 shadow dark:shadow-gray-800 rounded-md">
+            <ul className="flex flex-col sm:flex-row sm:inline-block w-full sm:w-fit mx-auto flex-wrap justify-center text-center p-2 bg-white dark:bg-slate-900 shadow dark:shadow-gray-800 rounded-md">
               {tabs.map((tab) => (
                 <li
                   key={tab.id}
                   role="presentation"
-                  className="inline-block md:w-1/3 w-full p-2"
+                  className="inline-block sm:w-1/3 w-full p-1 sm:p-2"
                 >
                   <button
                     onClick={() => setActiveTab(tab.id)}
-                    className={`px-5 py-3 text-start rounded-md w-full duration-500 ${
+                    className={`px-3 sm:px-5 py-2 sm:py-3 text-start rounded-md w-full duration-500 ${
                       activeTab === tab.id
                         ? "text-white bg-amber-400"
                         : "hover:text-amber-400 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-slate-800"
                     }`}
                   >
-                    <h5 className="text-base font-semibold">{tab.title}</h5>
-                    <p className="text-sm mt-1">{tab.description}</p>
+                    <h5 className="text-sm sm:text-base font-semibold">{tab.title}</h5>
+                    <p className="text-xs sm:text-sm mt-1 hidden sm:block">{tab.description}</p>
                   </button>
                 </li>
               ))}

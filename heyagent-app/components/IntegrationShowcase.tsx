@@ -17,14 +17,14 @@ export default function IntegrationShowcase() {
   const raysRef = useRef<SVGSVGElement>(null);
 
   const integrations: Integration[] = [
-    { name: "GitHub", icon: <FiGithub className="w-8 h-8" />, angle: 20, distance: 250 },
-    { name: "Zendesk", icon: <SiZendesk className="w-8 h-8" />, angle: 50, distance: 240 },
-    { name: "Google Workspace", icon: <FaGoogle className="w-8 h-8" />, angle: 130, distance: 240 },
-    { name: "Slack", icon: <FaSlack className="w-8 h-8" />, angle: 160, distance: 250 },
-    { name: "Salesforce", icon: <FaSalesforce className="w-8 h-8" />, angle: 200, distance: 250 },
-    { name: "Jira", icon: <SiJira className="w-8 h-8" />, angle: 230, distance: 240 },
-    { name: "Notion", icon: <SiNotion className="w-8 h-8" />, angle: 310, distance: 240 },
-    { name: "Asana", icon: <SiAsana className="w-8 h-8" />, angle: 340, distance: 250 },
+    { name: "GitHub", icon: <FiGithub className="w-6 h-6 sm:w-8 sm:h-8" />, angle: 20, distance: 250 },
+    { name: "Zendesk", icon: <SiZendesk className="w-6 h-6 sm:w-8 sm:h-8" />, angle: 50, distance: 240 },
+    { name: "Google Workspace", icon: <FaGoogle className="w-6 h-6 sm:w-8 sm:h-8" />, angle: 130, distance: 240 },
+    { name: "Slack", icon: <FaSlack className="w-6 h-6 sm:w-8 sm:h-8" />, angle: 160, distance: 250 },
+    { name: "Salesforce", icon: <FaSalesforce className="w-6 h-6 sm:w-8 sm:h-8" />, angle: 200, distance: 250 },
+    { name: "Jira", icon: <SiJira className="w-6 h-6 sm:w-8 sm:h-8" />, angle: 230, distance: 240 },
+    { name: "Notion", icon: <SiNotion className="w-6 h-6 sm:w-8 sm:h-8" />, angle: 310, distance: 240 },
+    { name: "Asana", icon: <SiAsana className="w-6 h-6 sm:w-8 sm:h-8" />, angle: 340, distance: 250 },
   ];
 
   const calculatePosition = (angle: number, distance: number) => {
@@ -36,7 +36,7 @@ export default function IntegrationShowcase() {
   };
 
   return (
-    <section className="relative pt-12 pb-4 bg-white dark:bg-slate-900 overflow-hidden">
+    <section className="relative py-6 sm:py-8 md:py-12 lg:py-24 bg-white dark:bg-slate-900 overflow-hidden">
       {/* Dotted grid background with fade */}
       <div className="absolute inset-0 z-0">
         <div 
@@ -61,20 +61,21 @@ export default function IntegrationShowcase() {
       
       <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl z-10">
         <div className="grid grid-cols-1 pb-0 text-center">
-          <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold text-slate-900 dark:text-white">
+          <h3 className="mb-4 text-xl sm:text-2xl md:text-3xl md:leading-normal leading-normal font-semibold text-slate-900 dark:text-white">
             Automation for your entire ecosystem
           </h3>
-          <p className="text-slate-600 dark:text-slate-400 max-w-xl mx-auto">
+          <p className="text-slate-600 dark:text-slate-400 max-w-xl mx-auto text-sm sm:text-base px-4 sm:px-0">
             Connect HeyAgent to your existing tools and watch as intelligent workflows transform your operations
           </p>
         </div>
 
-        <div className="relative mx-auto overflow-visible" style={{ width: '100%', maxWidth: '1400px', height: '560px' }}>
+        <div className="relative mx-auto overflow-visible" style={{ width: '100%', maxWidth: '1400px' }}>
+          <div className="sm:block hidden" style={{ height: '400px' }}>
           {/* SVG for rays */}
           <svg
             ref={raysRef}
             className="absolute inset-0 w-full h-full overflow-visible"
-            viewBox="0 0 1400 600"
+            viewBox="0 0 1400 400"
             style={{ zIndex: 1, overflow: 'visible' }}
             preserveAspectRatio="xMidYMid meet"
           >
@@ -87,7 +88,7 @@ export default function IntegrationShowcase() {
             {integrations.map((integration, index) => {
               const pos = calculatePosition(integration.angle, integration.distance);
               const centerX = 700;
-              const centerY = 300;
+              const centerY = 200;
               const endX = centerX + pos.x;
               const endY = centerY + pos.y;
               
@@ -139,42 +140,108 @@ export default function IntegrationShowcase() {
             })}
           </svg>
 
+          </div>
+
+          {/* Mobile simplified view */}
+          <div className="sm:hidden relative mt-12 mb-8">
+            <div className="grid grid-cols-3 gap-6 max-w-xs mx-auto relative z-10">
+              {/* HeyAgent as first icon - bigger */}
+              <div className="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-lg border-2 border-amber-400/50 flex items-center justify-center">
+                <div className="flex items-center justify-center h-8 w-8">
+                  <span className="text-3xl font-bold bg-gradient-to-r from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">
+                    ✳
+                  </span>
+                </div>
+              </div>
+              
+              {/* Integration icons */}
+              {integrations.slice(0, 8).map((integration) => (
+                <div
+                  key={integration.name}
+                  className="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 flex items-center justify-center"
+                >
+                  <div className="text-slate-600 dark:text-slate-400 flex items-center justify-center h-8 w-8">
+                    {integration.icon}
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            {/* SVG for connecting lines - positioned behind the grid */}
+            <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
+              <svg 
+                className="max-w-xs w-full h-full"
+                viewBox="0 0 100 100"
+                preserveAspectRatio="xMidYMid meet"
+              >
+                <defs>
+                  <linearGradient id="mobileLineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#fbbf24" stopOpacity="0.4" />
+                    <stop offset="100%" stopColor="#c026d3" stopOpacity="0.4" />
+                  </linearGradient>
+                </defs>
+                {/* Snake pattern connections - through centers with adjusted coordinates */}
+                <path
+                  d="
+                    M 2.5 14
+                    L 50 14
+                    L 97.5 14
+                    L 97.5 50
+                    L 50 50
+                    L 2.5 50
+                    L 2.5 86
+                    L 50 86
+                    L 97.5 86
+                  "
+                  stroke="url(#mobileLineGradient)"
+                  strokeWidth="1"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  opacity="0.5"
+                />
+              </svg>
+            </div>
+          </div>
+
           {/* Center Logo */}
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-            <div className="bg-white dark:bg-slate-800 p-10 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700">
-              <span className="text-6xl font-bold bg-gradient-to-r from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 hidden sm:block">
+            <div className="bg-white dark:bg-slate-800 p-6 sm:p-10 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700">
+              <span className="text-4xl sm:text-6xl font-bold bg-gradient-to-r from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">
                 ✳
               </span>
             </div>
           </div>
 
-          {/* Integration Icons */}
-          {integrations.map((integration) => {
-            const pos = calculatePosition(integration.angle, integration.distance);
-            return (
-              <div
-                key={integration.name}
-                className="absolute transform -translate-x-1/2 -translate-y-1/2 z-20"
-                style={{
-                  left: `${(700 + pos.x) / 1400 * 100}%`,
-                  top: `${(300 + pos.y) / 600 * 100}%`,
-                }}
-              >
-                <div className="bg-white dark:bg-slate-800 p-5 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 hover:border-amber-400 transition-all duration-300 hover:scale-110 group">
-                  <div className="text-slate-600 dark:text-slate-400 group-hover:text-amber-400 transition-colors">
-                    {integration.icon}
+          {/* Integration Icons - Desktop only */}
+          <div className="hidden sm:block">
+            {integrations.map((integration) => {
+              const pos = calculatePosition(integration.angle, integration.distance);
+              return (
+                <div
+                  key={integration.name}
+                  className="absolute transform -translate-x-1/2 -translate-y-1/2 z-20"
+                  style={{
+                    left: `${(700 + pos.x) / 1400 * 100}%`,
+                    top: `${(200 + pos.y) / 400 * 100}%`,
+                  }}
+                >
+                  <div className="bg-white dark:bg-slate-800 p-3 sm:p-5 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 hover:border-amber-400 transition-all duration-300 hover:scale-110 group">
+                    <div className="text-slate-600 dark:text-slate-400 group-hover:text-amber-400 transition-colors">
+                      {integration.icon}
+                    </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
 
         <div className="text-center mt-6">
           <p className="text-slate-600 dark:text-slate-400 mb-6">
             ... and hundreds more integrations through our API and webhook system
           </p>
-          <button className="py-3 px-8 inline-block font-semibold tracking-wide align-middle duration-500 text-base text-center bg-amber-400 hover:bg-amber-500 border border-amber-400 hover:border-amber-500 text-slate-900 dark:text-white rounded-md">
+          <button className="py-3 px-8 inline-block font-semibold tracking-wide align-middle duration-500 text-base text-center bg-amber-400 hover:bg-amber-500 border border-amber-400 hover:border-amber-500 text-white rounded-md">
             Explore All Integrations
           </button>
         </div>

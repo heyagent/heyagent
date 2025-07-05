@@ -46,16 +46,16 @@ export default function PlatformHero() {
   }, []);
 
   return (
-    <section className="relative table w-full lg:py-48 md:py-40 pt-36 pb-28 overflow-hidden bg-white dark:bg-slate-900">
+    <section className="relative table w-full py-24 sm:py-32 md:py-40 lg:py-48 overflow-hidden bg-white dark:bg-slate-900">
       <div className="container relative z-1 mx-auto px-4 sm:px-6 max-w-7xl" ref={containerRef}>
         <div className="relative grid lg:grid-cols-12 grid-cols-1 items-center mt-10 gap-[30px]">
           {/* Left Content */}
           <div className="lg:col-span-7">
             <div className="lg:me-6 lg:text-start text-center">
-              <h1 className="font-bold lg:leading-normal leading-normal text-4xl lg:text-6xl mb-5">
-                Enterprise AI Platform <br /> <span className="bg-gradient-to-r from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">Built for Scale.</span>
+              <h1 className="font-bold lg:leading-normal leading-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-5">
+                Enterprise AI Platform <br className="hidden sm:block" /> <span className="bg-gradient-to-r from-amber-400 to-fuchsia-600 text-transparent bg-clip-text">Built for Scale.</span>
               </h1>
-              <p className="text-lg max-w-xl lg:ms-0 mx-auto">
+              <p className="text-base sm:text-lg max-w-xl lg:ms-0 mx-auto px-4 sm:px-0">
                 Deploy intelligent agents across your organization to automate workflows, streamline operations, and empower employees to focus on what matters most.
               </p>
               
@@ -74,7 +74,7 @@ export default function PlatformHero() {
                   </div>
                   <button 
                     type="submit" 
-                    className="py-2 px-5 inline-block font-semibold tracking-wide align-middle duration-500 text-base text-center absolute top-[2px] end-[3px] h-[46px] bg-amber-400 hover:bg-amber-500 border border-amber-400 hover:border-amber-500 text-white rounded-md"
+                    className="py-2 px-3 sm:px-5 inline-block font-semibold tracking-wide align-middle duration-500 text-sm sm:text-base text-center absolute top-[2px] end-[3px] h-[46px] bg-amber-400 hover:bg-amber-500 border border-amber-400 hover:border-amber-500 text-white rounded-md"
                   >
                     Book Demo
                   </button>

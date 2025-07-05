@@ -7,10 +7,10 @@ export default function HowItWorksSection() {
     <section className="relative py-6 sm:py-8 md:py-12 lg:py-24 bg-white dark:bg-slate-900">
       <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl md:mt-12 mt-8">
         <div className="grid grid-cols-1 pb-6 text-center">
-          <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold text-slate-900 dark:text-white">
+          <h3 className="mb-4 text-xl sm:text-2xl md:text-3xl md:leading-normal leading-normal font-semibold text-slate-900 dark:text-white">
             So, how does it work?
           </h3>
-          <p className="text-slate-600 dark:text-slate-400 max-w-xl mx-auto">
+          <p className="text-slate-600 dark:text-slate-400 max-w-xl mx-auto text-sm sm:text-base px-4 sm:px-0">
             Deploy enterprise AI agents in three simple steps to automate workflows and empower your workforce
           </p>
         </div>
