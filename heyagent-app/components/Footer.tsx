@@ -63,6 +63,7 @@ export default function Footer() {
                 <FooterLinkSection 
                   title="Product"
                   links={[
+                    { href: "/", label: "Home" },
                     { href: "/pricing", label: "Pricing" },
                     { href: "/platform", label: "Platform" },
                     { href: "#", label: "Workflows" },
@@ -80,6 +81,7 @@ export default function Footer() {
                     { href: "#", label: "About" },
                     { href: "#", label: "ROI Calculator" },
                     { href: "#", label: "Case Studies" },
+                    { href: "/changelog", label: "Changelog" },
                     { href: "/faq", label: "FAQ" },
                     { href: "/blog", label: "Blog" }
                   ]}
@@ -92,6 +94,7 @@ export default function Footer() {
                   title="Company"
                   links={[
                     { href: "#", label: "Contact" },
+                    { href: "/account", label: "Account" },
                     { href: "/status", label: "Status" },
                     { href: "/terms", label: "Terms of Service" },
                     { href: "/privacy", label: "Privacy Policy" },
