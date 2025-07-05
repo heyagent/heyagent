@@ -4,7 +4,7 @@ interface ChangelogLayoutProps {
 
 export default function ChangelogLayout({ children }: ChangelogLayoutProps) {
   return (
-    <main className="bg-white dark:bg-gray-900">
+    <main className="bg-white dark:bg-gray-900 min-h-screen">
       {/* Hero Section with Centered Title */}
       <section className="relative pt-24 sm:pt-32 md:pt-40 lg:pt-48 pb-8 sm:pb-12 md:pb-16">
         <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
