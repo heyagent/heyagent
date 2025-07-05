@@ -40,7 +40,7 @@ export async function GET() {
     // Transform the data if needed
     const transformedData = {
       lastUpdated: new Date().toISOString(),
-      services: data.map((service: any) => ({
+      services: (data as any[]).map((service: any) => ({
         name: service.name,
         url: service.url,
         status: service.status,

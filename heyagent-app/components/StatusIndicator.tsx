@@ -31,7 +31,7 @@ export default function StatusIndicator() {
         if (!response.ok) {
           throw new Error('Failed to fetch status');
         }
-        const data = await response.json();
+        const data: StatusData = await response.json();
         setStatusData(data);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Unknown error');

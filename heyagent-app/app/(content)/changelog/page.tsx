@@ -55,7 +55,7 @@ export default function ChangelogPage() {
         if (!parentSection) return;
 
         const sectionTop = parentSection.getBoundingClientRect().top + window.scrollY;
-        const sectionBottom = sectionTop + parentSection.offsetHeight;
+        const sectionBottom = sectionTop + (parentSection as HTMLElement).offsetHeight;
 
         if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
           // Make it sticky
@@ -119,7 +119,7 @@ export default function ChangelogPage() {
                 {/* Date Column */}
                 <div className="lg:w-1/4 mb-4 sm:mb-6 lg:mb-0 relative">
                   <div 
-                    ref={el => dateRefs.current[index] = el}
+                    ref={el => { dateRefs.current[index] = el; }}
                     className="text-center lg:text-left bg-white dark:bg-gray-900 z-20 pb-2 lg:pb-0"
                   >
                     <time className="text-xl sm:text-2xl font-bold text-amber-400 block mb-1">
