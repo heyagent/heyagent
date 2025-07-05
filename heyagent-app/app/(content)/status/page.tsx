@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function Status() {
   return (
-    <main>
+    <div>
       {/* Hero Section */}
       <section className="relative pt-24 sm:pt-32 md:pt-40 lg:pt-48 pb-6 sm:pb-8 md:pb-12 bg-gradient-to-b from-amber-400/20 dark:from-amber-400/40 to-transparent">
         <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">
@@ -65,6 +65,6 @@ export default function Status() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
