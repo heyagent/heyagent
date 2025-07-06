@@ -35,7 +35,9 @@
 	 * Environment Variables
 	 * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
 	 */
-	// "vars": { "MY_VARIABLE": "production_value" },
+	"vars": { 
+		"SONIC_CMS_API_URL": "https://heyagent-sonic-cms.pages.dev/api/v1"
+	},
 	/**
 	 * Note: Use secrets to store sensitive data.
 	 * https://developers.cloudflare.com/workers/configuration/secrets/
@@ -51,14 +53,8 @@
 	 * D1 Databases
 	 * https://developers.cloudflare.com/d1/
 	 */
-	"d1_databases": [
-		{
-			"binding": "DB_CHANGELOG",
-			"database_name": "changelog-db",
-			"database_id": "2dca75a6-d0d6-4210-8417-f524960091a0",
-			"migrations_dir": "./migrations/changelog"
-		}
-	]
+	// D1 database removed - now using Sonic CMS for changelog management
+	// "d1_databases": []
 
 	/**
 	 * Service Bindings (communicate between multiple Workers)

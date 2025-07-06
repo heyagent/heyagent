@@ -4,8 +4,16 @@ import ChangelogTabs from "@/components/changelog/ChangelogTabs";
 import ChangelogSearch from "@/components/changelog/ChangelogSearch";
 import ChangelogPagination from "@/components/changelog/ChangelogPagination";
 import { useEffect, useRef, useState, useCallback, Suspense } from "react";
-import { ChangelogEntryType } from "@/lib/changelog-data";
 import { useRouter, useSearchParams } from "next/navigation";
+
+interface ChangelogEntryType {
+  version: string;
+  date: string;
+  title: string;
+  summary: string;
+  improvements: string[];
+  fixes: string[];
+}
 
 interface PaginationData {
   currentPage: number;

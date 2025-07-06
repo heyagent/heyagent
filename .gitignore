@@ -1,2 +1,4 @@
 # Reference folder - ignored by everything
 .reference/
+# Sonic CMS (separate repository)
+sonic-cms/
