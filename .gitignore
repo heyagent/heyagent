@@ -2,11 +2,11 @@
 .reference/
 
 # SonicJS specific
-heyagent-app/sonic-cms/.wrangler/
-heyagent-app/sonic-cms/.open-next/
-heyagent-app/sonic-cms/dist/
-heyagent-app/sonic-cms/.turbo/
-heyagent-app/sonic-cms/.next/
-heyagent-app/sonic-cms/node_modules/
-heyagent-app/sonic-cms/.env
-heyagent-app/sonic-cms/.dev.vars
+sonic-cms/.wrangler/
+sonic-cms/.open-next/
+sonic-cms/dist/
+sonic-cms/.turbo/
+sonic-cms/.next/
+sonic-cms/node_modules/
+sonic-cms/.env
+sonic-cms/.dev.vars
