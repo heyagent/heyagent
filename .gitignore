@@ -10,3 +10,6 @@ sonic-cms/.next/
 sonic-cms/node_modules/
 sonic-cms/.env
 sonic-cms/.dev.vars
+
+# Leftover directories from moves
+heyagent-app/sonic-cms/

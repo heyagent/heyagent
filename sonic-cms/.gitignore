@@ -24,7 +24,6 @@ pnpm-debug.log*
 .idea/
 .wrangler
 .drizzle.env
-wrangler.toml
 
 TEMP.md
 
