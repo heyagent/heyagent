@@ -1,0 +1,19 @@
+# SonicJS Configuration Backup
+# Created: 2025-07-06
+
+## API Keys
+RESEND_API_KEY = "re_DtjnPQRe_JtRPG2WM6aipGQLLXa4rKX8c"
+
+## Cloudflare Resources
+D1_DATABASE_NAME = "heyagent-cms-db"
+D1_DATABASE_ID = "cb7f1dc4-0a0a-403f-9b0a-304afb40b466"
+
+KV_NAMESPACE_NAME = "sonicjs"
+KV_NAMESPACE_ID = "01ec1097f60f48bbb480bdd623251d37"
+KV_PREVIEW_ID = "546f0391fc3a419f94246592b5323420"
+
+R2_BUCKET_NAME = "sonicjs"
+
+## URLs
+EMAIL_BASE_URL = "https://heyagent-sonic-cms.heyagentai.workers.dev"
+EMAIL_CONFIRMATION_REDIRECT_URL = "https://heyagent-sonic-cms.heyagentai.workers.dev/login"

@@ -1,0 +1,26 @@
+# Environment Variables for Cloudflare Pages
+# Format: Variable Name | Type | Value
+# Type can be: plain text, secret, or JSON
+# All values below should be added as "plain text" except RESEND_API_KEY which should be "secret"
+
+Variable Name                           Type            Value
+---------------------------------------------------------------
+INVALIDATE_USER_SESSIONS                plain text      false
+REQUIRE_EMAIL_CONFIRMATION              plain text      true
+USERS_CAN_REGISTER                      plain text      true
+RESET_PASSWORD_EXPIRATION_TIME          plain text      1200000
+PASSWORD_RESET_EMAIL_SUBJECT            plain text      SonicJS Password Reset
+DISABLED_CACHE                          plain text      true
+RESEND_API_KEY                          secret          re_DtjnPQRe_JtRPG2WM6aipGQLLXa4rKX8c
+EMAIL_ENABLED                           plain text      true
+EMAIL_FROM                              plain text      me@example.com
+EMAIL_BASE_URL                          plain text      https://heyagent-sonic-cms.pages.dev
+EMAIL_FROM_NAME                         plain text      Example
+EMAIL_SEND_WELCOME_EMAIL                plain text      true
+ONE_TIME_PASSWORD_CHARACTER_LENGTH      plain text      5
+ONE_TIME_PASSWORD_EXPIRATION_TIME       plain text      1200000
+ONE_TIME_PASSWORD_EMAIL_SUBJECT         plain text      Your SonicJS OTP
+EMAIL_CONFIRMATION_SUBJECT              plain text      Your SonicJS Email Confirmation
+EMAIL_CONFIRMATION_REDIRECT_URL         plain text      https://heyagent-sonic-cms.pages.dev/login
+AUTO_LOGIN_AFTER_EMAIL_CONFIRMATION     plain text      true
+TESTING_MODE                            plain text      true

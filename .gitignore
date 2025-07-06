@@ -1,4 +1,12 @@
 # Reference folder - ignored by everything
 .reference/
-# Sonic CMS (separate repository)
-sonic-cms/
+
+# SonicJS specific
+sonic-cms/.wrangler/
+sonic-cms/.open-next/
+sonic-cms/dist/
+sonic-cms/.turbo/
+sonic-cms/.next/
+sonic-cms/node_modules/
+sonic-cms/.env
+sonic-cms/.dev.vars
