@@ -1,0 +1,8 @@
+name = "heyagent-status"
+compatibility_date = "2025-04-02"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = ".vercel/output/static"
+
+[[kv_namespaces]]
+binding = "UPTIMEFLARE_STATE"
+id = "38bc5e9f491b4454913d5cd661266af7"

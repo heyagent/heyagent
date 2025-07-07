@@ -1,0 +1,22 @@
+name = "heyagent-status-worker"
+main = "src/index.ts"
+compatibility_date = "2025-04-02"
+
+[[kv_namespaces]]
+binding = "UPTIMEFLARE_STATE"
+id = "38bc5e9f491b4454913d5cd661266af7"
+
+[durable_objects]
+bindings = [
+  { name = "REMOTE_CHECKER_DO", class_name = "RemoteChecker" }
+]
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["RemoteChecker"]
+
+[triggers]
+crons = ["* * * * *"]
+
+[observability.logs]
+enabled = true
