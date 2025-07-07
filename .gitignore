@@ -15,3 +15,6 @@ sonic-cms/.dev.vars
 heyagent-app/sonic-cms/
 
 # UptimeFlare monitoring project (separate deployment)
+
+# Website project (separate repository)
+website/
