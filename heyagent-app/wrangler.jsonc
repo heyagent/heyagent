@@ -60,5 +60,16 @@
 	 * Service Bindings (communicate between multiple Workers)
 	 * https://developers.cloudflare.com/workers/wrangler/configuration/#service-bindings
 	 */
-	// "services": [{ "binding": "MY_SERVICE", "service": "my-service" }]
+	// "services": [{ "binding": "MY_SERVICE", "service": "my-service" }],
+	
+	/**
+	 * KV Namespaces
+	 * https://developers.cloudflare.com/kv/
+	 */
+	"kv_namespaces": [
+		{
+			"binding": "UPTIMEFLARE_STATE",
+			"id": "38bc5e9f491b4454913d5cd661266af7"
+		}
+	]
 }

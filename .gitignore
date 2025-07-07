@@ -13,3 +13,6 @@ sonic-cms/.dev.vars
 
 # Leftover directories from moves
 heyagent-app/sonic-cms/
+
+# UptimeFlare monitoring project (separate deployment)
+uptimeflare/
