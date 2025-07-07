@@ -53,8 +53,13 @@
 	 * D1 Databases
 	 * https://developers.cloudflare.com/d1/
 	 */
-	// D1 database removed - now using Sonic CMS for changelog management
-	// "d1_databases": []
+	"d1_databases": [
+		{
+			"binding": "DB_CHANGELOG",
+			"database_name": "heyagent-cms-db",
+			"database_id": "cb7f1dc4-0a0a-403f-9b0a-304afb40b466"
+		}
+	],
 
 	/**
 	 * Service Bindings (communicate between multiple Workers)

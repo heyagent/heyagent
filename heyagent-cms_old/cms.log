@@ -1,0 +1,48 @@
+
+> heyagent-cms@0.1.0 dev
+> next dev --turbopack --port 3001
+
+Using vars defined in .dev.vars
+[mf:info] ✨ Parsed 1 valid header rule.
+   ▲ Next.js 15.3.4 (Turbopack)
+   - Local:        http://localhost:3001
+   - Network:      http://10.255.255.254:3001
+
+ ✓ Starting...
+Using vars defined in .dev.vars
+Using vars defined in .dev.vars
+[mf:info] ✨ Parsed 1 valid header rule.
+[mf:info] ✨ Parsed 1 valid header rule.
+ ○ Compiling middleware ...
+ ✓ Compiled middleware in -105ms
+Using vars defined in .dev.vars
+ ✓ Ready in 5.4s
+Using vars defined in .dev.vars
+[mf:info] ✨ Parsed 1 valid header rule.
+[mf:info] ✨ Parsed 1 valid header rule.
+ ○ Compiling / ...
+ ✓ Compiled / in 5.7s
+ HEAD / 307 in 3330ms
+ GET / 307 in 5591ms
+ ○ Compiling /admin ...
+ ✓ Compiled /admin in 3.8s
+ GET /admin 200 in 4110ms
+ ○ Compiling /favicon.ico ...
+ ✓ Compiled /favicon.ico in 2.1s
+ GET /api/admin/changelog?page=1&limit=10 401 in 2008ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 2271ms
+Error fetching changelog: Error: D1_ERROR: no such table: changelog_entries: SQLITE_ERROR
+    at async ChangelogService.list (lib/db/changelog-service.ts:53:19)
+    at async GET (app/api/admin/changelog/route.ts:28:19)
+  51 |     `;
+  52 |
+> 53 |     const result = await this.db.prepare(query)
+     |                   ^
+  54 |       .bind(searchPattern, limit, offset)
+  55 |       .all();
+  56 | {
+  [cause]: Error: no such table: changelog_entries: SQLITE_ERROR
+      at D1DatabaseSessionAlwaysPrimary._sendOrThrow (cloudflare-internal:d1-api:126:24)
+      at async D1PreparedStatement.all (cloudflare-internal:d1-api:310:46)
+}
+ GET /api/admin/changelog?page=1&limit=10 500 in 867ms
